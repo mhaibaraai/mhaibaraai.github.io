@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Movk",
   description: "A VitePress Site",
+  srcDir: 'src',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -25,5 +26,4 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
   },
-  srcDir: 'src'
 })
