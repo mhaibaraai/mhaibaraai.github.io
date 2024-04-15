@@ -12,7 +12,6 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   metaChunk: true,
-  outDir: '../dist',
 
   markdown: {
     codeTransformers: [
