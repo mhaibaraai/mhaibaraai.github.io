@@ -9,7 +9,7 @@ export default antfu({
   formatters: {
     css: true,
     html: true,
-    markdown: true,
+    markdown: 'prettier',
   },
 
   ignores: [
@@ -17,8 +17,8 @@ export default antfu({
     "**/dist/**",
     "node_modules",
     "**/node_modules/**",
-    "**.svg",
-    "**/**.svg/**",
+    "public",
+    "**/public/**",
     "eslint.config.js",
     "**/eslint.config.js/**"
   ],

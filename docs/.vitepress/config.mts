@@ -1,6 +1,7 @@
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
-// import VueDevtools from 'vite-plugin-vue-devtools'
+import viteConfig from './vite.config'
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -21,6 +22,9 @@ export default defineConfig({
           return code.replace(/\[\!\!code/g, '[!code')
         },
       },
+      transformerTwoslash({
+        processHoverInfo: info => info.replace(/_unocss_core\./g, ''),
+      }),
     ],
   },
 
@@ -28,9 +32,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
 
     logo: { src: '/logo.svg', width: 24, height: 24 },
-
     nav: nav(),
-
     sidebar: [
 
     ],
@@ -43,6 +45,8 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
   ],
+
+  vite: viteConfig,
 
 })
 
