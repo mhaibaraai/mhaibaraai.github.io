@@ -19,8 +19,8 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   const clipPath = [
     `circle(0px at ${x}px ${y}px)`,
     `circle(${Math.hypot(
-        Math.max(x, innerWidth - x),
-        Math.max(y, innerHeight - y),
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y),
     )}px at ${x}px ${y}px)`,
   ]
 
@@ -42,6 +42,5 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 
 <template>
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
-  <DefaultTheme.Layout>
-  </DefaultTheme.Layout>
+  <DefaultTheme.Layout />
 </template>

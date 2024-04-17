@@ -7,6 +7,10 @@ table {
   display: table;
 }
 
+.custom-block.tip .custom-block-title {
+  color: var(--vp-c-brand-1);
+}
+
 .VPHero .image-bg {
   z-index: 1;
   opacity: 0.8;
@@ -17,6 +21,20 @@ table {
   opacity: 0.2;
 }
 
+.VPNavBarMenuLink.active span,
+.VPNavBarMenuLink:hover span {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/**
+ * VitePress: Custom fix
+ * -------------------------------------------------------------------------- */
+
+/*
+  Use lighter colors for links in dark mode for a11y.
+  Also specify some classes twice to have higher specificity
+  over scoped class data attribute.
+*/
 .dark .vp-doc a,
 .dark .vp-doc a > code,
 .dark .VPNavBarMenuLink.VPNavBarMenuLink:hover,
@@ -38,6 +56,7 @@ table {
 .dark .vp-doc .custom-block a {
   transition: color 0.25s;
 }
+
 
 /* VitePress Search */
 .VPLocalSearchBox .result {

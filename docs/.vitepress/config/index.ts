@@ -1,7 +1,9 @@
-import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
-import viteConfig from './vite.config'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+import { nav } from './nav'
+import { sidebarGuide } from './guide'
+import { sidebarReference } from './reference'
+import { algoliaSearch } from './algolia'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -15,6 +17,10 @@ export default defineConfig({
   metaChunk: true,
 
   markdown: {
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
+    },
     codeTransformers: [
       // We use `[!!code` in demo to prevent transformation, here we revert it back.
       {
@@ -33,49 +39,60 @@ export default defineConfig({
 
     logo: { src: '/logo.svg', width: 24, height: 24 },
 
-    nav: nav(),
+    nav,
 
     sidebar: {
-      '/guide/': { base: '/guide/', items: sidebarGuide() },
+      '/guide/': { base: '/guide/', items: sidebarGuide },
+      '/reference/': { base: '/reference/', items: sidebarReference },
     },
 
-    //社交帐户链接
+    // 社交帐户链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/mhaibaraai/' },
     ],
 
     editLink: {
       pattern: 'https://github.com/mhaibaraai/mhaibaraai.github.io/edit/main/docs/:path',
-      text: '在 GitHub 上编辑此页面'
+      text: '在 GitHub 上编辑此页面',
     },
 
     footer: {
       message: '基于 MIT 许可发布',
-      copyright: `版权所有 © 2023-${new Date().getFullYear()} yixuan`
+      copyright: `版权所有 © 2023-${new Date().getFullYear()} yixuan`,
     },
 
     docFooter: {
       prev: '上一页',
-      next: '下一页'
+      next: '下一页',
     },
 
     outline: {
-      label: '页面导航'
+      label: '页面导航',
     },
 
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
         dateStyle: 'short',
-        timeStyle: 'medium'
-      }
+        timeStyle: 'medium',
+      },
+    },
+
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: '7RNWHZWFWD',
+        apiKey: 'fa32f02af36769520ea9d4b684de2e87',
+        indexName: 'mhaibaraaiio',
+        ...algoliaSearch,
+      },
     },
 
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
-    darkModeSwitchTitle: '切换到深色模式'
+    darkModeSwitchTitle: '切换到深色模式',
 
   },
 
@@ -83,25 +100,4 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
   ],
 
-  vite: viteConfig
-
 })
-
-function nav(): DefaultTheme.NavItem[] {
-  return [
-    {
-      text: '指南',
-      link: '/guide/getting-started',
-      activeMatch: '/guide/'
-    },
-  ]
-}
-
-function sidebarGuide(): DefaultTheme.SidebarItem[] {
-  return [
-    {
-      text: '快速开始',
-      link: 'getting-started',
-    },
-  ]
-}

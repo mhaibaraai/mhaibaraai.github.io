@@ -1,20 +1,21 @@
+import { watch } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-import Layout from './components/layout.vue'
-
 import '@shikijs/vitepress-twoslash/style.css'
 
 import './rainbow.css'
-import './overrides.css'
 import './vars.css'
-
+import './overrides.css'
 import 'virtual:uno.css'
-import { watch } from 'vue'
+
+import Layout from './components/layout.vue'
+
+let homePageStyle: HTMLStyleElement | undefined
 
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app ,router}) {
+  enhanceApp({ app, router }) {
     app.use(TwoslashFloatingVue)
 
     if (typeof window === 'undefined')
@@ -28,7 +29,7 @@ export default {
       },
       { immediate: true },
     )
-  }
+  },
 }
 
 if (typeof window !== 'undefined') {
@@ -43,7 +44,6 @@ if (typeof window !== 'undefined') {
 }
 
 // Speed up the rainbow animation on home page
-let homePageStyle: HTMLStyleElement | undefined
 function updateHomePageStyle(value: boolean) {
   if (value) {
     if (homePageStyle)
