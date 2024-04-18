@@ -41,6 +41,7 @@ export default antfu(
   {
     files: [
       '**/*.md/*.[jt]s',
+      'docs/snippets/**/*.[jt]s',
     ],
     rules: {
       'no-restricted-imports': 'off',
@@ -49,6 +50,8 @@ export default antfu(
       'ts/no-unused-vars': 'off',
       'ts/no-var-requires': 'off',
       'ts/no-this-alias': 'off',
+      'no-console': 'off',
+      'unused-imports/no-unused-vars': 'off',
     },
   },
 

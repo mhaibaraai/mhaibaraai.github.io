@@ -40,117 +40,74 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 这里推荐 Anthony Fu 大佬的开源项目 ESlint 的预设配置 `@antfu/eslint-config`，详细配置请参考[文档](https://github.com/antfu/eslint-config)
 
-1、安装 ESLint 和 `@antfu/eslint-config` 依赖，为了使用外部格式化程序来格式化ESLint尚无法处理的文件（.css、.html等），安装 `eslint-plugin-format` 的依赖,为了支持 UnoCSS 安装 `@unocss/eslint-plugin`
+1. 安装 ESLint 和 `@antfu/eslint-config` 依赖，为了使用外部格式化程序来格式化ESLint尚无法处理的文件（.css、.html等），安装 `eslint-plugin-format` 的依赖,为了支持 UnoCSS 安装 `@unocss/eslint-plugin`
 
-```sh
-pnpm i -D eslint @antfu/eslint-config eslint-plugin-format @unocss/eslint-plugin
-```
+   ```sh
+   pnpm add -D eslint @antfu/eslint-config eslint-plugin-format @unocss/eslint-plugin
+   ```
 
-2、添加 `eslint.config.ts` 文件
+2. 添加 `eslint.config.ts` 文件
 
-```ts twoslash
-import antfu from '@antfu/eslint-config'
-
-export default antfu({
-
-  vue: true,
-  typescript: true,
-  unocss: true,
-
-  formatters: {
-    css: true,
-    html: true,
-    markdown: true,
-  },
-
-  ignores: [
-    'docs/.vitepress/cache',
-  ],
-
-})
-```
+   ```js
+   <<< ../../eslint.config.ts
+   ```
 
 ## 添加 `unocss` 预处理器
 
-1、安装 `unocss` 依赖
+1. 安装 `unocss` 依赖
 
-```sh
-pnpm add -D unocss
-```
+   ```sh
+   pnpm add -D unocss
+   ```
 
-2、新增 `vite.config.ts` 文件
+2. 添加 `vite.config.ts` 文件
 
-```ts twoslash
-import { defineConfig } from 'vite'
-import unocss from 'unocss/vite'
-import { presetAttributify, presetWind } from 'unocss'
+   ```js
+   <<< ../../vite.config.ts
+   ```
 
-export default defineConfig({
+3. 更新 theme 配置文件 `theme/index.ts`
 
-  plugins: [
-    unocss({
-      presets: [
-        presetAttributify(),
-        presetWind(),
-      ],
-    }),
-  ],
-
-})
-```
-
-3、更新 vitpress 配置文件 `config.mts`
-
-```ts
-import viteConfig from './vite.config'
-
-export default {
-  vite: viteConfig,
-}
-```
-
-4、更新 theme 配置文件 `theme/index.ts`
-
-```ts
-import 'virtual:uno.css'
-```
+   ```ts
+   import 'virtual:uno.css'
+   ```
 
 ## 在中启用 [TypeScript Twoslash](https://shiki-zh-docs.vercel.app/packages/vitepress)（类型悬停显示）
 
-1、安装 `shiki-twoslash` 依赖
+1. 安装 `shiki-twoslash` 依赖
 
-```sh
-pnpm add -D @shikijs/vitepress-twoslash
-```
+   ```sh
+   pnpm add -D @shikijs/vitepress-twoslash
+   ```
 
-2、更新 `config.mts` 文件
+2. 更新 `config.ts` 文件
 
-```ts
-import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+   ```ts
+   import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
-export default defineConfig({
+   export default defineConfig({
 
-  markdown: {
-    codeTransformers: [
-      transformerTwoslash({
-        processHoverInfo: info => info.replace(/_unocss_core\./g, ''),
-      }),
-    ],
-  }
+     markdown: {
+       codeTransformers: [
+         transformerTwoslash({
+           processHoverInfo: info => info.replace(/_unocss_core\./g, ''),
+         }),
+       ],
+     }
 
-})
-```
+   })
+   ```
 
-3、更新 theme 配置文件 `theme/index.ts` ,注册 `shiki-twoslash` 插件，导入 css 样式
+3. 更新 theme 配置文件 `theme/index.ts` ,注册 `shiki-twoslash` 插件，导入 css 样式
 
-```ts
-import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
+   ```ts
+   import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 
-import '@shikijs/vitepress-twoslash/style.css'
+   import '@shikijs/vitepress-twoslash/style.css'
 
-export default {
-  enhanceApp({ app }) {
-    app.use(TwoslashFloatingVue)
-  },
-}
-```
+   export default {
+     enhanceApp({ app }) {
+       app.use(TwoslashFloatingVue)
+     },
+   }
+   ```

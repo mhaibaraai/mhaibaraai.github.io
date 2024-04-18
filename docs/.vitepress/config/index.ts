@@ -4,6 +4,7 @@ import { nav } from './nav'
 import { sidebarGuide } from './guide'
 import { sidebarReference } from './reference'
 import { algoliaSearch } from './algolia'
+import { sidebarWork } from './work'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -32,6 +33,9 @@ export default defineConfig({
         processHoverInfo: info => info.replace(/_unocss_core\./g, ''),
       }),
     ],
+    image: {
+      lazyLoading: true,
+    },
   },
 
   themeConfig: {
@@ -44,6 +48,7 @@ export default defineConfig({
     sidebar: {
       '/guide/': { base: '/guide/', items: sidebarGuide },
       '/reference/': { base: '/reference/', items: sidebarReference },
+      '/work/': { base: '/work/', items: sidebarWork}
     },
 
     // 社交帐户链接
@@ -68,6 +73,7 @@ export default defineConfig({
 
     outline: {
       label: '页面导航',
+      level: [2, 3],
     },
 
     lastUpdated: {
