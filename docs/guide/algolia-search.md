@@ -66,34 +66,32 @@ export default defineConfig({
 
 在项目根目录下新建爬虫 `crawlerConfig.json` 文件，配置需要爬取的页面。
 
-```json
-{
-  "index_name": "xxx",  //索引名称
-  "start_urls": ["/"],  //网站地址
-  "rateLimit": 8,
-  "maxDepth": 10,
-  "selectors": {
-    "lvl0": {
-      "selector": "",
-      "defaultValue": "Documentation"
-    },
-    "lvl1": ".content h1",
-    "lvl2": ".content h2",
-    "lvl3": ".content h3",
-    "lvl4": ".content h4",
-    "lvl5": ".content h5",
-    "content": ".content p, .content li"
-  },
-  "selectors_exclude": [
-    "aside",
-    ".page-footer",
-    ".next-and-prev-link",
-    ".table-of-contents"
-  ],
-  "js_render": true
-}
-```
+::: tip 提示
+可以参考 [vitepress](https://vitepress.dev/zh/reference/default-theme-search#crawler-config) 的配置
+:::
 
 ### 创建 CI 脚本
 
-在项目根目录 `.github/workflows` 文件夹下创建 `del` 文件。
+在项目根目录 `.github/workflows` 文件夹下创建 `algolia.yml` 文件
+
+```yml
+name: algolia
+on:
+  push:
+    branches:
+      - main
+jobs:
+  algolia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get the content of algolia.json as config
+        id: algolia_config
+        run: echo "config=$(cat crawlerConfig.json | jq -r tostring)" >> $GITHUB_OUTPUT
+      - name: Push indices to Algolia
+        uses: signcl/docsearch-scraper-action@master
+        env:
+          APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          CONFIG: ${{ steps.algolia_config.outputs.config }}
+```
