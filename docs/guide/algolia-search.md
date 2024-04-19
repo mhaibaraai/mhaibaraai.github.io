@@ -84,7 +84,7 @@ jobs:
   algolia:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get the content of algolia.json as config
         id: algolia_config
         run: echo "config=$(cat crawlerConfig.json | jq -r tostring)" >> $GITHUB_OUTPUT
@@ -95,3 +95,7 @@ jobs:
           API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           CONFIG: ${{ steps.algolia_config.outputs.config }}
 ```
+
+::: details Node.js x actions are deprecated ？
+如果出现 `Node.js x actions are deprecated` 的提示，可以将 `uses: actions/checkout@v4` 的版本号升级一下。
+:::
