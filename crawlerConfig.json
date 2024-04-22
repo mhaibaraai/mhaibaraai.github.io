@@ -2,93 +2,32 @@
   "index_name": "mhaibaraaiio",
   "start_urls": ["https://mhaibaraai.github.io/"],
   "rateLimit": 8,
-  "startUrls": [
-    "https://mhaibaraai.github.io/"
-  ],
-  "renderJavaScript": false,
-  "sitemaps": [],
-  "exclusionPatterns": [],
-  "ignoreCanonicalTo": false,
-  "discoveryPatterns": [
-    "https://mhaibaraai.github.io/**"
-  ],
-  "schedule": "at 05:10 on Saturday",
-  "actions": [
-    {
-      "indexName": "mhaibaraaiio",
-      "pathsToMatch": [
-        "https://mhaibaraai.github.io/**"
-      ],
-      "recordExtractor": "function ($, helpers) { return helpers.docsearch({ recordProps: { lvl1: '.content h1', content: '.content p, .content li', lvl0: { selectors: '', defaultValue: 'Documentation' }, lvl2: '.content h2', lvl3: '.content h3', lvl4: '.content h4', lvl5: '.content h5' }, indexHeadings: true }) }"
+  "maxDepth": 10,
+  "selectors": {
+    "lvl0": {
+      "selector": "",
+      "defaultValue": "Documentation"
+    },
+    "lvl1": ".content h1",
+    "lvl2": ".content h2",
+    "lvl3": ".content h3",
+    "lvl4": ".content h4",
+    "lvl5": ".content h5",
+    "content": ".content p, .content li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true
     }
+  },
+  "selectors_exclude": [
+    "aside",
+    ".page-footer",
+    ".next-and-prev-link",
+    ".table-of-contents"
   ],
-  "initialIndexSettings": {
-    "mhaibaraaiio": {
-      "attributesForFaceting": [
-        "type",
-        "lang"
-      ],
-      "attributesToRetrieve": [
-        "hierarchy",
-        "content",
-        "anchor",
-        "url"
-      ],
-      "attributesToHighlight": [
-        "hierarchy",
-        "hierarchy_camel",
-        "content"
-      ],
-      "attributesToSnippet": [
-        "content:10"
-      ],
-      "camelCaseAttributes": [
-        "hierarchy",
-        "hierarchy_radio",
-        "content"
-      ],
-      "searchableAttributes": [
-        "unordered(hierarchy.lvl0)",
-        "unordered(hierarchy_camel.lvl1)",
-        "unordered(hierarchy.lvl1)",
-        "unordered(hierarchy_camel.lvl2)",
-        "unordered(hierarchy.lvl2)",
-        "unordered(hierarchy_camel.lvl3)",
-        "unordered(hierarchy.lvl3)",
-        "unordered(hierarchy_camel.lvl4)",
-        "unordered(hierarchy.lvl4)",
-        "unordered(hierarchy_camel.lvl5)",
-        "unordered(hierarchy.lvl5)",
-        "unordered(hierarchy_camel.lvl6)",
-        "unordered(hierarchy.lvl6)",
-        "content"
-      ],
-      "distinct": true,
-      "attributeForDistinct": "url",
-      "customRanking": [
-        "desc(weight.pageRank)",
-        "desc(weight.level)",
-        "asc(weight.position)"
-      ],
-      "ranking": [
-        "words",
-        "filters",
-        "typo",
-        "attribute",
-        "proximity",
-        "exact",
-        "custom"
-      ],
-      "highlightPreTag": "<span class=\"algolia-docsearch-suggestion--highlight\">",
-      "highlightPostTag": "</span>",
-      "minWordSizefor1Typo": 3,
-      "minWordSizefor2Typos": 7,
-      "allowTyposOnNumericTokens": false,
-      "minProximity": 1,
-      "ignorePlurals": true,
-      "advancedSyntax": true,
-      "attributeCriteriaComputedByMinProximity": true,
-      "removeWordsIfNoResults": "allOptional"
-    }
-  }
+  "custom_settings": {
+    "attributesForFaceting": ["lang", "tags"]
+  },
+  "js_render": true
 }
