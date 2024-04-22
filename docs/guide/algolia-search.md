@@ -55,10 +55,12 @@ export default defineConfig({
 
 ### Github Secrets 中添加私钥
 
-将上述获取的 `ALGOLIA_APP_ID` 和 `ALGOLIA_API_KEY` 添加到 Github 项目的 Secrets 中，在 **CI** 脚本中使用。
+打开 `Algolia Crawlers` 官网， `ALGOLIA_APP_ID` 和 `Algolia API Key` 添加到 Github 项目的 Secrets 中，在 **CI** 脚本中使用。
 
-* `ALGOLIA_APP_ID`：取 **Algolia** 的 `Application ID`
-* `ALGOLIA_API_KEY`：取 **Algolia** 的 `Write API Key`
+* `ALGOLIA_APP_ID`：取 **Algolia** 的 `Algolia App ID`
+* `ALGOLIA_API_KEY`：取 **Algolia** 的 `Algolia API Key`
+
+![crawler key图片](/algolia/crawler.png)
 
 ![github-secret 配置图片](/algolia/github-secret.png)
 
@@ -95,6 +97,8 @@ jobs:
           API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           CONFIG: ${{ steps.algolia_config.outputs.config }}
 ```
+
+999 crawler测试
 
 ::: details Node.js x actions are deprecated ？
 如果出现 `Node.js x actions are deprecated` 的提示，可以将 `uses: actions/checkout@v4` 的版本号升级一下。
