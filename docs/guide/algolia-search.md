@@ -98,8 +98,10 @@ jobs:
           CONFIG: ${{ steps.algolia_config.outputs.config }}
 ```
 
-999 crawler测试
-
-::: details Node.js x actions are deprecated ？
+::: details 出现 Node.js x actions are deprecated 报错？
 如果出现 `Node.js x actions are deprecated` 的提示，可以将 `uses: actions/checkout@v4` 的版本号升级一下。
+:::
+
+::: details 出现 Not enough rights to update an object 报错?
+错误信息中显示 `Not enough rights to update an object` ，意味着你使用的 `API Key` 没有足够的权限来更新 `Algolia` 的索引对象。
 :::
