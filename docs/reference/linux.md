@@ -4,7 +4,7 @@
 
 创建一个 `include` 文件夹
 
-```linux
+```sh
 mkdir include
 ```
 
@@ -12,13 +12,13 @@ mkdir include
 
 将名为 `include.zip` 的压缩文件解压缩到当前目录下的 `include` 文件夹中
 
-```linux
+```sh
 unzip -d ./include include.zip
 ```
 
 ## 文件夹重命名
 
-```linux
+```sh
 mv old_folder new_folder
 ```
 
@@ -26,6 +26,6 @@ mv old_folder new_folder
 
 重新启动 `Docker Compose` 文件中定义的所有服务
 
-```linux
+```sh
 docker-compose restart
 ```

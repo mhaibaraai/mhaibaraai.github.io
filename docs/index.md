@@ -11,6 +11,6 @@ hero:
       text: 快速开始
       link: /guide/getting-started
   image:
-      src: /logo.svg
+      src: /logo.png
       alt: Movk
 ---

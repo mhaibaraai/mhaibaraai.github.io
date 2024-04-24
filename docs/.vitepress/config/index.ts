@@ -41,7 +41,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: { src: '/logo.svg', width: 24, height: 24 },
+    logo: { src: '/logo.png', width: 24, height: 24 },
 
     nav,
 
@@ -103,7 +103,7 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
   ],
 
 })

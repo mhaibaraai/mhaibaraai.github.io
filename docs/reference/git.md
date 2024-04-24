@@ -19,3 +19,15 @@ git branch | grep -v "^\*" | xargs git branch -D
 ```sh
 git branch | xargs git branch -D
 ```
+
+## Git 将远程仓库的 master 分支的代码合并到你的本地分支
+
+```sh
+git merge new_remote/master --allow-unrelated-histories
+```
+
+## Git 强制推送本地分支到远程仓库
+
+```sh
+git push new_remote your_branch -f
+```
