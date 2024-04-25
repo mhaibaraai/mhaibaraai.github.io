@@ -2,7 +2,7 @@
 
 [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
-## [VitePress](https://vitepress.dev/zh/guide/getting-started) 初始化项目
+## VitePress 初始化项目
 
 ```sh
 pnpm add -D vitepress
@@ -38,7 +38,7 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 从 ESLint v9.0.0 开始，[ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files) 平面配置文件格式将成为默认的配置文件格式。
 
-这里推荐 Anthony Fu 大佬的开源项目 ESlint 的预设配置 `@antfu/eslint-config`，详细配置请参考[文档](https://github.com/antfu/eslint-config)
+这里推荐 Anthony Fu 大佬的开源项目 ESlint 的预设配置 `@antfu/eslint-config`，详细配置请参考 [文档](https://github.com/antfu/eslint-config)
 
 1. 安装 ESLint 和 `@antfu/eslint-config` 依赖，为了使用外部格式化程序来格式化ESLint尚无法处理的文件（.css、.html等），安装 `eslint-plugin-format` 的依赖,为了支持 UnoCSS 安装 `@unocss/eslint-plugin`
 
@@ -46,11 +46,9 @@ Error: No pnpm version is specified. Please specify it by one of the following w
    pnpm add -D eslint @antfu/eslint-config eslint-plugin-format @unocss/eslint-plugin
    ```
 
-2. 添加 `eslint.config.ts` 文件
+2. 添加 `eslint.config.js` 文件
 
-   ```js
-   <<< ../../eslint.config.ts
-   ```
+   <<< ../../eslint.config.js
 
 ## 添加 `unocss` 预处理器
 
@@ -62,9 +60,7 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 2. 添加 `vite.config.ts` 文件
 
-   ```js
-   <<< ../../vite.config.ts
-   ```
+   <<< ../vite.config.ts
 
 3. 更新 theme 配置文件 `theme/index.ts`
 
@@ -72,7 +68,9 @@ Error: No pnpm version is specified. Please specify it by one of the following w
    import 'virtual:uno.css'
    ```
 
-## 在中启用 [TypeScript Twoslash](https://shiki-zh-docs.vercel.app/packages/vitepress)（类型悬停显示）
+## 在中启用 TypeScript Twoslash（类型悬停显示）
+
+> 详细配置请参考 [shiki-twoslash](https://shiki-zh-docs.vercel.app/)
 
 1. 安装 `shiki-twoslash` 依赖
 
@@ -89,9 +87,7 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
      markdown: {
        codeTransformers: [
-         transformerTwoslash({
-           processHoverInfo: info => info.replace(/_unocss_core\./g, ''),
-         }),
+         transformerTwoslash(),
        ],
      }
 
@@ -101,12 +97,12 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 3. 更新 theme 配置文件 `theme/index.ts` ,注册 `shiki-twoslash` 插件，导入 css 样式
 
    ```ts
+   import type { EnhanceAppContext } from 'vitepress'
    import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-
    import '@shikijs/vitepress-twoslash/style.css'
 
    export default {
-     enhanceApp({ app }) {
+     enhanceApp({ app }: EnhanceAppContext) {
        app.use(TwoslashFloatingVue)
      },
    }

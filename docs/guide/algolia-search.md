@@ -2,7 +2,7 @@
 
 VitePress 支持使用 [Algolia DocSearch](https://docsearch.algolia.com/docs/what-is-docsearch/) 搜索文档站点。
 
-## 在 [Algolia DocSearch 官网](https://docsearch.algolia.com/apply) 填写自己的文档网站的地址和邮箱进行申请
+## 在 Algolia DocSearch 官网填写自己的文档网站的地址和邮箱进行申请
 
 ![Algolia DocSearch 申请图片](/algolia/apply.png)
 
@@ -57,8 +57,8 @@ export default defineConfig({
 
 打开 `Algolia Crawlers` 官网， `ALGOLIA_APP_ID` 和 `Algolia API Key` 添加到 Github 项目的 Secrets 中，在 **CI** 脚本中使用。
 
-* `ALGOLIA_APP_ID`：取 **Algolia** 的 `Algolia App ID`
-* `ALGOLIA_API_KEY`：取 **Algolia** 的 `Algolia API Key`
+- `ALGOLIA_APP_ID`：取 **Algolia** 的 `Algolia App ID`
+- `ALGOLIA_API_KEY`：取 **Algolia** 的 `Algolia API Key`
 
 ![crawler key图片](/algolia/crawler.png)
 

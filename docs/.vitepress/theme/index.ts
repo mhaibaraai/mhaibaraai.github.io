@@ -8,6 +8,7 @@ import './vars.css'
 import './overrides.css'
 import 'virtual:uno.css'
 
+import type { EnhanceAppContext } from 'vitepress'
 import Layout from './components/layout.vue'
 
 let homePageStyle: HTMLStyleElement | undefined
@@ -15,7 +16,7 @@ let homePageStyle: HTMLStyleElement | undefined
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app, router }) {
+  enhanceApp({ app, router }: EnhanceAppContext) {
     app.use(TwoslashFloatingVue)
 
     if (typeof window === 'undefined')

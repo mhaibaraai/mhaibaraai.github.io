@@ -2,13 +2,13 @@
 
 ## Pnpm 安装包
 
-* 生产环境
+- 生产环境
 
 ```sh
 pnpm i [xxx] -S -w
 ```
 
-* 开发环境
+- 开发环境
 
 ```sh
 pnpm i [xxx] -D -w
@@ -55,13 +55,13 @@ pnpm i [xxx] -D -w
 
 ## 如何在 Mac 电脑上完全卸载 Node
 
-* `brew` 的安装方式
+- `brew` 的安装方式
 
 ```sh
 brew unistall nodejs
 ```
 
-* 官网下载 `pkg` 安装包的
+- 官网下载 `pkg` 安装包的
 
 ```sh
 sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}
@@ -120,3 +120,20 @@ nvm alias default 16.20.2
    fnm use 18
    fnm default 18
    ```
+
+## 删除所有 node_modules
+
+```sh
+find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
+```
+
+::: info 提示
+
+- `find` : 使用 `find` 命令从当前目录（.）开始搜索文件和文件夹。
+- `-name 'node_modules'` : `-name` 选项用于指定要匹配的文件或文件夹名。这里我们指定匹配名为 `node_modules` 的文件夹。
+- `-type d` : `-type` 选项用于指定要匹配的类型。`d` 表示只匹配文件夹（目录）。
+- `-prune` : `-prune` 选项用于排除匹配到的目录，防止 `find` 命令继续向下搜索这些目录的子目录。因为我们只关心 `node_modules` 目录本身，不需要搜索它的子目录，所以使用 `-prune` 来排除这些子目录。
+- `-execdir rm -rf '{}' +` : `-execdir` 选项表示在找到的每个匹配项上执行一个命令，`rm -rf '{}' +` 是要执行的命令。`rm -rf` 是一个常用的命令，用于递归地删除目录及其内容。`'{}'` 表示 `find` 命令匹配到的文件或文件夹名字，在这里就是 `node_modules` 目录。
+- `+` : `+` 表示 `find` 命令将匹配到的文件或文件夹名传递给 `-execdir` 选项指定的命令。`+` 会将多个匹配到的文件或文件夹名传递给命令，而不是每次只传递一个。这样可以提高效率。
+
+:::

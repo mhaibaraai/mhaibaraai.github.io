@@ -23,19 +23,13 @@ export default defineConfig({
       dark: 'vitesse-dark',
     },
     codeTransformers: [
-      // We use `[!!code` in demo to prevent transformation, here we revert it back.
       {
         postprocess(code) {
           return code.replace(/\[\!\!code/g, '[!code')
         },
       },
-      transformerTwoslash({
-        processHoverInfo: info => info.replace(/_unocss_core\./g, ''),
-      }),
+      transformerTwoslash(),
     ],
-    image: {
-      lazyLoading: true,
-    },
   },
 
   themeConfig: {
@@ -48,7 +42,7 @@ export default defineConfig({
     sidebar: {
       '/guide/': { base: '/guide/', items: sidebarGuide },
       '/reference/': { base: '/reference/', items: sidebarReference },
-      '/work/': { base: '/work/', items: sidebarWork}
+      '/work/': { base: '/work/', items: sidebarWork },
     },
 
     // 社交帐户链接

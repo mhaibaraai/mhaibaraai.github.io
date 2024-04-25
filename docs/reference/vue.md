@@ -19,20 +19,20 @@ Missing "./preload-helper" export in "vite" package
 ```ts [global.d.ts]
 declare global {
   interface JSEncrypt {
-    setPublicKey(publicKey: string): void;
-    setPrivateKey(privateKey: string): void;
-    encrypt(value: string): string;
-    decrypt(value: string): string;
-    getPublicKey(): string;
-    getPrivateKey(): string;
+    setPublicKey(publicKey: string): void
+    setPrivateKey(privateKey: string): void
+    encrypt(value: string): string
+    decrypt(value: string): string
+    getPublicKey(): string
+    getPrivateKey(): string
   }
 
-  interface JSEncryptConstructor {vue
-    new(): JSEncrypt;
+  interface JSEncryptConstructor {
+    new(): JSEncrypt
   }
 
   const JSEncrypt: JSEncryptConstructor
-  
+
 }
 
 export {}
@@ -52,14 +52,14 @@ ls-remote -h -t git://github.com/adobe-webplatform/eve.git
 
 ::: tip 解决方法
 
-* 修改Git的协议（ssh 替换为 https）
+- 修改Git的协议（ssh 替换为 https）
 
-``` sh
+```sh
 git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
 ```
 
-* 切换镜像网站
+- 切换镜像网站
 
-``` sh
+```sh
 git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.com/"
 ```

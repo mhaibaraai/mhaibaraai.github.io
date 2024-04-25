@@ -3,6 +3,8 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 
+import GitalkVue from './gitalk.vue'
+
 const { isDark } = useData()
 
 function enableTransitions() {
@@ -42,5 +44,9 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 
 <template>
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #doc-after>
+      <GitalkVue />
+    </template>
+  </DefaultTheme.Layout>
 </template>
