@@ -81,3 +81,13 @@ import GitalkVue from './gitalk.vue'
 先登录 `GitHub`，然后在 `GitHub` 仓库的 `Issues` 里面创建一个新的 `Issue`，然后刷新页面就可以看到评论了。
 
 :::
+
+::: details 发现评论重复？
+
+尝试在 `Gitalk` 组件上添加 `:key="Date.now()"` 属性，强制刷新组件。
+
+```vue
+<GitalkVue :key="Date.now()" />
+```
+
+:::

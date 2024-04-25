@@ -26,6 +26,8 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     )}px at ${x}px ${y}px)`,
   ]
 
+  // eslint-disable-next-line ts/ban-ts-comment
+  // @ts-expect-error
   await document.startViewTransition(async () => {
     isDark.value = !isDark.value
     await nextTick()
@@ -46,7 +48,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
   <DefaultTheme.Layout>
     <template #doc-after>
-      <GitalkVue />
+      <GitalkVue :key="Date.now()" />
     </template>
   </DefaultTheme.Layout>
 </template>
