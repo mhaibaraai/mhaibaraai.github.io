@@ -43,6 +43,7 @@ export default defineConfig({
       '/guide/': { base: '/guide/', items: sidebarGuide },
       '/reference/': { base: '/reference/', items: sidebarReference },
       '/work/': { base: '/work/', items: sidebarWork },
+      '/playground/': { base: '/playground/', items: [] },
     },
 
     // 社交帐户链接
