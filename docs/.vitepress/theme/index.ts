@@ -3,6 +3,9 @@ import DefaultTheme from 'vitepress/theme'
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import '@shikijs/vitepress-twoslash/style.css'
 
+import { ElementPlusContainer } from '@vitepress-demo-preview/component'
+import '@vitepress-demo-preview/component/dist/style.css'
+
 import './rainbow.css'
 import './vars.css'
 import './overrides.css'
@@ -18,6 +21,7 @@ export default {
   Layout,
   enhanceApp({ app, router }: EnhanceAppContext) {
     app.use(TwoslashFloatingVue)
+    app.component('demo-preview', ElementPlusContainer)
 
     if (typeof window === 'undefined')
       return

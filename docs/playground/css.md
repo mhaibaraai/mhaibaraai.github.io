@@ -1,9 +1,7 @@
 # Svg 线性渐变动画
 
-<<< ../../src/packages/css/svg-animation.vue
+::: preview 渐变 || 描述
 
-<script setup>
-import CustomComponent from '../../src/packages/css/svg-animation.vue'
-</script>
+demo-preview=../../src/packages/css/svg-animation.vue
 
-<CustomComponent />
+:::

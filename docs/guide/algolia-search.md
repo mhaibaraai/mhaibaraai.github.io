@@ -72,13 +72,57 @@ export default defineConfig({
 
 在项目根目录下新建爬虫 `crawlerConfig.json` 文件，配置需要爬取的页面。
 
-::: tip 提示
-可以参考 [vitepress](https://vitepress.dev/zh/reference/default-theme-search#crawler-config) 的配置
-:::
+> 参考 [vitepress](https://vitepress.dev/zh/reference/default-theme-search#crawler-config) 的配置
+
+```json
+{
+  "index_name": "xxx",
+  "start_urls": ["xxx"],
+  "rateLimit": 8,
+  "maxDepth": 10,
+  "selectors": {
+    "lvl0": {
+      "selector": "",
+      "defaultValue": "Documentation"
+    },
+    "lvl1": ".content h1",
+    "lvl2": ".content h2",
+    "lvl3": ".content h3",
+    "lvl4": ".content h4",
+    "lvl5": ".content h5",
+    "content": ".content p, .content li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true
+    }
+  },
+  "selectors_exclude": [
+    "aside",
+    ".page-footer",
+    ".next-and-prev-link",
+    ".table-of-contents"
+  ],
+  "custom_settings": {
+    "attributesForFaceting": ["lang", "tags"]
+  },
+  "js_render": true
+}
+```
 
 ### 创建 CI 脚本
 
 在项目根目录 `.github/workflows` 文件夹下创建 `algolia.yml` 文件
+
+::: tip 提示
+可以添加时间延迟，避免文档更新不及时
+
+```yml
+- name: Delay before pushing indices to Algolia
+  run: sleep 60 && echo "Delay complete, pushing indices now."
+```
+
+:::
 
 ```yml
 name: algolia

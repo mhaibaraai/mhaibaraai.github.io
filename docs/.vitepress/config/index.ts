@@ -1,6 +1,7 @@
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 import { algoliaSearch } from './algolia'
 import { vitepressGenerateSidebar } from './sidebar'
 import { generateNav } from './nav'
@@ -36,6 +37,10 @@ export default defineConfig({
       },
       transformerTwoslash(),
     ],
+    config: (md) => {
+      md.use(containerPreview)
+      md.use(componentPreview)
+    },
   },
 
   themeConfig: {

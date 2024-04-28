@@ -15,7 +15,7 @@ jobs:
         id: algolia_config
         run: echo "config=$(cat crawlerConfig.json | jq -r tostring)" >> $GITHUB_OUTPUT
       - name: Delay before pushing indices to Algolia
-        run: sleep 90 && echo "Delay complete, pushing indices now."
+        run: sleep 60 && echo "Delay complete, pushing indices now."
       - name: Push indices to Algolia
         uses: signcl/docsearch-scraper-action@master
         env:
