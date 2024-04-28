@@ -107,4 +107,8 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
   ],
 
+  sitemap: {
+    hostname: 'https://mhaibaraai.github.io',
+  },
+
 })
