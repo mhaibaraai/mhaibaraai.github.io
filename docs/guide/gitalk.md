@@ -1,3 +1,7 @@
+---
+order: 3
+---
+
 # 添加 Gitalk 添加评论功能
 
 ## 注册 GitHub Application

@@ -1,3 +1,7 @@
+---
+order: 2
+---
+
 # Algolia Search 搜索
 
 VitePress 支持使用 [Algolia DocSearch](https://docsearch.algolia.com/docs/what-is-docsearch/) 搜索文档站点。

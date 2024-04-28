@@ -1,23 +1,16 @@
 import type { DefaultTheme } from 'vitepress'
-import { sidebarItemToNavItemWithLink } from '../utils'
-import { sidebarGuide } from './guide'
-import { sidebarReference } from './reference'
-import { sidebarWork } from './work'
 
-export const nav: DefaultTheme.NavItem[] = [
-  {
-    text: '指南',
-    activeMatch: '/guide/',
-    items: sidebarItemToNavItemWithLink(sidebarGuide, '/guide'),
-  },
-  {
-    text: '参考',
-    activeMatch: '/reference/',
-    items: sidebarItemToNavItemWithLink(sidebarReference, '/reference'),
-  },
-  {
-    text: '工作',
-    activeMatch: '/work/',
-    items: sidebarItemToNavItemWithLink(sidebarWork, '/work'),
-  },
-]
+export function generateNav(docModules: DefaultTheme.NavItemWithLink[], sidebarItems: DefaultTheme.Sidebar): DefaultTheme.NavItem[] {
+  return docModules.map((doc) => {
+    const key = `/${doc.link}/`
+    const items = sidebarItems[key]?.items || []
+    return {
+      text: doc.text,
+      activeMatch: key,
+      items: items.map(item => ({
+        ...item,
+        link: `${key}${item.link}`,
+      })),
+    }
+  })
+}

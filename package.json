@@ -26,6 +26,7 @@
     "unocss": "^0.59.2",
     "vite": "^5.2.8",
     "vitepress": "^1.1.0",
+    "vitepress-sidebar": "^1.22.0",
     "vue": "^3.4.21"
   }
 }

@@ -1,10 +1,16 @@
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import { nav } from './nav'
-import { sidebarGuide } from './guide'
-import { sidebarReference } from './reference'
 import { algoliaSearch } from './algolia'
-import { sidebarWork } from './work'
+import { vitepressGenerateSidebar } from './sidebar'
+import { generateNav } from './nav'
+
+const docModules: DefaultTheme.NavItemWithLink[] = [
+  { text: '指南', link: 'guide' },
+  { text: '参考', link: 'reference' },
+  { text: '工作', link: 'work' },
+  { text: '示例', link: 'playground' },
+]
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -37,14 +43,9 @@ export default defineConfig({
 
     logo: { src: '/logo.png', width: 24, height: 24 },
 
-    nav,
+    nav: generateNav(docModules, vitepressGenerateSidebar(docModules)),
 
-    sidebar: {
-      '/guide/': { base: '/guide/', items: sidebarGuide },
-      '/reference/': { base: '/reference/', items: sidebarReference },
-      '/work/': { base: '/work/', items: sidebarWork },
-      '/playground/': { base: '/playground/', items: [] },
-    },
+    sidebar: vitepressGenerateSidebar(docModules),
 
     // 社交帐户链接
     socialLinks: [
