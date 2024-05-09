@@ -2,6 +2,7 @@ import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
+import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
 import { vitepressGenerateSidebar } from './sidebar'
 import { generateNav } from './nav'
@@ -10,7 +11,8 @@ const docModules: DefaultTheme.NavItemWithLink[] = [
   { text: '指南', link: 'guide' },
   { text: '参考', link: 'reference' },
   { text: '工作', link: 'work' },
-  { text: '示例', link: 'playground' },
+  // { text: '示例', link: 'playground' },
+  // { text: 'ol-cesium-map', link: 'ol-cesium-map' },
 ]
 
 // https://vitepress.dev/reference/site-config
@@ -23,6 +25,8 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   metaChunk: true,
+
+  vite,
 
   markdown: {
     theme: {

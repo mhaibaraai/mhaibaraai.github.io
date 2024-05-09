@@ -52,6 +52,14 @@ export default {
 
 3、在 `.md` 文件中使用
 
+- 使用 `Component Form` 标签
+
+```md
+<preview path="../../src/packages/demo/demo.vue" />
+```
+
+- 使用 `Container Form` 标签
+
 ```md
 ::: preview demo 组件 || 这是一个简单的描述
 
@@ -62,8 +70,4 @@ demo-preview=../../src/packages/demo/demo.vue
 
 预览效果如下：
 
-::: preview demo 组件 || 这是一个简单的描述
-
-demo-preview=../../src/packages/demo/demo.vue
-
-:::
+<preview path="../snippets/demo/component-preview.vue" />

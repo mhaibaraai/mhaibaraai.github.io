@@ -5,7 +5,7 @@ import { generateSidebar as _generateSidebar } from 'vitepress-sidebar'
 type GenerateSidebarOptions = Parameters<typeof generateSidebar>[0]
 
 const defaultOptions: GenerateSidebarOptions = {
-  documentRootPath: 'docs',
+  documentRootPath: '/',
   collapsed: false,
   capitalizeFirst: true,
   useTitleFromFileHeading: true,

@@ -1,18 +1,16 @@
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
-  optimizeDeps: {
-    exclude: [
-      'vitepress',
-    ],
-  },
   server: {
     hmr: {
       overlay: false,
     },
   },
   plugins: [
-    UnoCSS('uno.config.ts'),
+    UnoCSS(
+      fileURLToPath(new URL('./uno.config.ts', import.meta.url)),
+    ),
   ],
 })

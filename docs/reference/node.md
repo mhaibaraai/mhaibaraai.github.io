@@ -14,6 +14,17 @@ pnpm i [xxx] -S -w
 pnpm i [xxx] -D -w
 ```
 
+## Pnpm 工作空间
+
+`pnpm-workspace.yaml` 定义了工作空间的根目录，并能够使您从工作空间中包含 `/` 排除目录。默认情况下，包含所有子目录。
+
+```yaml
+packages:
+  - packages/*
+  - docs
+  - packages/playground/**
+```
+
 ## Brew 安装 Node 教程及多版本切换
 
 1. 查看当前电脑是否安装 `node`
@@ -137,3 +148,7 @@ find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
 - `+` : `+` 表示 `find` 命令将匹配到的文件或文件夹名传递给 `-execdir` 选项指定的命令。`+` 会将多个匹配到的文件或文件夹名传递给命令，而不是每次只传递一个。这样可以提高效率。
 
 :::
+
+```
+
+```

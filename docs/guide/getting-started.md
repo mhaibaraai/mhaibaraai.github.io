@@ -64,7 +64,7 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 2. 添加 `vite.config.ts` 文件
 
-   <<< ../vite.config.ts
+   <<< ../.vitepress/vite.config.ts
 
 3. 更新 theme 配置文件 `theme/index.ts`
 

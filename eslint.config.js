@@ -14,9 +14,6 @@ export default antfu(
     },
   },
   {
-    files: [
-      '*.vue',
-    ],
     rules: {
       'no-console': 'off',
     },
