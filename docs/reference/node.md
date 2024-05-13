@@ -138,17 +138,21 @@ nvm alias default 16.20.2
 find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
 ```
 
-::: info 提示
+## Npm 传递参数
 
-- `find` : 使用 `find` 命令从当前目录（.）开始搜索文件和文件夹。
-- `-name 'node_modules'` : `-name` 选项用于指定要匹配的文件或文件夹名。这里我们指定匹配名为 `node_modules` 的文件夹。
-- `-type d` : `-type` 选项用于指定要匹配的类型。`d` 表示只匹配文件夹（目录）。
-- `-prune` : `-prune` 选项用于排除匹配到的目录，防止 `find` 命令继续向下搜索这些目录的子目录。因为我们只关心 `node_modules` 目录本身，不需要搜索它的子目录，所以使用 `-prune` 来排除这些子目录。
-- `-execdir rm -rf '{}' +` : `-execdir` 选项表示在找到的每个匹配项上执行一个命令，`rm -rf '{}' +` 是要执行的命令。`rm -rf` 是一个常用的命令，用于递归地删除目录及其内容。`'{}'` 表示 `find` 命令匹配到的文件或文件夹名字，在这里就是 `node_modules` 目录。
-- `+` : `+` 表示 `find` 命令将匹配到的文件或文件夹名传递给 `-execdir` 选项指定的命令。`+` 会将多个匹配到的文件或文件夹名传递给命令，而不是每次只传递一个。这样可以提高效率。
+当你使用 `npm run` 命令时，如果你想要传递参数给你的脚本，你需要在参数前加上 `--` , 例如：
 
-:::
-
+```sh
+npm run gen:cc -- --path ol-cesium-map --name demo
 ```
 
+这样，`--path ol-cesium-map --name demo` 就会被传递给你的脚本，而不是 `npm run` 命令。
+
+使用 `mri` 来解析这些参数：
+
+```ts
+const argv = process.argv.slice(2)
+const mriData = mri<MriData>(argv)
+
+// mriData : { _: [], path: 'ol-cesium-map', name: 'demo' }
 ```

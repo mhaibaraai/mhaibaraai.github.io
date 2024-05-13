@@ -1,4 +1,4 @@
 packages:
   - packages/*
   - docs
-  - packages/ol-cesium-map/**
+  - packages/playground/**

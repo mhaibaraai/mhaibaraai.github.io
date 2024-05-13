@@ -4,14 +4,12 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
-import { vitepressGenerateSidebar } from './sidebar'
-import { generateNav } from './nav'
+import { generateSidebar as _generateSidebar } from 'vitepress-sidebar'
 
 const docModules: DefaultTheme.NavItemWithLink[] = [
   { text: '指南', link: 'guide' },
   { text: '参考', link: 'reference' },
   { text: '工作', link: 'work' },
-  // { text: '示例', link: 'playground' },
   // { text: 'ol-cesium-map', link: 'ol-cesium-map' },
 ]
 
@@ -51,10 +49,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
 
     logo: { src: '/logo.png', width: 24, height: 24 },
-
-    nav: generateNav(docModules, vitepressGenerateSidebar(docModules)),
-
-    sidebar: vitepressGenerateSidebar(docModules),
 
     // 社交帐户链接
     socialLinks: [

@@ -12,6 +12,10 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
+  "types": [
+    "chrome",
+    "vite/client"
+  ],
   "exclude": [
     "**/node_modules/**",
     "**/dist/**",

@@ -1,6 +1,6 @@
 import { defineConfig } from 'unocss'
 
-import config from './packages/playground/uno.config'
+import config from './packages/ol-cesium-map/uno.config'
 
 export default defineConfig({
   ...config,
