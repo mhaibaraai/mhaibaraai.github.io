@@ -4,7 +4,6 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
-import { generateSidebar as _generateSidebar } from 'vitepress-sidebar'
 
 const docModules: DefaultTheme.NavItemWithLink[] = [
   { text: '指南', link: 'guide' },
