@@ -159,7 +159,7 @@ date: 2021-09-01
 ---
 ```
 
-### debug
+### debugLog
 
 - 类型: `boolean`
 - 默认值: `false`
