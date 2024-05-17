@@ -186,7 +186,7 @@ export default defineConfig({
       sortMenusBy: 'frontmatterOrder',
       sortMenusOrder: 'asc',
       collapsed: true,
-      debug: true,
+      debugLog: true,
     }),
   ],
 })

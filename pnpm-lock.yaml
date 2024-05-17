@@ -72,8 +72,8 @@ importers:
         specifier: 1.1.4
         version: 1.1.4(@algolia/client-search@4.23.3)(@types/node@20.12.12)(axios@0.19.2)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.4.2)
       vitepress-plugin-auto-nav-sidebar:
-        specifier: ^1.0.1
-        version: 1.0.1(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2))(vitepress@1.1.4(@algolia/client-search@4.23.3)(@types/node@20.12.12)(axios@0.19.2)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.4.2))
+        specifier: ^1.0.2
+        version: 1.0.2(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2))(vitepress@1.1.4(@algolia/client-search@4.23.3)(@types/node@20.12.12)(axios@0.19.2)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.4.2))
       vue:
         specifier: ^3.4.26
         version: 3.4.27(typescript@5.4.2)
@@ -3182,8 +3182,8 @@ packages:
       terser:
         optional: true
 
-  vitepress-plugin-auto-nav-sidebar@1.0.1:
-    resolution: {integrity: sha512-Tsn+8TMrK7TMysZawdbGhbNn5tf/YIf54cJt1llPi2hcePg1K4oBtPzhu6EmlZcFwbxtkAChKa+2x1/ZJIp2fw==}
+  vitepress-plugin-auto-nav-sidebar@1.0.2:
+    resolution: {integrity: sha512-HaHgxRk1MOeaEluvmUnGGSlhw3hoB4p0i74Id0Pp6pIfcFQBNIg3l65UuHwnoZhSM9bkwC8wf3oIZ9OpJHKBpA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       vite: ^5.0.0
@@ -6902,7 +6902,7 @@ snapshots:
       fsevents: 2.3.3
       sass: 1.77.2
 
-  vitepress-plugin-auto-nav-sidebar@1.0.1(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2))(vitepress@1.1.4(@algolia/client-search@4.23.3)(@types/node@20.12.12)(axios@0.19.2)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.4.2)):
+  vitepress-plugin-auto-nav-sidebar@1.0.2(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2))(vitepress@1.1.4(@algolia/client-search@4.23.3)(@types/node@20.12.12)(axios@0.19.2)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.4.2)):
     dependencies:
       vite: 5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vitepress: 1.1.4(@algolia/client-search@4.23.3)(@types/node@20.12.12)(axios@0.19.2)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.4.2)

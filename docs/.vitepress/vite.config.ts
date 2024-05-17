@@ -18,6 +18,7 @@ export default defineConfig({
       sortMenusBy: 'frontmatterOrder',
       sortMenusOrder: 'asc',
       collapsed: true,
+      debugLog: false,
     }),
     UnoCSS(
       fileURLToPath(new URL('./uno.config.ts', import.meta.url)),
