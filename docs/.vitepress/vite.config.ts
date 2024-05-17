@@ -1,7 +1,7 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import UnoCSS from 'unocss/vite'
-import VitePluginVitePressAutoNavSidebar from 'vite-plugin-vitepress-auto-nav-sidebar'
+import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
   server: {
@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    VitePluginVitePressAutoNavSidebar({
+    VitePressPluginAutoNavSidebar({
       ignoreIndexItems: true,
       excludeFolders: ['public', 'snippets'],
       useTitleFromFileHeading: true,

@@ -22,7 +22,7 @@ order: 4
 推荐使用 `pnpm` 包管理器
 
 ```bash
-pnpm add vite-plugin-vitepress-auto-nav-sidebar
+pnpm add vitepress-plugin-auto-nav-sidebar
 ```
 
 ### 添加插件
@@ -31,11 +31,11 @@ pnpm add vite-plugin-vitepress-auto-nav-sidebar
 
 ```ts twoslash
 import { defineConfig } from 'vite'
-import VitePluginVitePressAutoNavSidebar from 'vite-plugin-vitepress-auto-nav-sidebar'
+import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
   plugins: [
-    VitePluginVitePressAutoNavSidebar(),
+    VitePressPluginAutoNavSidebar(),
   ],
 })
 ```
@@ -172,11 +172,11 @@ date: 2021-09-01
 
 ```ts twoslash
 import { defineConfig } from 'vite'
-import VitePluginVitePressAutoNavSidebar from 'vite-plugin-vitepress-auto-nav-sidebar'
+import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
   plugins: [
-    VitePluginVitePressAutoNavSidebar({
+    VitePressPluginAutoNavSidebar({
       documentRootPath:'/',
       ignoreIndexItems: true,
       excludeFiles: ['demo.md'],
