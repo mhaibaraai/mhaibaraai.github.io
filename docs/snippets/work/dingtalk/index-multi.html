@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      :root {
+        box-sizing: border-box;
+      }
+
+      *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+        /* ←---- 告诉 其他 所有 元素 和 伪 元素 继承 其 盒 模型 */
+      }
+    </style>
+  </head>
+
+  <body></body>
+  <script>
+    function getUrlSearch(name) {
+      // 未传参，返回空
+      if (!name) return null
+      // 查询参数：先通过search取值，如果取不到就通过hash来取
+      var after = window.location.search
+      after = after.substr(1) || window.location.hash.split('?')[1]
+      // 地址栏URL没有查询参数，返回空
+      if (!after) return null
+      // 如果查询参数中没有"name"，返回空
+      if (after.indexOf(name) === -1) return null
+
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+      // 当地址栏参数存在中文时，需要解码，不然会乱码
+      var r = decodeURI(after).match(reg)
+      // 如果url中"name"没有值，返回空
+      if (!r) return null
+      return r[2]
+    }
+    function isMobile() {
+      if (
+        window.navigator.userAgent.match(
+          /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i,
+        )
+      ) {
+        return true // 移动端
+      } else {
+        return false // PC端
+      }
+    }
+    //判断后的操作
+    function changeProject() {
+      const res = getUrlSearch('type')
+      console.log('res', res)
+      if (res === 'pc') {
+        window.location.href = './pc/index.html'
+      } else if (res === 'mobile') {
+        window.location.href = './mobile/index.html'
+      } else {
+        window.location.href = './pc/index.html'
+      }
+    }
+
+    if (window.navigator.userAgent) {
+      if (isMobile()) {
+        location.href = './mobile/index.html'
+        // 判断true跳转到这个主页
+      } else {
+        location.href = './pc/index.html'
+        // 判断false跳转到这个主页
+      }
+    } else {
+      changeProject()
+    }
+  </script>
+</html>

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "paths": {
+      "vue-ol-cesium-map": ["./packages/vue-ol-cesium-map/src/index.ts"]
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "esModuleInterop": true
+  },
+  "include": ["packages/**/*", "apps/**/*", "docs/**/*"],
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    ".turbo"
+  ]
+}

@@ -1,0 +1,48 @@
+<!-- 稳定性监控- wpkReporter.js -->
+<script
+  src="https://wpkgate-emas.ding.zj.gov.cn/static/wpk-jssdk.1.0.2/wpkReporter.js"
+  crossorigin="true"
+></script>
+<script>
+  // 稳定性监控代码
+  try {
+    const config = {
+      bid: 'gxq_msgd01_zzdpro',
+      signkey: '1234567890abcdef',
+      gateway: 'https://wpkgate-emas.ding.zj.gov.cn',
+    }
+    const wpk = new wpkReporter(config)
+    wpk.installAll()
+    window._wpk = wpk
+  } catch (err) {
+    console.error('WpkReporterinitfail', err)
+  }
+  // 流量分析-通用采集sdk
+  ;(function (w, d, s, q, i) {
+    w[q] = w[q] || []
+    const f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s)
+    j.async = true
+    j.id = 'beacon-aplus'
+    j.src = 'https://alidt.alicdn.com/alilog/mlog/aplus_cloud.js'
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'aplus_queue')
+  aplus_queue.push({
+    action: 'aplus.setMetaInfo',
+    arguments: ['aplus-rhost-v', 'alog-api.ding.zj.gov.cn'],
+  })
+  aplus_queue.push({
+    action: 'aplus.setMetaInfo',
+    arguments: ['aplus-rhost-g', 'alog-api.ding.zj.gov.cn'],
+  })
+  const u = navigator.userAgent
+  const isAndroid = u.indexOf('Android') > -1
+  const isIOS = !!u.match(/\(i[^;]+;(U;)?CPU.+MacOSX/)
+  aplus_queue.push({
+    action: 'aplus.setMetaInfo',
+    arguments: [
+      'appId',
+      isAndroid ? '28302650' : isIOS ? '28328447' : '47130293',
+    ],
+  })
+</script>
