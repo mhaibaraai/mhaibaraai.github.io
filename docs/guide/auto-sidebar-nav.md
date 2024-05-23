@@ -6,7 +6,7 @@ order: 4
 
 通过扫描文件目录，自动生成侧边栏和导航栏。
 
-## ✨  特点
+## ✨ 特点
 
 - 支持自定义根路径
 - 支持自定义忽略列表，排除文件和文件夹，可正则匹配
@@ -41,7 +41,7 @@ export default defineConfig({
 ```
 
 > [!tip]提示
->插件配置成功的话，会在控制台输出 `sidebar and nav generated successfully！`。
+> 插件配置成功的话，会在控制台输出 `sidebar and nav generated successfully！`。
 
 ## 🛠️ 配置
 
@@ -54,7 +54,7 @@ export default defineConfig({
 
 这是目录所在的路径 `.vitepress`，如果项目根目录下文档所在的文件夹是 `/docs` ，那么该选项的值应该设置为 `docs` 或 `/docs`
 
-``` text
+```text
 .
 ├── src/
 ├── README.md
@@ -111,7 +111,7 @@ export default defineConfig({
 
 > 关于 `frontmatter` 的详细用法，可以参考 [VitePress 文档](https://vitepress.dev/zh/reference/frontmatter-config)。
 
-``` markdown
+```markdown
 ---
 title: 文档标题
 ---
@@ -145,7 +145,7 @@ title: 文档标题
 
 2、`frontmatterOrder` : 对于每个文件夹，按照 `frontmatter` 中的 `order` 字段升序或降序排序，如果 `order` 字段不存在或为非数字，则 `order` 为默认值 `0`。
 
-``` markdown
+```markdown
 ---
 order: 1
 ---
@@ -153,7 +153,7 @@ order: 1
 
 3、`frontmatterDate` : 对于每个文件夹，按照 `frontmatter` 中的 `date` 字段升序或降序排序，如果 `date` 字段不存在或为非日期格式，则 `date` 为默认值当前日期。
 
-``` markdown
+```markdown
 ---
 date: 2021-09-01
 ---
@@ -177,7 +177,7 @@ import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 export default defineConfig({
   plugins: [
     VitePressPluginAutoNavSidebar({
-      documentRootPath:'/',
+      documentRootPath: '/',
       ignoreIndexItems: true,
       excludeFiles: ['demo.md'],
       excludeFolders: ['public', 'snippets'],
@@ -194,7 +194,7 @@ export default defineConfig({
 
 输出结果：
 
-``` text
+```text
 sidebar {
   "/guide/": {
     "base": "",

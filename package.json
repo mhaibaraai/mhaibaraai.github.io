@@ -10,10 +10,11 @@
     "pnpm": ">=8.15.6"
   },
   "scripts": {
-    "dev:docs": "pnpm --filter docs run dev",
-    "build:docs": "turbo run build --filter docs",
+    "docs:dev": "pnpm --filter docs run dev",
+    "docs:build": "pnpm --filter docs run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "build": "turbo run build",
-    "lint": "turbo run lint",
     "test": "turbo run test",
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
