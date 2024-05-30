@@ -1,0 +1,3 @@
+{
+  "extends": "@movk-repo/typescript-config/vite.json",
+}

@@ -1,9 +1,10 @@
 # Make sure to add  docs/.vitepress/dist and  docs/.vitepress/cache to your .gitignore file
 .cache
 .DS_Store
-docs/.vitepress/dist
-docs/.vitepress/cache
+dist
+cache
 node_modules
 .vitepress/cache
 output
 .turbo
+.cache

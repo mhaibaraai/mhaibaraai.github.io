@@ -1,17 +1,16 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "baseBranch": "origin/main",
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "lint": {
-      "outputs": []
-    },
-    "test": {
-      "outputs": []
-    },
+    "lint": {},
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "stub": {
       "cache": false
     }
   }

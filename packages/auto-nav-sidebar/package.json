@@ -1,0 +1,64 @@
+{
+  "name": "vitepress-plugin-auto-nav-sidebar",
+  "type": "module",
+  "version": "1.0.2",
+  "packageManager": "pnpm@9.1.0",
+  "description": "自动生成侧边栏和导航栏的vitepress插件",
+  "author": "yixuan",
+  "license": "MIT",
+  "homepage": "https://mhaibaraai.github.io/guide/auto-sidebar-nav",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mhaibaraai/mhaibaraai.github.io.git"
+  },
+  "bugs": "https://github.com/mhaibaraai/vitepress-auto-nav-sidebar/issues",
+  "keywords": [
+    "vitepress",
+    "vitepress-plugin",
+    "vitepress-menu",
+    "vitepress-nav",
+    "vitepress-sidebar",
+    "vitepress-auto-sidebar",
+    "vitepress-auto-sidebar-nav",
+    "vitepress-plugin-sidebar-nav",
+    "vitepress-plugin-auto-sidebar-nav",
+    "vitepress-sidemenu",
+    "sidebar",
+    "sidebar-generator",
+    "sidebar-nav",
+    "sidebar-nav-generator"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup",
+    "stub": "tsup --watch",
+    "release": "bumpp -r"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-rc.45"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.5.9",
+    "typescript": "^5.2.2",
+    "vitepress": "1.0.0-rc.45"
+  }
+}

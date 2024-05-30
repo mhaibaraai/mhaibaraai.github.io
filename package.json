@@ -1,37 +1,33 @@
 {
-  "name": "movk-monorepo",
-  "type": "module",
   "private": true,
   "packageManager": "pnpm@9.1.0",
-  "license": "MIT",
-  "main": "index.js",
   "engines": {
     "node": ">=18.20.0",
     "pnpm": ">=8.15.6"
   },
   "scripts": {
-    "docs:dev": "pnpm --filter docs run dev",
-    "docs:build": "pnpm --filter docs run build",
+    "docs": "pnpm -C docs run dev",
+    "docs:build": "pnpm -C docs run build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "turbo run build",
-    "test": "turbo run test",
+    "lint:auto-nav-sidebar": "turbo lint --filter=./packages/auto-nav-sidebar",
+    "stub:auto-nav-sidebar": "turbo stub --filter=./packages/auto-nav-sidebar",
+    "build:auto-nav-sidebar": "turbo build --filter=./packages/auto-nav-sidebar",
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.18.1",
-    "@types/chrome": "^0.0.268",
+    "@movk-repo/eslint-config": "workspace:*",
+    "@movk-repo/typescript-config": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
-    "eslint": "npm:eslint-ts-patch@8.57.0-0",
-    "eslint-plugin-format": "^0.1.1",
+    "bumpp": "^9.4.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "lodash-es": "^4.17.21",
     "mri": "1.2.0",
-    "pnpm": "^9.1.0",
-    "tsx": "^4.8.2",
+    "tsup": "^8.0.2",
     "turbo": "^1.3.0",
+    "unbuild": "^2.0.0",
     "vite": "^5.2.8",
     "vue": "^3.4.21"
   }

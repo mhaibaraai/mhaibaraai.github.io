@@ -1,0 +1,16 @@
+{
+  "name": "@movk-repo/eslint-config",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.19.0",
+    "eslint": "npm:eslint-ts-patch@8.57.0-0",
+    "eslint-plugin-format": "^0.1.1"
+  }
+}

@@ -4,17 +4,20 @@ import UnoCSS from 'unocss/vite'
 import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '~/': fileURLToPath(new URL('../../packages/vue-ol-cesium-map/src/', import.meta.url)),
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     '~thress/': fileURLToPath(new URL('../../packages/vue-ol-cesium-map/src/', import.meta.url)),
+  //   },
+  // },
   plugins: [
     VitePressPluginAutoNavSidebar({
       ignoreIndexItems: true,
-      excludeFolders: ['public', 'snippets', 'components', 'demos'],
+      excludeFiles: [/.*demo.*/],
+      excludeFolders: ['demo','public','snippets'],
+      removeTitlePrefix: /^\d+-/,
       useTitleFromFileHeading: true,
       useTitleFromFrontmatter: true,
+      useSortFromTitle: true,
       sortMenusBy: 'frontmatterOrder',
       sortMenusOrder: 'asc',
       collapsed: true,
