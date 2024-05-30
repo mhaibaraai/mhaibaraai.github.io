@@ -150,7 +150,7 @@ export default eslintConfig(
 )
 ```
 
-## 使用 `tsup` 打包
+## 使用 tsup 打包
 
 参考文档：
 
@@ -190,6 +190,8 @@ export default defineConfig({
 :::
 
 ## 使用 bumpp 发布包
+
+- [bumpp 文档](https://github.com/antfu-collective/bumpp)
 
 ## 发现的问题
 

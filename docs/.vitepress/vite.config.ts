@@ -8,7 +8,7 @@ export default defineConfig({
     VitePressPluginAutoNavSidebar({
       ignoreIndexItems: true,
       excludeFiles: [/.*demo.*/],
-      excludeFolders: ['demo', 'public', 'snippets', '.turbo'],
+      excludeFolders: [/.*demo.*/, 'public', 'snippets', '.turbo'],
       removeTitlePrefix: /^\d+-/,
       useTitleFromFileHeading: true,
       useTitleFromFrontmatter: true,
