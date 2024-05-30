@@ -1,8 +1,8 @@
 {
   "name": "@movk-repo/eslint-config",
   "type": "module",
-  "private": true,
   "version": "1.1.0",
+  "private": true,
   "license": "MIT",
   "main": "index.js",
   "publishConfig": {

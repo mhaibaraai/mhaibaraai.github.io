@@ -43,8 +43,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "stub": "tsup --watch",
-    "lint": "eslint ."
+    "stub": "tsup --watch"
   },
   "peerDependencies": {
     "vitepress": "^1.0.0-rc.45"

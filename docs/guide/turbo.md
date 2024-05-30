@@ -182,7 +182,7 @@ export default defineConfig({
 
 在开发时，可以使用 `tsup --watch` 命令，实时打包。
 
-``` sh
+```sh
 "build": "tsup",
 "stub": "tsup --watch",
 ```
@@ -215,9 +215,9 @@ export default defineConfig({
 
 ```yaml
 - name: Install dependencies
-run: pnpm install
+  run: pnpm install
 - name: Build packages // [!code ++]
-run: pnpm build:packages // [!code ++]
+  run: pnpm build:packages // [!code ++]
 - name: Build with VitePress
-run: pnpm docs:build
+  run: pnpm docs:build
 ```
