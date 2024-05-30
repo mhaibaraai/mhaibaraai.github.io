@@ -1,5 +1,10 @@
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
-  root: true,
-  extends: ["@movk-repo/eslint-config"],
-};
+import eslintConfig from '@movk-repo/eslint-config'
+
+export default eslintConfig(
+  {
+    rules: {
+      'ts/method-signature-style': 'off',
+      'unused-imports/no-unused-vars': 'off',
+    },
+  },
+)

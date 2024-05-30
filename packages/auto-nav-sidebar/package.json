@@ -42,11 +42,10 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "build": "tsup",
     "stub": "tsup --watch",
-    "release": "bumpp -r"
+    "release": "bumpp -r",
+    "lint": "eslint ."
   },
   "peerDependencies": {
     "vitepress": "^1.0.0-rc.45"

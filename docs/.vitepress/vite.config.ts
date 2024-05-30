@@ -4,16 +4,11 @@ import UnoCSS from 'unocss/vite'
 import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
-  // resolve: {
-  //   alias: {
-  //     '~thress/': fileURLToPath(new URL('../../packages/vue-ol-cesium-map/src/', import.meta.url)),
-  //   },
-  // },
   plugins: [
     VitePressPluginAutoNavSidebar({
       ignoreIndexItems: true,
       excludeFiles: [/.*demo.*/],
-      excludeFolders: ['demo','public','snippets'],
+      excludeFolders: ['demo', 'public', 'snippets'],
       removeTitlePrefix: /^\d+-/,
       useTitleFromFileHeading: true,
       useTitleFromFrontmatter: true,

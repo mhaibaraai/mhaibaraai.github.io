@@ -122,21 +122,17 @@ packages:
 import antfu from '@antfu/eslint-config'
 
 export default function combine(...configs) {
-
   return antfu({
 
     formatters: true,
     vue: true,
     typescript: true,
 
-  },
-    ...configs,
-    {
-      rules: {
-        'no-console': 'off',
-      },
+  }, ...configs, {
+    rules: {
+      'no-console': 'off',
     },
-  )
+  },)
 }
 ```
 

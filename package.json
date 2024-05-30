@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "private": true,
   "packageManager": "pnpm@9.1.0",
   "engines": {
@@ -8,11 +9,12 @@
   "scripts": {
     "docs": "pnpm -C docs run dev",
     "docs:build": "pnpm -C docs run build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "lint:auto-nav-sidebar": "turbo lint --filter=./packages/auto-nav-sidebar",
+    "lint": "turbo lint",
+    "lint:packages": "turbo lint --filter='./packages/*'",
     "stub:auto-nav-sidebar": "turbo stub --filter=./packages/auto-nav-sidebar",
-    "build:auto-nav-sidebar": "turbo build --filter=./packages/auto-nav-sidebar",
+    "build": "turbo build",
+    "build:packages": "turbo build --filter='./packages/*'",
+    "build:auto-nav-sidebar": "turbo build --filter='./packages/auto-nav-sidebar'",
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
   "devDependencies": {
