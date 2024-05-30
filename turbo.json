@@ -6,9 +6,6 @@
       "outputs": ["dist/**"]
     },
     "lint": {},
-    "lint-fix": {
-      "dependsOn": ["^lint"]
-    },
     "dev": {
       "cache": false,
       "persistent": true

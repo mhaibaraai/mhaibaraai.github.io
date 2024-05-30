@@ -149,3 +149,75 @@ export default eslintConfig(
   },
 )
 ```
+
+## 使用 `tsup` 打包
+
+参考文档：
+
+- [tsup 官网](https://tsup.egoist.dev/) 由 esbuild 提供支持，无需配置即可捆绑您的 TypeScript 库。
+- [为什么是 tsup](https://www.modyqyw.top/blogs/2022/12/why-tsup)
+
+下面是一个简单的配置文件：
+
+```ts
+import { defineConfig } from 'tsup'
+
+export default defineConfig({
+  entryPoints: [
+    'src/index.ts',
+  ],
+  external: [
+    'typescript',
+    '@types/fs-extra',
+    '@types/node',
+  ],
+  clean: true,
+  format: ['esm', 'cjs'],
+  dts: true,
+  shims: true,
+})
+```
+
+::: tip
+
+在开发时，可以使用 `tsup --watch` 命令，实时打包。
+
+``` sh
+"build": "tsup",
+"stub": "tsup --watch",
+```
+
+:::
+
+## 使用 bumpp 发布包
+
+## 发现的问题
+
+1、发布到 `GitHub Pages` 报错
+
+在 `docs` 工作区中引用 `packages` 中的包，自动打包时报了一个错误：
+
+`Failed to resolve entry for package "vitepress-plugin-auto-nav-sidebar"`
+
+出现这个原因是因为 `pnpm` 在打包时，引用的包没有被打包，导致找不到入口文件。
+
+解决方法：
+
+- 在 `docs` 工作区中添加 `vitepress-plugin-auto-nav-sidebar` 依赖
+
+```sh
+"vitepress-plugin-auto-nav-sidebar": "workspace:*",
+```
+
+- 修改 `.github/workflows/deploy.yml` 文件
+
+在打包 `docs` 任务之前添加 `pnpm build:packages` 命令
+
+```yaml
+- name: Install dependencies
+run: pnpm install
+- name: Build packages // [!code ++]
+run: pnpm build:packages // [!code ++]
+- name: Build with VitePress
+run: pnpm docs:build
+```
