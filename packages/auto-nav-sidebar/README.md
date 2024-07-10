@@ -1,6 +1,6 @@
 # 自动生成侧边栏和导航栏
 
-通过扫描文件目录，自动生成侧边栏和导航栏。
+[vitepress-plugin-auto-nav-sidebar](https://www.npmjs.com/package/vitepress-plugin-auto-nav-sidebar) 通过扫描文件目录，自动生成侧边栏和导航栏。
 
 ## ✨ 特点
 

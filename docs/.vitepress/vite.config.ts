@@ -4,10 +4,13 @@ import UnoCSS from 'unocss/vite'
 import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
+  server: {
+    port: 36666,
+  },
   plugins: [
     VitePressPluginAutoNavSidebar({
       ignoreIndexItems: true,
-      excludeFiles: [/.*demo.*/],
+      excludeFiles: ['demo.md'],
       excludeFolders: [/.*demo.*/, 'public', 'snippets', '.turbo'],
       removeTitlePrefix: /^\d+-/,
       useTitleFromFileHeading: true,
