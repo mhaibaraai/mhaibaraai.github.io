@@ -21,11 +21,16 @@
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
   "devDependencies": {
+    "@arcgis/core": "^4.29.10",
     "@movk-repo/eslint-config": "workspace:*",
+    "@movk-repo/shared": "workspace:*",
     "@movk-repo/typescript-config": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
+    "@vuesri/core": "^1.0.41",
+    "arcgis-js-api": "^4.29.10",
     "bumpp": "^9.4.1",
+    "element-plus": "npm:element-plus@latest",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "lodash-es": "^4.17.21",

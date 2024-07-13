@@ -4,6 +4,8 @@ import { componentPreview, containerPreview } from '@vitepress-demo-preview/plug
 import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
 
+const TAG_ID = 'G-0Q89WLMD81'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 
@@ -94,6 +96,18 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
+    [
+      'script',
+      { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${TAG_ID}` },
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', ${TAG_ID});`,
+    ],
   ],
 
   sitemap: {
