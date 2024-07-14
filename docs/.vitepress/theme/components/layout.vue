@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 
 import GitalkVue from './gitalk.vue'
+import VisitorVue from './visitor.vue'
 
 const { isDark } = useData()
 
@@ -47,6 +48,9 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 <template>
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
   <DefaultTheme.Layout>
+    <template #nav-bar-title-after>
+      <VisitorVue />
+    </template>
     <template #doc-after>
       <GitalkVue :key="Date.now()" />
     </template>
