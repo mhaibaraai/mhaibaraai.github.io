@@ -7,6 +7,12 @@ export default defineConfig({
   server: {
     port: 36666,
   },
+  ssr: {
+    noExternal: [
+      '@vuesri/core',
+      '@arcgis/core',
+    ],
+  },
   plugins: [
     VitePressPluginAutoNavSidebar({
       ignoreIndexItems: true,
