@@ -8,12 +8,10 @@ const defaultOptions: __esri.SceneViewProperties = {
 </script>
 
 <template>
-  <ClientOnly>
-    <VaSceneView :style="{ height: '50vh' }" :default-options="defaultOptions">
-      <VaTdtBasemap type="vec_w" :spatial-reference="{ wkid: 3857 }" />
-      <slot />
-    </VaSceneView>
-  </ClientOnly>
+  <VaSceneView :style="{ height: '50vh' }" :default-options="defaultOptions">
+    <VaTdtBasemap type="vec_w" :spatial-reference="{ wkid: 3857 }" />
+    <slot />
+  </VaSceneView>
 </template>
 
 <style></style>

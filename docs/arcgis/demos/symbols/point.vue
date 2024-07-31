@@ -16,5 +16,5 @@ import BaseMap from './map.vue'
   </BaseMap>
 </template>
 
-<style scoped>
+<style>
 </style>

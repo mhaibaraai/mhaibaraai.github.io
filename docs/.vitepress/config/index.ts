@@ -1,6 +1,8 @@
+import path from 'node:path'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
+// import { componentPreview } from '@vitepress-demo-preview/plugin'
+
 import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
 
@@ -30,9 +32,22 @@ export default defineConfig({
       },
       transformerTwoslash(),
     ],
+
     config: (md) => {
-      md.use(containerPreview)
-      md.use(componentPreview)
+      // md.use(containerPreview)
+      // md.use(componentPreview)
+      // md.use(
+      //   demoContainerPlugin as never,
+      //   {
+      //     root: demoPath,
+      //     globSource: '**/*.vue',
+      //   } as DemoContainerPluginSettings,
+      // )
+
+      // md.use(sourceContainerPlugin, {
+      //   root: demoPath,
+      //   extnames: ['.vue'],
+      // } as SourceContainerPluginSettings)
     },
   },
 

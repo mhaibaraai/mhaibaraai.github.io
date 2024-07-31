@@ -6,6 +6,7 @@ export default eslintConfig(
       'ts/method-signature-style': 'off',
       'unused-imports/no-unused-vars': 'off',
       'regexp/no-super-linear-backtracking': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
 )
