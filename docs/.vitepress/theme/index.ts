@@ -4,7 +4,7 @@ import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import '@shikijs/vitepress-twoslash/style.css'
 import './main'
 
-import { ElementPlusContainer } from '@movk-repo/demo-preview'
+// import { ElementPlusContainer } from '@movk-repo/demo-preview'
 // import { DemoContainer } from '@vunk/shared/markdown/components/DemoContainer'
 import './rainbow.css'
 import './vars.css'
@@ -21,7 +21,7 @@ export default {
   Layout,
   async enhanceApp({ app, router }: EnhanceAppContext) {
     app.use(TwoslashFloatingVue)
-    app.component('demo-preview', ElementPlusContainer)
+    // app.component('demo-preview', ElementPlusContainer)
     // app.component('DemoContainer', DemoContainer)
 
     if (typeof window === 'undefined')

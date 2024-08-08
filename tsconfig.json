@@ -6,5 +6,8 @@
         "./packages/auto-nav-sidebar/src"
       ]
     }
-  }
+  },
+  "include": [
+    "typings/*.d.ts"
+  ]
 }

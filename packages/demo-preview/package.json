@@ -1,0 +1,38 @@
+{
+  "name": "@movk-repo/demo-preview",
+  "type": "module",
+  "version": "1.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.1.0",
+  "author": "yixuan",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "stub": "tsup --watch"
+  },
+  "peerDependencies": {
+    "markdown-it-container": "^4.0.0",
+    "vitepress": "^1.0.0-rc.45",
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/markdown-it-container": "^2.0.10"
+  }
+}
