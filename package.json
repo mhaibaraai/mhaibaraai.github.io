@@ -16,7 +16,7 @@
     "lint:fix": "eslint . --fix",
     "stub:auto-nav-sidebar": "turbo stub --filter=./packages/auto-nav-sidebar",
     "build": "turbo build",
-    "build:packages": "turbo build --filter='./packages/*'",
+    "build:packages": "turbo build --filter='./packages/**' --filter='!./packages/demo-preview/**'",
     "build:auto-nav-sidebar": "turbo build --filter='./packages/auto-nav-sidebar'",
     "release": "bumpp -r",
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
