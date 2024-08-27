@@ -217,7 +217,7 @@ export default function VitePressPluginAutoNavSidebar(
       ; (config as UserConfig).vitepress.site.themeConfig.nav = navs
 
       // 打印插件生成sidebar和nav成功
-      console.log('sidebar and nav generated successfully！')
+      // console.log('sidebar and nav generated successfully！')
 
       return config
     },

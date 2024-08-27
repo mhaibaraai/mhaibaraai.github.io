@@ -1,17 +1,10 @@
 {
-  "name": "@movk-repo/demo-preview",
+  "name": "@movk-repo/demo-preview-plugin",
   "type": "module",
   "version": "1.1.0",
-  "private": true,
   "packageManager": "pnpm@9.1.0",
   "author": "yixuan",
   "license": "MIT",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -33,6 +26,7 @@
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
-    "@types/markdown-it-container": "^2.0.10"
+    "@types/markdown-it-container": "^2.0.10",
+    "typescript": "^5.2.2"
   }
 }

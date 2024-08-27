@@ -1,17 +1,10 @@
 import { watch } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-import '@shikijs/vitepress-twoslash/style.css'
 import './main'
 
-// import { ElementPlusContainer } from '@movk-repo/demo-preview'
-// import { DemoContainer } from '@vunk/shared/markdown/components/DemoContainer'
-import './rainbow.css'
-import './vars.css'
-import './overrides.css'
-import 'virtual:uno.css'
-
 import type { EnhanceAppContext } from 'vitepress'
+import { DemoPreviewContainer } from '@movk-repo/demo-preview-container'
 import Layout from './components/layout.vue'
 
 let homePageStyle: HTMLStyleElement | undefined
@@ -21,8 +14,7 @@ export default {
   Layout,
   async enhanceApp({ app, router }: EnhanceAppContext) {
     app.use(TwoslashFloatingVue)
-    // app.component('demo-preview', ElementPlusContainer)
-    // app.component('DemoContainer', DemoContainer)
+    app.component('DemoPreview', DemoPreviewContainer)
 
     if (typeof window === 'undefined')
       return

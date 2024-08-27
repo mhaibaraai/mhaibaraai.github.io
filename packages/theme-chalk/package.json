@@ -1,0 +1,10 @@
+{
+  "name": "@movk-repo/theme-chalk",
+  "version": "1.1.0",
+  "private": true,
+  "author": "yixuan",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

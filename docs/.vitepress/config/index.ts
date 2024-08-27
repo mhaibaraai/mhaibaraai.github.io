@@ -1,7 +1,6 @@
-import path from 'node:path'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-// import { componentPreview } from '@vitepress-demo-preview/plugin'
+import { containerPreview } from '@movk-repo/demo-preview-plugin'
 
 import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
@@ -34,6 +33,12 @@ export default defineConfig({
     ],
 
     config: (md) => {
+      md.use(
+        containerPreview as never,
+        {
+          name: 'demo',
+        },
+      )
       // md.use(containerPreview)
       // md.use(componentPreview)
       // md.use(

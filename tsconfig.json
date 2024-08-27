@@ -1,13 +1,30 @@
 {
   "extends": "@movk-repo/typescript-config/vite.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "vitepress-plugin-auto-nav-sidebar": [
-        "./packages/auto-nav-sidebar/src"
+      "@movk-repo/*": [
+        "./packages/*"
+      ],
+      "@movk-repo/components/*": [
+        "./packages/components/*"
+      ],
+      "@movk-repo/shared/*": [
+        "./packages/shared/*"
+      ],
+      "@movk-repo/theme/*": [
+        "./packages/theme/*"
       ]
     }
   },
   "include": [
-    "typings/*.d.ts"
+    "typings/*.d.ts",
+    "packages/**/*",
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    "packages/**/*.tsx",
+    "docs/**/*",
+    "docs/.vitepress/**/*.ts",
+    "docs/.vitepress/**/*.vue"
   ]
 }
