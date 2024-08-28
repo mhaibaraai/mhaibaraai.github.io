@@ -33,7 +33,7 @@ export interface ContainerOpts {
   ): string
 }
 
-export async function containerPreview(md: MarkdownIt, { root, name = 'preview' }: ContainerOpt) {
+function createDemoContainer(md: MarkdownIt, { root, name = 'preview' }: ContainerOpt) {
   const RE = new RegExp(`^${name}\\s*(.*)$`)
   md.use(markdownItContainer, name, {
     marker: ':',
@@ -79,3 +79,5 @@ export async function containerPreview(md: MarkdownIt, { root, name = 'preview' 
     },
   } as ContainerOpts)
 }
+
+export default createDemoContainer

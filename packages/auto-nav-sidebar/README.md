@@ -1,6 +1,6 @@
 # 自动生成侧边栏和导航栏
 
-[vitepress-plugin-auto-nav-sidebar](https://www.npmjs.com/package/vitepress-plugin-auto-nav-sidebar) 通过扫描文件目录，自动生成侧边栏和导航栏。
+[@movk-repo/vitepress-plugin-auto-nav-sidebar](https://www.npmjs.com/package/@movk-repo/vitepress-plugin-auto-nav-sidebar) 通过扫描文件目录，自动生成侧边栏和导航栏。
 
 ## ✨ 特点
 
@@ -18,7 +18,7 @@
 推荐使用 `pnpm` 包管理器
 
 ```bash
-pnpm add vitepress-plugin-auto-nav-sidebar
+pnpm add @movk-repo/vitepress-plugin-auto-nav-sidebar
 ```
 
 ### 添加插件
@@ -27,7 +27,7 @@ pnpm add vitepress-plugin-auto-nav-sidebar
 
 ```ts twoslash
 import { defineConfig } from 'vite'
-import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
+import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
   plugins: [
@@ -35,9 +35,6 @@ export default defineConfig({
   ],
 })
 ```
-
-> [!tip]提示
-> 插件配置成功的话，会在控制台输出 `sidebar and nav generated successfully！`。
 
 ## 🛠️ 配置
 
@@ -64,7 +61,7 @@ export default defineConfig({
 ### ignoreIndexItems
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 是否忽略首页的文件，如果设置为 `true`，则首页的 `index.md` 文件不会被添加到侧边栏和导航栏中。
 
@@ -78,28 +75,28 @@ export default defineConfig({
 ### excludeFolders
 
 - 类型: `(string | RegExp)[]`
-- 默认值: `['.vitepress', 'node_modules', 'dist']`
+- 默认值: `['.vitepress', 'node_modules', 'dist','public','.turbo']`
 
 忽略的文件夹列表，支持正则匹配。
 
 ### collapsed
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 是否折叠侧边栏。
 
 ### useTitleFromFileHeading
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 如果设置为 `true`，则使用 `.md` 内容中的 `h1` 作为侧边栏和导航栏的标题。如果 `h1` 不存在，则使用文件名。
 
 ### useTitleFromFrontmatter
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 如果设置为 `true`，则使用 `.md` 文件的 `frontmatter` 中的 `title` 字段作为侧边栏和导航栏的标题。如果不存在或者无法解析，则使用文件名。
 
@@ -119,7 +116,7 @@ title: 文档标题
 ### useSortFromTitle
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: `true`
 
 如果设置为 `true`，当菜单标题为数字开头时，按照数字排序。例如，如果文件为 [`1-a.md` , `10-a.md` ,`2-a.md`]，最终会按照 [ `1-a.md` , `2-a.md` ,`10-a.md`] 排序。
 
@@ -199,7 +196,7 @@ docs
 
 ```ts twoslash
 import { defineConfig } from 'vite'
-import VitePressPluginAutoNavSidebar from 'vitepress-plugin-auto-nav-sidebar'
+import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
 
 export default defineConfig({
   plugins: [

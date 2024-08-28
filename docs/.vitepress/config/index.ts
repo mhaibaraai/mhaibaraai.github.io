@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import { containerPreview } from '@movk-repo/demo-preview-plugin'
+// import { containerPreview } from '@movk-repo/demo-preview-plugin'
+import vite from './vite.config'
 
-import vite from '../vite.config'
 import { algoliaSearch } from './algolia'
 
 // https://vitepress.dev/reference/site-config
@@ -33,35 +33,16 @@ export default defineConfig({
     ],
 
     config: (md) => {
-      md.use(
-        containerPreview as never,
-        {
-          name: 'demo',
-        },
-      )
-      // md.use(containerPreview)
-      // md.use(componentPreview)
       // md.use(
-      //   demoContainerPlugin as never,
+      //   containerPreview,
       //   {
-      //     root: demoPath,
-      //     globSource: '**/*.vue',
-      //   } as DemoContainerPluginSettings,
+      //     name: 'demo',
+      //   },
       // )
-
-      // md.use(sourceContainerPlugin, {
-      //   root: demoPath,
-      //   extnames: ['.vue'],
-      // } as SourceContainerPluginSettings)
     },
   },
 
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-
-    logo: { src: '/logo.png', width: 24, height: 24 },
-
-    // 社交帐户链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/mhaibaraai/' },
     ],

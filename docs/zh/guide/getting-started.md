@@ -87,7 +87,16 @@ export default antfu({
 
 2. 添加 `vite.config.ts` 文件
 
-   <<< ../.vitepress/vite.config.ts
+   ```ts
+   import { defineConfig } from 'vite'
+   import { createUnocssPlugin } from 'unocss/vite'
+
+   export default defineConfig({
+     plugins: [
+       createUnocssPlugin(),
+     ],
+   })
+   ```
 
 3. 更新 theme 配置文件 `theme/index.ts`
 

@@ -199,16 +199,16 @@ export default defineConfig({
 
 在 `docs` 工作区中引用 `packages` 中的包，自动打包时报了一个错误：
 
-`Failed to resolve entry for package "vitepress-plugin-auto-nav-sidebar"`
+`Failed to resolve entry for package "@movk-repo/vitepress-plugin-auto-nav-sidebar"`
 
 出现这个原因是因为 `pnpm` 在打包时，引用的包没有被打包，导致找不到入口文件。
 
 解决方法：
 
-- 在 `docs` 工作区中添加 `vitepress-plugin-auto-nav-sidebar` 依赖
+- 在 `docs` 工作区中添加 `@movk-repo/vitepress-plugin-auto-nav-sidebar` 依赖
 
 ```sh
-"vitepress-plugin-auto-nav-sidebar": "workspace:*",
+"@movk-repo/vitepress-plugin-auto-nav-sidebar": "workspace:*",
 ```
 
 - 修改 `.github/workflows/deploy.yml` 文件

@@ -2,7 +2,7 @@
   "name": "@movk-repo/demo-preview-plugin",
   "type": "module",
   "version": "1.1.0",
-  "packageManager": "pnpm@9.1.0",
+  "packageManager": "pnpm@9.9.0",
   "author": "yixuan",
   "license": "MIT",
   "main": "./dist/index.cjs",

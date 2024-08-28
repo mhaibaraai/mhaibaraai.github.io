@@ -11,7 +11,7 @@ let options: Partial<Options> = {}
 const defaultExcludeFiles = ['README.md', '.DS_Store', 'package.json']
 
 // 默认排除的文件夹
-const defaultExcludeFolders = ['.vitepress', 'node_modules', 'dist']
+const defaultExcludeFolders = ['.vitepress', 'node_modules', 'dist', 'public', '.turbo']
 
 let _excludeFiles = [] as (string | RegExp)[]
 let _excludeFolders = [] as (string | RegExp)[]
@@ -37,7 +37,7 @@ function handleFrontmatter(fileContent: string, fileName = ''): {
   date: string
   text: string
 } {
-  const { useTitleFromFileHeading, useTitleFromFrontmatter, removeTitlePrefix, useSortFromTitle = false } = options
+  const { useTitleFromFileHeading = true, useTitleFromFrontmatter = true, removeTitlePrefix, useSortFromTitle = true } = options
 
   let text = fileName
   if (useTitleFromFileHeading)
@@ -58,8 +58,8 @@ function handleFrontmatter(fileContent: string, fileName = ''): {
   }
 }
 
-async function createSidebarItems(pPath: string, ...cFolder: string[]) {
-  const { ignoreIndexItems = false, collapsed } = options
+async function createSidebarItems(basePath: string, pPath: string, ...cFolder: string[]) {
+  const { ignoreIndexItems = true, collapsed } = options
 
   // 读取文件夹
   const rawNode = fse.readdirSync(join(pPath, ...cFolder))
@@ -81,7 +81,7 @@ async function createSidebarItems(pPath: string, ...cFolder: string[]) {
       if (isIgnore(node, _excludeFolders))
         continue
 
-      const children = await createSidebarItems(pPath, ...cFolder, node)
+      const children = await createSidebarItems(basePath, pPath, ...cFolder, node)
 
       // 拿到文件夹下的index.md或node.md文件
       const indexFilePath = join(nodePath, 'index.md')
@@ -95,7 +95,7 @@ async function createSidebarItems(pPath: string, ...cFolder: string[]) {
         order,
         date,
         collapsed,
-        link: children?.length ? children[0].link : `/${[...cFolder, node].join('/')}/`,
+        link: children?.length ? children[0].link : `/${basePath}/${[...cFolder, node].join('/')}/`,
         items: children,
       })
     }
@@ -116,7 +116,7 @@ async function createSidebarItems(pPath: string, ...cFolder: string[]) {
         text,
         order,
         date,
-        link: `/${[...cFolder, fileName].join('/')}`,
+        link: `/${basePath}/${[...cFolder, fileName].join('/')}`,
       })
     }
   }
@@ -124,8 +124,8 @@ async function createSidebarItems(pPath: string, ...cFolder: string[]) {
 }
 
 // 创建sidebar
-async function createSidebarNav(scanStartPath: string) {
-  const { excludeFolders = [], excludeFiles = [], debugLog } = options
+async function createSidebarNav(scanStartPath: string, basePath: string) {
+  const { excludeFolders = [], excludeFiles = [], debugLog = false } = options
 
   const sidebar: ExtendedSidebarMulti = {}
   const navs: DefaultTheme.NavItem[] = []
@@ -141,14 +141,14 @@ async function createSidebarNav(scanStartPath: string) {
   })
 
   for (const n of nodes) {
-    const items = await createSidebarItems(scanStartPath, n)
+    const items = await createSidebarItems(basePath, scanStartPath, n)
     const indexFilePath = join(scanStartPath, n, 'index.md')
     const fileContent = readFile(indexFilePath)
 
     const _sortMenus = sortMenus(items)
     const { text, order, date } = handleFrontmatter(fileContent)
 
-    sidebar[`/${n}/`] = {
+    sidebar[`/${basePath}/${n}/`] = {
       base: '',
       text: text || n,
       order,
@@ -158,7 +158,7 @@ async function createSidebarNav(scanStartPath: string) {
 
     if (items.length > 0) {
       navs.push({
-        activeMatch: `/${n}/`,
+        activeMatch: `/${basePath}/${n}/`,
         text: text || n,
         order,
         items: _sortMenus.map((item) => {
@@ -173,7 +173,7 @@ async function createSidebarNav(scanStartPath: string) {
       navs.push({
         text: text || n,
         order,
-        link: `/${n}/`,
+        link: `/${basePath}/${n}/`,
       } as DefaultTheme.NavItem)
     }
   }
@@ -211,13 +211,12 @@ export default function VitePressPluginAutoNavSidebar(
       const { documentRootPath = '/' } = opt
       const scanStartPath = join(process.cwd(), documentRootPath)
 
-      const { sidebar, navs } = await createSidebarNav(scanStartPath)
+      const basePath = documentRootPath.startsWith('/') ? documentRootPath.slice(1) : documentRootPath
+
+      const { sidebar, navs } = await createSidebarNav(scanStartPath, basePath)
 
         ; (config as UserConfig).vitepress.site.themeConfig.sidebar = sidebar
       ; (config as UserConfig).vitepress.site.themeConfig.nav = navs
-
-      // 打印插件生成sidebar和nav成功
-      // console.log('sidebar and nav generated successfully！')
 
       return config
     },

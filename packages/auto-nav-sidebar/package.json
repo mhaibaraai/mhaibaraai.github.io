@@ -1,8 +1,8 @@
 {
-  "name": "vitepress-plugin-auto-nav-sidebar",
+  "name": "@movk-repo/vitepress-plugin-auto-nav-sidebar",
   "type": "module",
-  "version": "1.1.0",
-  "packageManager": "pnpm@9.1.0",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.9.0",
   "description": "自动生成侧边栏和导航栏的vitepress插件",
   "author": "yixuan",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git@github.com:mhaibaraai/mhaibaraai.github.io.git"
   },
-  "bugs": "https://github.com/mhaibaraai/vitepress-auto-nav-sidebar/issues",
+  "bugs": "https://github.com/mhaibaraai/mhaibaraai.github.io/issues",
   "keywords": [
     "vitepress",
     "vitepress-plugin",

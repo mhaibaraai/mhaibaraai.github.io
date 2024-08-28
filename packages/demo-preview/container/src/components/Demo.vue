@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ClientOnly } from '@movk-repo/components'
 
+import { useNamespace } from '@movk-repo/shared'
+
 defineProps({
   file: {
     type: String,
@@ -11,10 +13,12 @@ defineProps({
     required: true,
   },
 })
+
+const ns = useNamespace('example')
 </script>
 
 <template>
-  <div class="example-showcase">
+  <div :class="ns.b('showcase')">
     <ClientOnly>
       <component :is="demo" v-if="demo" v-bind="$attrs" />
     </ClientOnly>
@@ -22,9 +26,4 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-.example-showcase {
-  padding: 1.5rem;
-  margin: 0.5px;
-  background-color: var(--bg-color);
-}
 </style>

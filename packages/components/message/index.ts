@@ -47,8 +47,6 @@ function createMessage({ ...options }: MessageOptions): MessageContext {
   )
 
   const vm = messageApp.mount(container)
-  console.log('vm', vm.$.exposed)
-  console.log('container', container)
   document.body.appendChild(container.firstElementChild!)
 
   const handler: MessageHandler = {

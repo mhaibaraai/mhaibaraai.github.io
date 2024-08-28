@@ -1,12 +1,19 @@
 <script setup lang="ts">
+import { useNamespace } from '@movk-repo/shared'
 import { computed } from 'vue'
 
 const props = defineProps({
+  visible: {
+    type: Boolean,
+    required: true,
+  },
   highlightSource: {
     type: String,
     required: true,
   },
 })
+
+const ns = useNamespace('example')
 
 const decoded = computed(() => {
   return decodeURIComponent(props.highlightSource)
@@ -14,8 +21,8 @@ const decoded = computed(() => {
 </script>
 
 <template>
-  <div class="example-source-wrapper">
-    <div class="example-source" v-html="decoded" />
+  <div v-show="visible" :class="ns.b('source-wrapper')">
+    <div :class="ns.b('source')" v-html="decoded" />
   </div>
 </template>
 

@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.1.0",
   "private": true,
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.9.0",
   "engines": {
     "node": ">=18.20.0",
     "pnpm": ">=8.15.6"
@@ -34,7 +34,7 @@
     "@vueuse/core": "^11.0.0",
     "element-plus": "^2.8.1",
     "lodash-es": "^4.17.21",
-    "vue": "^3.4.31"
+    "vue": "^3.4.38"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
@@ -46,6 +46,6 @@
     "fs-extra": "^11.2.0",
     "tsup": "^8.2.4",
     "turbo": "^2.0.6",
-    "vite": "^5.4.2"
+    "vite": "^5.4.1"
   }
 }

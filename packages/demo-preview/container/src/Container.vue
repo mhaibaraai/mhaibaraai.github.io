@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ClientOnly, Message } from '@movk-repo/components'
-import { useNamespace } from '@movk-repo/shared'
+import { useCopyCode, useNamespace } from '@movk-repo/shared'
 import { computed, ref } from 'vue'
 import SourceCode from '~/components/SourceCode.vue'
 import CaretTop from '~/icons/CaretTop.vue'
@@ -13,28 +13,18 @@ const props = defineProps<{
   source: string
   highlightSource: string
   sourcePath: string
-  description?: string
+  description: string
 }>()
 
 const ns = useNamespace('example')
 
 const decodedDescription = computed(() =>
-  decodeURIComponent(props.description!),
+  decodeURIComponent(props.description),
 )
 
 const sourceVisible = ref(false)
 
 const sourceCodeRef = ref<HTMLButtonElement>()
-// const formatPathDemos = computed(() => {
-//   const demos = {}
-
-//   Object.keys(props.demos).forEach((key) => {
-//     demos[key.replace('../../examples/', '').replace('.vue', '')]
-//       = props.demos[key].default
-//   })
-
-//   return demos
-// })
 
 function onSourceVisibleKeydown(e: KeyboardEvent) {
   if (['Enter', 'Space'].includes(e.code)) {
@@ -46,7 +36,7 @@ function onSourceVisibleKeydown(e: KeyboardEvent) {
 
 async function copyCode() {
   try {
-    await navigator.clipboard.writeText(decodeURIComponent(props.source))
+    await useCopyCode(decodeURIComponent(props.source))
     Message({
       type: 'success',
       message: '代码已复制到剪贴板',
@@ -67,10 +57,12 @@ async function copyCode() {
     <p text="sm" v-html="decodedDescription" />
 
     <div :class="ns.b()">
-      <div>
-        3243
+      <div :class="ns.e('showcase')">
+        <ClientOnly>
+          111
+          <slot name="source" />
+        </ClientOnly>
       </div>
-      <!-- <Example :file="path" :demo="formatPathDemos[path]" /> -->
 
       <div :class="ns.e('divider')" />
 
@@ -79,7 +71,7 @@ async function copyCode() {
         <Code @click="sourceVisible = !sourceVisible" />
       </div>
       <CollapseTransition>
-        <SourceCode v-show="sourceVisible" :highlight-source="highlightSource" />
+        <SourceCode :visible="sourceVisible" :highlight-source="highlightSource" />
       </CollapseTransition>
 
       <Transition name="movk-fade-in-linear">

@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/getting-started
+      link: /zh/guide/getting-started
   image:
       src: /logo.png
       alt: Movk
