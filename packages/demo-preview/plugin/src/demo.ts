@@ -42,7 +42,7 @@ function createDemoContainer(md: MarkdownIt, options: ContainerOptions): Contain
           ? `<ClientOnly>\n<${componentName}/>\n</ClientOnly>`
           : `<${componentName}/>`
 
-        return `<DemoPreview title="${title}" description="${encodeURIComponent(md.render(description))}" source="${encodeURIComponent(
+        return `<div>${md.render(description)}</div>\n<DemoPreview title="${title}" source="${encodeURIComponent(
           md.render(`\`\`\` ${fileExtname.slice(1)}\n${source}\`\`\``),
         )}" raw-source="${encodeURIComponent(
           source,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Message } from '@movk-repo/components'
 import { useCopyCode, useNamespace } from '@movk-repo/shared'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import SourceCode from './components/SourceCode.vue'
 import CaretTop from './icons/CaretTop.vue'
 import Code from './icons/Code.vue'
@@ -17,10 +17,6 @@ const props = defineProps<{
 }>()
 
 const ns = useNamespace('example')
-
-const decodedDescription = computed(() =>
-  decodeURIComponent(props.description),
-)
 
 const sourceVisible = ref(false)
 
@@ -53,8 +49,6 @@ async function copyCode() {
 
 <template>
   <!-- <ClientOnly></ClientOnly> -->
-  <p :class="ns.e('description')" v-html="decodedDescription" />
-
   <div :class="ns.b()">
     <div :class="ns.e('showcase')">
       <slot name="source" />

@@ -17,11 +17,11 @@ title: 组件预览与展示代码
 :::
 ```
 
-<!-- ::: demo 预览 `Vue` 组件
+::: demo 预览 `Vue` 组件
 
 /basic/counter.vue
 
-::: -->
+:::
 
 ### TypeScript 组件
 
