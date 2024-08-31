@@ -63,10 +63,7 @@ function normalizeParams(params: Partial<ContainerParams>): ContainerOptions {
     ...defaultContainerParams,
     ...params,
   } as ContainerOptions
-  // options.RE = new RegExp(`^${options.name}\\s*(.*)$`)
-  const createDemoContainerRE = (name: string) =>
-    new RegExp(`^${name}\\s*(.*?)\\s*(\\{ClientOnly\\})?$`, 'm')
-  options.RE = createDemoContainerRE(options.name)
+  options.RE = new RegExp(`^${options.name}\\s*(.*)$`)
   return options
 }
 

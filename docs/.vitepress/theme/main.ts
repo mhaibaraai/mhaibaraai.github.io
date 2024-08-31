@@ -1,7 +1,7 @@
 import './rainbow.css'
 import './vars.css'
 import './overrides.css'
-// import 'virtual:uno.css'
+import 'virtual:uno.css'
 
 // import '@vuesri/core/index.css'
 // import 'element-plus/dist/index.css'

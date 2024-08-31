@@ -21,7 +21,7 @@ export function transformScriptSetup(env: MarkdownEnv, options: ContainerOptions
   })
 
   const importStatement = useClientOnly
-    ? `import { defineClientComponent } from 'vitepress'\nconst ${_componentName} = defineClientComponent(() => import('${componentPath}'))`
+    ? `const ${_componentName} = defineClientComponent(() => import('${componentPath}'))`
     : `import ${_componentName} from '${componentPath}'`
 
   if (scriptsSetupIndex === -1) {
@@ -29,7 +29,7 @@ export function transformScriptSetup(env: MarkdownEnv, options: ContainerOptions
       type: 'script',
       tagOpen: `<script setup lang='ts'>`,
       tagClose: '</script>',
-      content: `<script setup lang='ts'>\n${importStatement}\n</script>`,
+      content: `<script setup lang='ts'>\nimport { defineClientComponent } from 'vitepress'\n${importStatement}\n</script>`,
       contentStripped: importStatement,
     }
     scriptsCode.push(scriptBlock)

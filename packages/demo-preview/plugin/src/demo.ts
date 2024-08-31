@@ -34,7 +34,7 @@ function createDemoContainer(md: MarkdownIt, options: ContainerOptions): Contain
           componentName,
           fileExtname,
           sourceFile,
-          useClientOnly: !!m?.[2],
+          useClientOnly: tokens[idx].attrGet('ClientOnly') === '',
         }
         transformScriptSetup(env, transformedOption)
 
@@ -59,7 +59,7 @@ function createDemoContainer(md: MarkdownIt, options: ContainerOptions): Contain
 function parseComponentPath(filePath: string) {
   const fileExtname = filePath.match(/\.[^/.]+$/)?.[0] || ''
   const withoutExtension = filePath.replace(fileExtname, '')
-  const componentName = `ep${withoutExtension.replace(/\//g, '-')}`
+  const componentName = `ep${withoutExtension.replace(/\//g, '-')}-${fileExtname.slice(1)}`
   return { componentName, fileExtname }
 }
 

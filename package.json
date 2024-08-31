@@ -1,7 +1,7 @@
 {
   "name": "@movk-repo/root",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@9.7.1",
   "engines": {
@@ -14,12 +14,7 @@
     "turbo:lint": "turbo lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "stub:auto-nav-sidebar": "turbo stub --filter=./packages/auto-nav-sidebar",
-    "stub:demo-preview-plugin": "turbo stub --filter=./packages/demo-preview/plugin",
-    "dev:demo-preview-component": "turbo dev --filter=./packages/demo-preview/component",
-    "build": "turbo build",
-    "build:packages": "turbo build --filter='./packages/**' --filter='!./packages/demo-preview/**'",
-    "build:auto-nav-sidebar": "turbo build --filter='./packages/auto-nav-sidebar'",
+    "build:packages": "turbo build --filter='./packages/**'",
     "release": "bumpp -r",
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
@@ -47,6 +42,8 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.2.4",
     "turbo": "^2.0.6",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.1"
   }
 }

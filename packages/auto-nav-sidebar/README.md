@@ -2,6 +2,8 @@
 
 [@movk-repo/vitepress-plugin-auto-nav-sidebar](https://www.npmjs.com/package/@movk-repo/vitepress-plugin-auto-nav-sidebar) 通过扫描文件目录，自动生成侧边栏和导航栏。
 
+![component version](https://badgen.net/npm/v/@movk-repo/vitepress-plugin-auto-nav-sidebar)
+
 ## ✨ 特点
 
 - 支持自定义根路径

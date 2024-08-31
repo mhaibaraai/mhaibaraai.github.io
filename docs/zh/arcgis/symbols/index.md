@@ -14,11 +14,3 @@
 ### PointSymbol3D
 
 选择一个 3D 符号样式，可以设置符号的大小、颜色、轮廓等属性。
-
-<!-- :::demo
-symbols/map
-:::
-
-:::source
-symbols/map
-::: -->

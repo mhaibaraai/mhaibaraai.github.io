@@ -4,24 +4,6 @@ order: 1
 
 # 快速开始
 
-::: demo 预览
-
-/basic/counter.vue
-
-:::
-
-::: demo 预览111
-
-/basic/demo.tsx
-
-:::
-
-::: demo 预览222 {ClientOnly}
-
-/basic/demo.tsx
-
-:::
-
 [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
 ## VitePress 初始化项目
