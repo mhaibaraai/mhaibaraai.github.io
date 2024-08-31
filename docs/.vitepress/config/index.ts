@@ -35,6 +35,9 @@ export default defineConfig({
   },
 
   themeConfig: {
+
+    logo: { src: '/logo.png', width: 24, height: 24 },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/mhaibaraai/' },
     ],

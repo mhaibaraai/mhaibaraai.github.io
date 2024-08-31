@@ -25,6 +25,8 @@
 | [@movk-repo/demo-preview-plugin](https://www.npmjs.com/package/@movk-repo/demo-preview-plugin)       | ![component version](https://badgen.net/npm/v/@movk-repo/demo-preview-plugin)    |
 | [@movk-repo/demo-preview-container](https://www.npmjs.com/package/@movk-repo/demo-preview-container) | ![component version](https://badgen.net/npm/v/@movk-repo/demo-preview-container) |
 
+推荐使用 `pnpm` 安装，以获得更快的安装速度。
+
 ```bash
 pnpm add @movk-repo/demo-preview-plugin @movk-repo/demo-preview-container
 ```

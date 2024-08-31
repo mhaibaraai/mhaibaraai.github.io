@@ -1,7 +1,7 @@
 {
   "name": "@movk-repo/demo-preview-container",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "pnpm@9.7.1",
   "description": "vitepress插件，用于预览markdown文件",
   "author": "yixuan",
