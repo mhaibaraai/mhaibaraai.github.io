@@ -39,7 +39,7 @@ title: 组件预览与展示代码
 
 :::
 
-### 仅客户端渲染
+### 非 SSR 组件
 
 ```markdown
 ::: demo `Teleport` 被元素加 `ElTooltip` 组件内部使用 {ClientOnly}

@@ -25,5 +25,5 @@ const ns = useNamespace('example')
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style>
 </style>

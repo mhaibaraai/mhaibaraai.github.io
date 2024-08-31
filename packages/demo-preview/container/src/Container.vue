@@ -13,7 +13,6 @@ const props = defineProps<{
   path: string
   rawSource: string
   source: string
-  description: string
 }>()
 
 const ns = useNamespace('example')
@@ -49,6 +48,7 @@ async function copyCode() {
 
 <template>
   <!-- <ClientOnly></ClientOnly> -->
+
   <div :class="ns.b()">
     <div :class="ns.e('showcase')">
       <slot name="source" />
@@ -75,4 +75,4 @@ async function copyCode() {
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style></style>
