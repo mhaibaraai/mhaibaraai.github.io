@@ -1,8 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-// import { containerPreview } from '@movk-repo/demo-preview-plugin'
 import vite from './vite.config'
-
+import { mdPlugin } from './plugin'
 import { algoliaSearch } from './algolia'
 
 // https://vitepress.dev/reference/site-config
@@ -32,14 +31,7 @@ export default defineConfig({
       transformerTwoslash(),
     ],
 
-    config: (md) => {
-      // md.use(
-      //   containerPreview,
-      //   {
-      //     name: 'demo',
-      //   },
-      // )
-    },
+    config: md => mdPlugin(md),
   },
 
   themeConfig: {

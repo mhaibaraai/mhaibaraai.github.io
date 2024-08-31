@@ -10,6 +10,7 @@
     margin: 0.5px;
     background-color: getCssVar('bg-color');
   }
+
   @include e('divider') {
     display: block;
     height: 1px;

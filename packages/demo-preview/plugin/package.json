@@ -2,7 +2,7 @@
   "name": "@movk-repo/demo-preview-plugin",
   "type": "module",
   "version": "1.1.0",
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.7.1",
   "author": "yixuan",
   "license": "MIT",
   "main": "./dist/index.cjs",
@@ -12,8 +12,10 @@
     "dist"
   ],
   "scripts": {
+    "dev": "tsup --watch",
     "build": "tsup",
-    "stub": "tsup --watch"
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm run clean"
   },
   "peerDependencies": {
     "markdown-it-container": "^4.0.0",

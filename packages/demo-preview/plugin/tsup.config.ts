@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entryPoints: ['./core/index.ts'],
+  entryPoints: ['./src/index.ts'],
   external: [
     'typescript',
   ],

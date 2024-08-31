@@ -6,7 +6,19 @@ order: 1
 
 ::: demo 预览
 
-/basic/counter
+/basic/counter.vue
+
+:::
+
+::: demo 预览111
+
+/basic/demo.tsx
+
+:::
+
+::: demo 预览222 {ClientOnly}
+
+/basic/demo.tsx
 
 :::
 

@@ -4,27 +4,22 @@
     "baseUrl": ".",
     "paths": {
       "@movk-repo/*": [
-        "./packages/*"
-      ],
-      "@movk-repo/components/*": [
-        "./packages/components/*"
-      ],
-      "@movk-repo/shared/*": [
-        "./packages/shared/*"
-      ],
-      "@movk-repo/theme/*": [
-        "./packages/theme/*"
+        "packages/*"
       ]
-    }
+    },
+    "types": [
+      "node",
+      "vite/client"
+    ]
   },
   "include": [
-    "typings/*.d.ts",
-    "packages/**/*",
-    "packages/**/*.ts",
-    "packages/**/*.vue",
-    "packages/**/*.tsx",
+    "typings/**/*",
     "docs/**/*",
     "docs/.vitepress/**/*.ts",
-    "docs/.vitepress/**/*.vue"
+    "docs/.vitepress/**/*.vue",
+    "packages/**/*"
+  ],
+  "exclude": [
+    "docs/snippets"
   ]
 }

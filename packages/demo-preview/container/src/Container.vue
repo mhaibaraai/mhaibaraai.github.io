@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ClientOnly, Message } from '@movk-repo/components'
+import { Message } from '@movk-repo/components'
 import { useCopyCode, useNamespace } from '@movk-repo/shared'
 import { computed, ref } from 'vue'
-import SourceCode from '~/components/SourceCode.vue'
-import CaretTop from '~/icons/CaretTop.vue'
-import Code from '~/icons/Code.vue'
-import Copy from '~/icons/Copy.vue'
-import CollapseTransition from '~/components/CollapseTransition.vue'
+import SourceCode from './components/SourceCode.vue'
+import CaretTop from './icons/CaretTop.vue'
+import Code from './icons/Code.vue'
+import Copy from './icons/Copy.vue'
+import CollapseTransition from './components/CollapseTransition.vue'
 
 const props = defineProps<{
   title: string
+  path: string
+  rawSource: string
   source: string
-  highlightSource: string
-  sourcePath: string
   description: string
 }>()
 
@@ -36,7 +36,7 @@ function onSourceVisibleKeydown(e: KeyboardEvent) {
 
 async function copyCode() {
   try {
-    await useCopyCode(decodeURIComponent(props.source))
+    await useCopyCode(decodeURIComponent(props.rawSource))
     Message({
       type: 'success',
       message: '代码已复制到剪贴板',
@@ -52,39 +52,33 @@ async function copyCode() {
 </script>
 
 <template>
-  <ClientOnly>
-    <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
-    <p text="sm" v-html="decodedDescription" />
+  <!-- <ClientOnly></ClientOnly> -->
+  <p :class="ns.e('description')" v-html="decodedDescription" />
 
-    <div :class="ns.b()">
-      <div :class="ns.e('showcase')">
-        <ClientOnly>
-          111
-          <slot name="source" />
-        </ClientOnly>
-      </div>
-
-      <div :class="ns.e('divider')" />
-
-      <div :class="ns.e('op-btns')">
-        <Copy @click="copyCode" @keydown.prevent.enter="copyCode" @keydown.prevent.space="copyCode" />
-        <Code @click="sourceVisible = !sourceVisible" />
-      </div>
-      <CollapseTransition>
-        <SourceCode :visible="sourceVisible" :highlight-source="highlightSource" />
-      </CollapseTransition>
-
-      <Transition name="movk-fade-in-linear">
-        <div
-          v-show="sourceVisible" :class="ns.e('float-control')" tabindex="0" role="button"
-          @click="sourceVisible = false" @keydown="onSourceVisibleKeydown"
-        >
-          <CaretTop />
-          <span>隐藏源代码</span>
-        </div>
-      </Transition>
+  <div :class="ns.b()">
+    <div :class="ns.e('showcase')">
+      <slot name="source" />
     </div>
-  </ClientOnly>
+    <div :class="ns.e('divider')" />
+
+    <div :class="ns.e('op-btns')">
+      <Copy @click="copyCode" @keydown.prevent.enter="copyCode" @keydown.prevent.space="copyCode" />
+      <Code @click="sourceVisible = !sourceVisible" />
+    </div>
+    <CollapseTransition>
+      <SourceCode :visible="sourceVisible" :source="source" />
+    </CollapseTransition>
+
+    <Transition name="movk-fade-in-linear">
+      <div
+        v-show="sourceVisible" :class="ns.e('float-control')" tabindex="0" role="button"
+        @click="sourceVisible = false" @keydown="onSourceVisibleKeydown"
+      >
+        <CaretTop />
+        <span>隐藏源代码</span>
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>

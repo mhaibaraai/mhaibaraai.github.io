@@ -15,12 +15,10 @@
 
 选择一个 3D 符号样式，可以设置符号的大小、颜色、轮廓等属性。
 
-<preview path="../demos/symbols/point.vue" />
-
-:::demo
+<!-- :::demo
 symbols/map
 :::
 
 :::source
 symbols/map
-:::
+::: -->

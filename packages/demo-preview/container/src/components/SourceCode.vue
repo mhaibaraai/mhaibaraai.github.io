@@ -7,7 +7,7 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
-  highlightSource: {
+  source: {
     type: String,
     required: true,
   },
@@ -16,7 +16,7 @@ const props = defineProps({
 const ns = useNamespace('example')
 
 const decoded = computed(() => {
-  return decodeURIComponent(props.highlightSource)
+  return decodeURIComponent(props.source)
 })
 </script>
 

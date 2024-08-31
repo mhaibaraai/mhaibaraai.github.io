@@ -2,7 +2,7 @@
   "name": "@movk-repo/vitepress-plugin-auto-nav-sidebar",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.7.1",
   "description": "自动生成侧边栏和导航栏的vitepress插件",
   "author": "yixuan",
   "license": "MIT",
