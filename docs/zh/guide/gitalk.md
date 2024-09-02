@@ -43,7 +43,7 @@ pnpm add -D gitalk
 
 ```ts
 import DefaultTheme from 'vitepress/theme'
-import Layout from './components/layout.vue'
+import Layout from './components/Layout.vue'
 
 export default {
   extends: DefaultTheme,
@@ -51,28 +51,28 @@ export default {
 }
 ```
 
-3、在 `docs/.vitepress/theme/components` 目录下创建 `layout.vue` 文件，添加 `gitalk` 评论组件
+3、在 `docs/.vitepress/components` 目录下创建 `Layout.vue` 文件，添加 `gitalk` 评论组件
 
 ```vue
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
 
-import GitalkVue from './gitalk.vue'
+import Gitalk from './Gitalk.vue'
 </script>
 
 <template>
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
   <DefaultTheme.Layout>
     <template #doc-after>
-      <GitalkVue />
+      <Gitalk />
     </template>
   </DefaultTheme.Layout>
 </template>
 ```
 
-4、在 `docs/.vitepress/theme/components` 目录下创建 `gitalk.vue` 文件，添加 `gitalk` 评论组件
+4、在 `docs/.vitepress/components` 目录下创建 `Gitalk.vue` 文件，添加 `gitalk` 评论组件
 
-<<< @/.vitepress/components/gitalk.vue
+<<< @/.vitepress/components/Gitalk.vue
 
 ::: tip 提示
 
@@ -91,7 +91,7 @@ import GitalkVue from './gitalk.vue'
 尝试在 `Gitalk` 组件上添加 `:key="Date.now()"` 属性，强制刷新组件。
 
 ```vue
-<GitalkVue :key="Date.now()" />
+<Gitalk :key="Date.now()" />
 ```
 
 :::
