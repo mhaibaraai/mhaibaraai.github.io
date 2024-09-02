@@ -72,7 +72,7 @@ import GitalkVue from './gitalk.vue'
 
 4、在 `docs/.vitepress/theme/components` 目录下创建 `gitalk.vue` 文件，添加 `gitalk` 评论组件
 
-<<< @/.vitepress/theme/components/gitalk.vue
+<<< @/.vitepress/components/gitalk.vue
 
 ::: tip 提示
 

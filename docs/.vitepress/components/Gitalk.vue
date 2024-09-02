@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
-import { onMounted, watch } from 'vue'
 import { useRoute } from 'vitepress'
 
 const route = useRoute()

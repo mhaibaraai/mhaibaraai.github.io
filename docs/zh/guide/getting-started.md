@@ -52,7 +52,7 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 2. 添加 `eslint.config.js` 文件
 
-```js
+```js twoslash
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
@@ -100,7 +100,7 @@ export default antfu({
 
 ## 在中启用 TypeScript Twoslash（类型悬停显示）
 
-> 详细配置请参考 [shiki-twoslash](https://shiki-zh-docs.vercel.app/)
+> 详细配置请参考 [shiki-twoslash](https://shiki-zh-docs.vercel.app/packages/vitepress)
 
 1. 安装 `shiki-twoslash` 依赖
 
@@ -126,7 +126,7 @@ export default antfu({
 
 3. 更新 theme 配置文件 `theme/index.ts` ,注册 `shiki-twoslash` 插件，导入 css 样式
 
-   ```ts
+   ```ts twoslash
    import type { EnhanceAppContext } from 'vitepress'
    import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
    import '@shikijs/vitepress-twoslash/style.css'

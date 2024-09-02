@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import vite from './vite.config'
+import vite from '../vite.config'
 import { mdPlugin } from './plugin'
 import { algoliaSearch } from './algolia'
 

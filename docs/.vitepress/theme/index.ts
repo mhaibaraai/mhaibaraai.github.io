@@ -1,11 +1,10 @@
-import { watch } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import './main'
 
 import type { EnhanceAppContext } from 'vitepress'
 import { DemoPreviewContainer } from '@movk-repo/demo-preview-container'
-import Layout from './components/layout.vue'
+import Layout from '../components/Layout.vue'
 
 let homePageStyle: HTMLStyleElement | undefined
 

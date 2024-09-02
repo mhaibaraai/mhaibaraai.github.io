@@ -7,7 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Badges: typeof import('./.vitepress/components/Badges.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    Gitalk: typeof import('./.vitepress/components/Gitalk.vue')['default']
+    Layout: typeof import('./.vitepress/components/Layout.vue')['default']
+    Visitor: typeof import('./.vitepress/components/Visitor.vue')['default']
   }
 }

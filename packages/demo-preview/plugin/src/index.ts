@@ -31,8 +31,8 @@ export interface ContainerOptions extends ContainerParams {
   RE: RegExp
   fileExtname: string
   componentName: string
-  useClientOnly: boolean
   sourceFile: string
+  useClientOnly: boolean
 }
 
 export interface ContainerOpts {
@@ -54,8 +54,8 @@ const defaultContainerParams: ContainerOptions = {
   RE: /./,
   fileExtname: 'vue',
   componentName: '',
-  useClientOnly: false,
   sourceFile: '',
+  useClientOnly: false,
 }
 
 function normalizeParams(params: Partial<ContainerParams>): ContainerOptions {

@@ -98,7 +98,7 @@ table {
 }
 
 /* link 链接添加自定义图标 */
-:is(.vp-external-link-icon, .vp-doc a[href*='://'], .vp-doc a[target='_blank']):not(.no-icon)::after
+/* :is(.vp-external-link-icon, .vp-doc a[href*='://'], .vp-doc a[target='_blank']):not(.no-icon)::after
 {
   content: '';
   color: currentColor;
@@ -106,4 +106,4 @@ table {
   width: 16px;
   height: 16px;
   vertical-align: middle;
-}
+} */

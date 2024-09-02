@@ -8,7 +8,7 @@
 - **组件支持**：兼容 `.vue` 和 `.tsx` 组件。
 - **可修改根目录**：支持自定义根目录（默认 `/examples`），轻松组织项目示例文件。
 - **简化路径管理**：直接使用相对路径 `/demo/test.tsx` 即可引入示例文件。
-- **`ClientOnly` 控制**：在 `Markdown` 中轻松使用 `{ClientOnly}` 选项，控制组件加载方式，确保 SSR 兼容性。
+- **SSR 兼容性**：在 `Markdown` 中轻松使用 `{ClientOnly}` 选项，控制组件加载方式。
 - **VitePress 默认渲染**：支持使用 `VitePress` 的默认渲染机制，在服务端渲染示例演示，实现高效、快速的页面加载。
 - **兼容暗黑模式**：支持暗黑模式，提供更好的阅读体验。
 
@@ -20,10 +20,10 @@
 
 ## 📦 安装
 
-| 包名                                                                                                 | 版本                                                                             |
-| ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [@movk-repo/demo-preview-plugin](https://www.npmjs.com/package/@movk-repo/demo-preview-plugin)       | ![component version](https://badgen.net/npm/v/@movk-repo/demo-preview-plugin)    |
-| [@movk-repo/demo-preview-container](https://www.npmjs.com/package/@movk-repo/demo-preview-container) | ![component version](https://badgen.net/npm/v/@movk-repo/demo-preview-container) |
+| 包名                                                                                                 | 版本                                                |
+| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [@movk-repo/demo-preview-plugin](https://www.npmjs.com/package/@movk-repo/demo-preview-plugin)       | <Badges name="@movk-repo/demo-preview-plugin" />    |
+| [@movk-repo/demo-preview-container](https://www.npmjs.com/package/@movk-repo/demo-preview-container) | <Badges name="@movk-repo/demo-preview-container" /> |
 
 推荐使用 `pnpm` 安装，以获得更快的安装速度。
 
