@@ -1,22 +1,17 @@
 # 组件预览与展示代码
 
-专为增强 `Markdown` 文档而设计，特别适用于展示 `Vue` 和 `TypeScript` 组件的实时预览。
+专为增强 `Markdown` 文档设计，特别适用于 `Vue` 和 `TSX` 组件的实时预览与代码展示，支持自定义容器及 SSR 兼容。
 
 ## ✨ 特点
 
-- **自定义容器**：支持自定义容器符号和容器名称，灵活适应不同的文档需求。
-- **组件支持**：兼容 `.vue` 和 `.tsx` 组件。
-- **可修改根目录**：支持自定义根目录（默认 `/examples`），轻松组织项目示例文件。
-- **简化路径管理**：直接使用相对路径 `/demo/test.tsx` 即可引入示例文件。
-- **SSR 兼容性**：在 `Markdown` 中轻松使用 `{ClientOnly}` 选项，控制组件加载方式。
-- **VitePress 默认渲染**：支持使用 `VitePress` 的默认渲染机制，在服务端渲染示例演示，实现高效、快速的页面加载。
-- **兼容暗黑模式**：支持暗黑模式，提供更好的阅读体验。
-
-::: warning 注意
-
-当打包不支持 SSR 的组件时，需要在容器中添加 `{ClientOnly}` 选项，确保组件在客户端渲染。
-
-:::
+- **自定义容器**：支持灵活配置容器符号和名称，满足不同文档结构的需求。
+- **组件支持**：兼容 `.vue` 和 `.tsx` 组件，轻松引入多种前端框架示例。
+- **可修改根目录**：支持自定义根目录（默认 `/examples`），便于项目示例文件的组织和管理。
+- **简化路径管理**：通过相对路径直接引入示例文件，如 `/demo/test.tsx`，简化路径配置。
+- **SSR 兼容性**：轻松使用 `{ClientOnly}` 选项，灵活控制组件加载方式，增强服务端渲染兼容性。
+- **VitePress 扩展支持**：完美支持 VitePress 的 `行内语法高亮` 、`代码行号` 及 `代码组` 功能，提升文档的可读性和交互性。
+- **高效渲染**：基于 VitePress 默认的服务端渲染机制，确保示例演示内容快速加载，提升用户体验和搜索引擎优化（SEO）。
+- **暗黑模式兼容**：原生支持暗黑模式，为用户提供更好的视觉体验。
 
 ## 📦 安装
 
@@ -38,8 +33,8 @@ pnpm add @movk-repo/demo-preview-plugin @movk-repo/demo-preview-container
 在 `.vitepress/config.ts` 中添加插件
 
 ```ts twoslash
-import { defineConfig } from 'vitepress'
 import { demoPreviewPlugin } from '@movk-repo/demo-preview-plugin'
+import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   markdown: {

@@ -1,6 +1,6 @@
+import { isClient, isFunction, isString, isVNode, Mutable } from '@movk-repo/utils'
 import { createApp, render } from 'vue'
-import { Mutable, isClient, isFunction, isString, isVNode } from '@movk-repo/utils'
-import { MessageContext, instances } from './src/instance'
+import { instances, MessageContext } from './src/instance'
 import { MessageFn, MessageHandler, MessageOptions, MessageParams, MessageProps } from './src/message'
 import MessageConstructor from './src/message.vue'
 import './style/index.scss'

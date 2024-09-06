@@ -1,10 +1,10 @@
-import { readFileSync } from 'node:fs'
 import type MarkdownIt from 'markdown-it'
 import { transformScriptSetup } from './transform'
-import type { ContainerOptions, ContainerOpts } from '.'
+import { parseComponentPath, rawPathToToken } from './utils'
+import type { ContainerOptions, ContainerOpts, FilesOptions } from '.'
 
 function createDemoContainer(md: MarkdownIt, options: ContainerOptions): ContainerOpts {
-  const { RE, root, marker } = options
+  const { RE, root, marker, name } = options
   return {
     marker,
     validate: (params: string) => {
@@ -14,53 +14,59 @@ function createDemoContainer(md: MarkdownIt, options: ContainerOptions): Contain
       const m = tokens[idx].info.trim().match(RE)
 
       if (tokens[idx].nesting === 1) { // opening tag
-        const sourceFileToken = tokens[idx + 2]
         const description = m?.[1] || ''
-        const title = description.split(' ')[0]
+        const files: FilesOptions[] = []
 
-        let source = ''
-        const sourceFile = sourceFileToken.children?.[0].content ?? ''
-        const { fileExtname, componentName } = parseComponentPath(sourceFile)
-
-        if (sourceFileToken.type === 'inline') {
-          source = readFileSync(`${root}/${sourceFile}`, 'utf-8')
+        for (
+          let i = idx + 1;
+          !(
+            tokens[i].nesting === -1
+            && tokens[i].type === `container_${name}_close`
+          );
+          ++i
+        ) {
+          if (tokens[i].type === 'inline') {
+            const rawPath = tokens[i].content.trim()
+            files.push(rawPathToToken(rawPath, root))
+          }
         }
-        if (!source)
-          throw new Error(`Cannot find source file: ${sourceFile}`)
+        if (files.length === 0)
+          throw new Error('No source file specified')
+
+        const { filepath, rawSource, rawCode } = files[0]
+
+        let code = rawCode
+
+        // code-group
+        if (tokens[idx].attrGet('code-group') === '') {
+          const groupCode = files.map(file => file.rawCode).join('\n')
+          code = `::: code-group\n${groupCode}\n:::`
+        }
 
         // transform script setup
         const transformedOption = {
           ...options,
-          componentName,
-          fileExtname,
-          sourceFile,
+          componentName: parseComponentPath(filepath),
+          filepath,
           useClientOnly: tokens[idx].attrGet('ClientOnly') === '',
-        }
+        } as ContainerOptions
+
+        // inject transformedOption to env
         transformScriptSetup(env, transformedOption)
 
-        const sourceCode = transformedOption.useClientOnly
-          ? `<ClientOnly>\n<${componentName}/>\n</ClientOnly>`
-          : `<${componentName}/>`
+        const source = transformedOption.useClientOnly
+          ? `<ClientOnly>\n<${transformedOption.componentName}/>\n</ClientOnly>`
+          : `<${transformedOption.componentName}/>`
 
-        return `<div>${md.render(description)}</div>\n<DemoPreview title="${title}" source="${encodeURIComponent(
-          md.render(`\`\`\` ${fileExtname.slice(1)}\n${source}\`\`\``),
-        )}" raw-source="${encodeURIComponent(
-          source,
-        )}" path="${sourceFile}">
-        <template #source>${sourceCode}</template>`
+        return `<div>${md.render(description)}</div>\n<DemoPreview raw-source="${encodeURIComponent(rawSource)}">
+        <template #source>${source}</template>
+        <template #code>${md.render(code)}</template>`
       }
       else {
         return '</DemoPreview>\n'
       }
     },
   }
-}
-
-function parseComponentPath(filePath: string) {
-  const fileExtname = filePath.match(/\.[^/.]+$/)?.[0] || ''
-  const withoutExtension = filePath.replace(fileExtname, '')
-  const componentName = `ep${withoutExtension.replace(/\//g, '-')}-${fileExtname.slice(1)}`
-  return { componentName, fileExtname }
 }
 
 export default createDemoContainer

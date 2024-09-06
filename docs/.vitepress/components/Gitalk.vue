@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
 import { useRoute } from 'vitepress'
+import 'gitalk/dist/gitalk.css'
 
 const route = useRoute()
 

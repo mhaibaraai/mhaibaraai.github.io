@@ -82,8 +82,8 @@ export default antfu({
 2. 添加 `vite.config.ts` 文件
 
    ```ts
-   import { defineConfig } from 'vite'
    import { createUnocssPlugin } from 'unocss/vite'
+   import { defineConfig } from 'vite'
 
    export default defineConfig({
      plugins: [
@@ -127,8 +127,8 @@ export default antfu({
 3. 更新 theme 配置文件 `theme/index.ts` ,注册 `shiki-twoslash` 插件，导入 css 样式
 
    ```ts twoslash
-   import type { EnhanceAppContext } from 'vitepress'
    import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
+   import type { EnhanceAppContext } from 'vitepress'
    import '@shikijs/vitepress-twoslash/style.css'
 
    export default {

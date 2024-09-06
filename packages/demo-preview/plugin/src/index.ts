@@ -1,9 +1,9 @@
 import { join } from 'node:path'
-import type MarkdownIt from 'markdown-it'
-import type { MarkdownEnv } from 'vitepress'
 import Renderer from 'markdown-it/lib/renderer.mjs'
-import type Token from 'markdown-it/lib/token.mjs'
 import mdContainer from 'markdown-it-container'
+import type MarkdownIt from 'markdown-it'
+import type Token from 'markdown-it/lib/token.mjs'
+import type { MarkdownEnv } from 'vitepress'
 import createDemoContainer from './demo'
 
 export interface ContainerParams {
@@ -29,9 +29,9 @@ export interface ContainerParams {
 
 export interface ContainerOptions extends ContainerParams {
   RE: RegExp
-  fileExtname: string
+  filepath: string
   componentName: string
-  sourceFile: string
+  useCodeGroup: boolean
   useClientOnly: boolean
 }
 
@@ -47,14 +47,26 @@ export interface ContainerOpts {
   ): string
 }
 
+export interface FilesOptions {
+  filepath: string
+  extension: string
+  region: string
+  lines: string
+  lang: string
+  attrs: string
+  title: string
+  rawSource: string
+  rawCode: string
+}
+
 const defaultContainerParams: ContainerOptions = {
   marker: ':',
   root: join(process.cwd(), 'examples'),
   name: 'demo',
   RE: /./,
-  fileExtname: 'vue',
+  filepath: '',
   componentName: '',
-  sourceFile: '',
+  useCodeGroup: false,
   useClientOnly: false,
 }
 

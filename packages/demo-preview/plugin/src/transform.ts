@@ -1,6 +1,6 @@
 import { join } from 'node:path'
-import { MarkdownEnv } from 'vitepress'
 import { camelize, capitalize } from '@movk-repo/utils'
+import { MarkdownEnv } from 'vitepress'
 import { ContainerOptions } from '.'
 
 const scriptLangTsRE = /<\s*script[^>]+\blang=['"]ts['"][^>]*/
@@ -8,8 +8,8 @@ const scriptSetupRE = /<\s*script[^>]+\bsetup\b[^>]*/
 const scriptSetupCommonRE = /<\s*script\s+(setup|lang='ts'|lang="ts")?\s*(setup|lang='ts'|lang="ts")?\s*>/
 
 export function transformScriptSetup(env: MarkdownEnv, options: ContainerOptions) {
-  const { root, useClientOnly, componentName, sourceFile } = options
-  const componentPath = join(root, sourceFile)
+  const { root, useClientOnly, componentName, filepath } = options
+  const componentPath = join(root, filepath)
   const _componentName = capitalize(camelize(componentName))
 
   const scriptsCode = env.sfcBlocks!.scripts

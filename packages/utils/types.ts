@@ -3,11 +3,11 @@ import { isNil } from 'lodash-unified'
 
 export {
   isArray,
+  isDate,
   isFunction,
   isObject,
-  isString,
-  isDate,
   isPromise,
+  isString,
   isSymbol,
 } from '@vue/shared'
 export { isVNode } from 'vue'
