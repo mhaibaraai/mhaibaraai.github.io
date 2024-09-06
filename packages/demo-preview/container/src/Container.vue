@@ -2,17 +2,13 @@
 import { Message } from '@movk-repo/components'
 import { useCopyCode, useNamespace } from '@movk-repo/shared'
 import { ref } from 'vue'
-import SourceCode from './components/SourceCode.vue'
+import CollapseTransition from './components/CollapseTransition.vue'
 import CaretTop from './icons/CaretTop.vue'
 import Code from './icons/Code.vue'
 import Copy from './icons/Copy.vue'
-import CollapseTransition from './components/CollapseTransition.vue'
 
 const props = defineProps<{
-  title: string
-  path: string
   rawSource: string
-  source: string
 }>()
 
 const ns = useNamespace('example')
@@ -60,7 +56,9 @@ async function copyCode() {
       <Code @click="sourceVisible = !sourceVisible" />
     </div>
     <CollapseTransition>
-      <SourceCode :visible="sourceVisible" :source="source" />
+      <div v-show="sourceVisible" :class="ns.e('source-wrapper')">
+        <slot name="code" />
+      </div>
     </CollapseTransition>
 
     <Transition name="movk-fade-in-linear">

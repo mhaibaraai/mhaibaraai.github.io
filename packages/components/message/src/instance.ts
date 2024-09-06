@@ -1,6 +1,6 @@
+import { Mutable } from '@movk-repo/utils'
 import { shallowReactive } from 'vue'
 import type { ComponentPublicInstance, VNode } from 'vue'
-import { Mutable } from '@movk-repo/utils'
 import type { MessageHandler, MessageProps } from './message'
 
 export interface MessageContext {

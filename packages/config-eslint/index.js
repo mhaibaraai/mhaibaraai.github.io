@@ -13,6 +13,8 @@ export default function combine(...configs) {
       'node/prefer-global/process': 'off',
       'ts/no-this-alias': 'off',
       'ts/consistent-type-imports': 'off',
+      'regexp/optimal-quantifier-concatenations': 'off',
+      'regexp/no-useless-non-capturing-group': 'off',
     },
   })
 }

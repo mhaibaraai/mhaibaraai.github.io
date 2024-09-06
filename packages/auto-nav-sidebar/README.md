@@ -26,8 +26,8 @@ pnpm add @movk-repo/vitepress-plugin-auto-nav-sidebar
 在 `.vitepress/config.ts` 中添加插件
 
 ```ts twoslash
-import { defineConfig } from 'vite'
 import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
@@ -195,8 +195,8 @@ docs
 下面是一个配置示例：
 
 ```ts twoslash
-import { defineConfig } from 'vite'
 import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [

@@ -1,10 +1,10 @@
 import { join } from 'node:path'
-import type { Plugin } from 'vite'
 import fse from 'fs-extra'
+import type { Plugin } from 'vite'
 import type { DefaultTheme } from 'vitepress'
 import { debounce } from './debounce'
-import type { ExtendedSidebarItem, ExtendedSidebarMulti, Options, UserConfig } from './type'
 import { extractDateFromFrontmatter, extractOrderFromFileName, extractOrderFromFrontmatter, extractTitleFromFileHeading, extractTitleFromFrontmatter, isIgnore, readFile, sortMenusByDate, sortMenusByKey } from './utils'
+import type { ExtendedSidebarItem, ExtendedSidebarMulti, Options, UserConfig } from './type'
 
 let options: Partial<Options> = {}
 

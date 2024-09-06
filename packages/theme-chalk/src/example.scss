@@ -5,6 +5,17 @@
   border: 1px solid getCssVar('border-color');
   border-radius: getCssVar('border-radius-base');
 
+  .vp-code-group {
+    margin-top: 0;
+  }
+
+  @include e('source-wrapper') {
+    [class*='language-'] {
+      margin: 0 !important;
+      border-radius: 0 !important;
+    }
+  }
+
   @include e('showcase') {
     padding: 1.5rem;
     margin: 0.5px;
