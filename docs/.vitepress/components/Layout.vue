@@ -44,7 +44,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
   <DefaultTheme.Layout>
     <template #nav-bar-title-after>
-      <Visitor />
+      <!-- <Visitor /> -->
     </template>
     <template #doc-after>
       <Gitalk :key="Date.now()" />

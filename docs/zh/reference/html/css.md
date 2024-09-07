@@ -1,6 +1,6 @@
-# Css
+# CSS
 
-## CSS 变量
+## 变量
 
 - 有两个变量 `--primary-color` 和 `--secondary-color`，使用其中一个作为背景色。
 

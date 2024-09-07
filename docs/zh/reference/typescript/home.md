@@ -1,12 +1,4 @@
-# Vue
-
-## vite + vue3 项目打包失败
-
-Missing "./preload-helper" export in "vite" package
-
-::: tip 解决方法
-搜索 `vite/preload-helper` 替换为 `\0vite/preload-helper`
-:::
+# 学习记录
 
 ## 在 npm 包或 UMD 库中扩展全局变量
 
@@ -45,21 +37,3 @@ return jsencrypt.encrypt(msg)
 ```
 
 :::
-
-## vue-element-admin 安装第三包（npm install）时报错
-
-ls-remote -h -t git://github.com/adobe-webplatform/eve.git
-
-::: tip 解决方法
-
-- 修改Git的协议（ssh 替换为 https）
-
-```sh
-git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
-```
-
-- 切换镜像网站
-
-```sh
-git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.com/"
-```
