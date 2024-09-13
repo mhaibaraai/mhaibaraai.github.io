@@ -43,7 +43,9 @@
   },
   "scripts": {
     "build": "tsup",
-    "stub": "tsup --watch"
+    "stub": "tsup --watch",
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm run clean"
   },
   "peerDependencies": {
     "vitepress": "^1.0.0-rc.45"

@@ -1,9 +1,9 @@
 import { DemoPreviewContainer } from '@movk-repo/demo-preview-container'
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-import DefaultTheme from 'vitepress/theme'
+import Layout from '~components/MVPLayout.vue'
 
+import DefaultTheme from 'vitepress/theme'
 import type { EnhanceAppContext } from 'vitepress'
-import Layout from '../components/Layout.vue'
 import './main'
 
 let homePageStyle: HTMLStyleElement | undefined

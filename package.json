@@ -11,14 +11,16 @@
   "scripts": {
     "docs": "pnpm -C docs run dev",
     "docs:build": "pnpm -C docs run build",
-    "turbo:lint": "turbo lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build:packages": "turbo build --filter='./packages/**'",
+    "build": "turbo build",
+    "build:packages": "turbo build --filter='./packages/**' --parallel",
+    "build:internal": "turbo build --filter='./internal/**' --parallel",
     "release": "bumpp -r",
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
   "dependencies": {
+    "@movk-repo/build-utils": "workspace:*",
     "@movk-repo/components": "workspace:*",
     "@movk-repo/constants": "workspace:*",
     "@movk-repo/eslint-config": "workspace:*",
@@ -39,10 +41,12 @@
     "bumpp": "^9.4.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.2.4",
     "turbo": "^2.0.6",
     "unplugin-auto-import": "^0.18.2",
+    "unplugin-icons": "^0.19.3",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.1"
   }

@@ -15,10 +15,10 @@
 
 ## 📦 安装
 
-| 包名                                                                                                 | 版本                                                |
-| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| [@movk-repo/demo-preview-plugin](https://www.npmjs.com/package/@movk-repo/demo-preview-plugin)       | <Badges name="@movk-repo/demo-preview-plugin" />    |
-| [@movk-repo/demo-preview-container](https://www.npmjs.com/package/@movk-repo/demo-preview-container) | <Badges name="@movk-repo/demo-preview-container" /> |
+| 包名                                                                                                 | 版本                                                   |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [@movk-repo/demo-preview-plugin](https://www.npmjs.com/package/@movk-repo/demo-preview-plugin)       | <MVPBadges name="@movk-repo/demo-preview-plugin" />    |
+| [@movk-repo/demo-preview-container](https://www.npmjs.com/package/@movk-repo/demo-preview-container) | <MVPBadges name="@movk-repo/demo-preview-container" /> |
 
 推荐使用 `pnpm` 安装，以获得更快的安装速度。
 

@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev --host",
+    "dev": "pnpm run clean && vitepress dev --host",
     "build": "vitepress build",
     "serve": "vitepress serve",
-    "clean": "rm -rf .vitepress/dist",
+    "clean": "rimraf auto-imports.d.ts components.d.ts .vitepress/dist",
     "prebuild": "pnpm run clean"
   },
   "dependencies": {

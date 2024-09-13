@@ -29,7 +29,7 @@
     "package.json"
   ],
   "scripts": {
-    "dev": "vite build --watch",
+    "stub": "vite build --watch",
     "build": "vite build",
     "clean": "rm -rf dist",
     "prebuild": "pnpm run clean"

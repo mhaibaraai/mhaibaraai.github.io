@@ -3,7 +3,7 @@ order: 4
 title: 自动生成侧边栏和导航栏
 ---
 
-<Badges name="@movk-repo/vitepress-plugin-auto-nav-sidebar"/>
+<MVPBadges name="@movk-repo/vitepress-plugin-auto-nav-sidebar"/>
 
 <!-- @include: ../../../packages/auto-nav-sidebar/README.md -->
 

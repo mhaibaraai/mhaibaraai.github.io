@@ -3,12 +3,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
-      "~c/*": [
-        "src/components/*"
-      ],
       "@movk-repo/*": [
         "packages/*"
       ]
