@@ -18,11 +18,11 @@ defineProps<{
   <VPLink class="MovkFeature" :href="link" :rel="rel" :target="target" :no-icon="true" :tag="link ? 'a' : 'div'">
     <article class="box">
       <div v-if="typeof icon === 'object' && icon.wrap" class="icon">
-        <VPImage :image="icon" :alt="icon.alt" :height="icon.height || 48" :width="icon.width || 48" />
+        <VPImage :image="icon" :alt="icon.alt" :height="icon.height || 32" :width="icon.width || 32" />
       </div>
       <VPImage
-        v-else-if="typeof icon === 'object'" :image="icon" :alt="icon.alt" :height="icon.height || 48"
-        :width="icon.width || 48"
+        v-else-if="typeof icon === 'object'" :image="icon" :alt="icon.alt" :height="icon.height || 32"
+        :width="icon.width || 32"
       />
       <div v-else-if="icon" class="icon" v-html="icon" />
       <h5 class="title truncate" v-html="title" />
@@ -70,18 +70,18 @@ defineProps<{
 }
 
 .box > :deep(.VPImage) {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   border-radius: 6px;
   background-color: var(--vp-c-default-soft);
-  width: 48px;
-  height: 48px;
+  width: 2rem;
+  height: 2rem;
   font-size: 24px;
   transition: background-color 0.25s;
 }

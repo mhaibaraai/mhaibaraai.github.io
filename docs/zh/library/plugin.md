@@ -6,11 +6,6 @@ features:
       - title: tree-handle-lib
         details: 树形数据处理库
         link: https://www.npmjs.com/package/tree-handle-lib
-  - title: 拖拽
-    items:
-      - title: vue-draggable-next
-        details: 基于 Sortable.js 的 Vue 3 拖拽组件
-        link: https://github.com/anish2690/vue-draggable-next
   - title: Vue
     items:
       - title: unplugin-auto-import
@@ -22,6 +17,9 @@ features:
       - title: unplugin-icons
         details: 自动导入图标
         link: https://github.com/unplugin/unplugin-icons
+      - title: vue-draggable-next
+        details: 基于 Sortable.js 的 Vue 3 拖拽组件
+        link: https://github.com/anish2690/vue-draggable-next
   - title: Arcgis for js
     items:
       - title: '@vuesri/core'
@@ -35,15 +33,23 @@ features:
         link: https://www.npmjs.com/package/@types/terraformer__arcgis
       - title: '@turf/turf'
         details: 用于空间分析的模块化工具集
-        link: https://turfjs.org/docs/api/along
+        link: https://github.com/Turfjs/turf
       - title: geojson
         details: GeoJSON 对象的 JavaScript 实现
         link: https://github.com/caseycesari/GeoJSON.js
-  - title: Echarts
+  - title: 可视化
     items:
       - title: echarts
         details: 百度开源的数据可视化库
-        link: https://echarts.apache.org/zh/index.html
+        link: https://github.com/apache/echarts
+      - title: vue-echarts
+        details: 基于 ECharts 的 Vue 组件库
+        link: https://github.com/ecomfe/vue-echarts
+  - title: CSS
+    items:
+      - title: TinyColor
+        details: 一个快速、小巧的 JavaScript 颜色处理库
+        link: https://github.com/bgrins/TinyColor
 ---
 
 # {{ $frontmatter.title }}
