@@ -9,8 +9,10 @@ order: 2
 
 使用 [`TinyColor`](https://bgrins.github.io/TinyColor/) 库生成随机颜色
 
-::: demo
+::: demo {code-group}
 
 /echarts/RandomColor.vue
+
+/echarts/VChart.vue
 
 :::
