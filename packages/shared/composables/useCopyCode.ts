@@ -1,3 +1,10 @@
+/**
+ * 将文本复制到剪贴板的异步函数。
+ *
+ * @param text 要复制到剪贴板的文本
+ * @returns 一个 Promise，当文本成功复制到剪贴板时解析
+ */
+
 export async function useCopyCode(text: string) {
   try {
     return navigator.clipboard.writeText(text)

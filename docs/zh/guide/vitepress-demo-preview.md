@@ -114,9 +114,10 @@ title: 组件预览与展示代码
 ### 代码组
 
 - 配置语法参考 [VitePress 官方文档：代码组](https://vitepress.dev/zh/guide/markdown#code-groups)
+- `{code-group}` 选项或文件路径数量大于 1 时，渲染代码组
 
 ```markdown
-::: demo 这是一个代码组的示例 {code-group ClientOnly}
+::: demo 这是一个代码组的示例,`{code-group}` 非必传 {code-group ClientOnly}
 
 <!-- 行号 ,自定义源语言-->
 
@@ -133,7 +134,7 @@ title: 组件预览与展示代码
 :::
 ```
 
-::: demo 这是一个代码组的示例 {code-group ClientOnly}
+::: demo 这是一个代码组的示例，`{code-group}` 非必传 {code-group ClientOnly}
 
 /basic/non-ssr.vue { vue 1,4}
 
@@ -151,8 +152,4 @@ title: 组件预览与展示代码
 
 ## 🗓️ 更新日志
 
-::: details 点击查看更新日志
-
 <!-- @include: ../../../packages/demo-preview/CHANGELOG.md -->
-
-:::

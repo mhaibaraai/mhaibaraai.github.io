@@ -1,5 +1,4 @@
 ---
-title: 常用网站
 features:
   - title: Arcgis
     items:
@@ -101,6 +100,6 @@ features:
         link: http://www.webgl3d.cn/
 ---
 
-# {{ $frontmatter.title }}
+# 常用网站
 
 <MVPPlugins/>

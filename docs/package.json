@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm run clean && vitepress dev --host",
+    "dev": "pnpm run clean && vitepress dev --host --port 36666",
     "build": "vitepress build",
     "serve": "vitepress serve",
     "clean": "rimraf auto-imports.d.ts components.d.ts .vitepress/dist",

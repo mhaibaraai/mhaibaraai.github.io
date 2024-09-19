@@ -5,7 +5,7 @@ import type { DefaultTheme } from 'vitepress/theme'
 
 defineProps<{
   icon?: DefaultTheme.FeatureIcon
-  title: string
+  title?: string
   details?: string
   link?: string
   linkText?: string

@@ -1,3 +1,7 @@
+### 1.1.1 (Plugin)
+
+- 简化了 `Plugin` 插件的代码组判断：当携带参数 `code-group` 或文件路径数量大于 1 时，渲染代码组
+
 ### 1.1.0 (Plugin、Container)
 
 - 添加 `VitePress` 默认扩展支持

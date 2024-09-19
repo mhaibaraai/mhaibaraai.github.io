@@ -38,7 +38,7 @@ function createDemoContainer(md: MarkdownIt, options: ContainerOptions): Contain
         let code = rawCode
 
         // code-group
-        if (tokens[idx].attrGet('code-group') === '') {
+        if (tokens[idx].attrGet('code-group') === '' || files.length > 1) {
           const groupCode = files.map(file => file.rawCode).join('\n')
           code = `::: code-group\n${groupCode}\n:::`
         }

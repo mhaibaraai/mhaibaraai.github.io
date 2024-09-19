@@ -1,5 +1,4 @@
 ---
-title: 常用插件库
 features:
   - title: 数据处理
     items:
@@ -52,6 +51,6 @@ features:
         link: https://github.com/bgrins/TinyColor
 ---
 
-# {{ $frontmatter.title }}
+# 常用插件库
 
 <MVPPlugins/>
