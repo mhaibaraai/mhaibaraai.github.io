@@ -1,7 +1,7 @@
 import type MarkdownIt from 'markdown-it'
+import type { ContainerOptions, ContainerOpts, FilesOptions } from '.'
 import { transformScriptSetup } from './transform'
 import { parseComponentPath, rawPathToToken } from './utils'
-import type { ContainerOptions, ContainerOpts, FilesOptions } from '.'
 
 function createDemoContainer(md: MarkdownIt, options: ContainerOptions): ContainerOpts {
   const { RE, root, marker, name } = options

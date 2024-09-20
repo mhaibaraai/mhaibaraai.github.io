@@ -1,6 +1,6 @@
-import { computed, getCurrentInstance, inject, ref, unref } from 'vue'
-
 import type { InjectionKey, Ref } from 'vue'
+
+import { computed, getCurrentInstance, inject, ref, unref } from 'vue'
 
 export const defaultNamespace = 'movk'
 const statePrefix = 'is-'

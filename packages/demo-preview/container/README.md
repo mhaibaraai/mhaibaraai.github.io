@@ -45,13 +45,24 @@ export default defineConfig({
 })
 ```
 
-### 添加容器组件
+### 注册容器组件
 
-在 `.vitepress/theme/index.ts` 中添加容器组件
+在 `.vitepress/theme/index.ts` 中注册容器组件
+
+- [如何在 VitePress 中注册组件](https://vitepress.dev/zh/guide/extending-default-theme#registering-global-components)
 
 ```ts twoslash
 import { DemoPreviewContainer } from '@movk-repo/demo-preview-container'
+import { EnhanceAppContext } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 import '@movk-repo/demo-preview-container/dist/style.css'
+
+export default {
+  extends: DefaultTheme,
+  async enhanceApp({ app }: EnhanceAppContext) {
+    app.component('DemoPreview', DemoPreviewContainer)
+  },
+}
 ```
 
 ## 🛠️ 配置
@@ -68,7 +79,19 @@ import '@movk-repo/demo-preview-container/dist/style.css'
 - 类型: `string`
 - 默认值: `/examples`
 
-示例文件所在的根目录，默认值为 `/examples`。
+示例文件所在的根目录，默认值为 `/examples`，文件目录结构如下：
+
+```text
+.
+├─ docs
+│  ├─ .vitepress
+│  │  ├─ theme
+│  │  │  └─ index.ts
+│  │  └─ config.ts
+│  └─ index.md
+├─ examples
+└─ package.json
+```
 
 ### name
 

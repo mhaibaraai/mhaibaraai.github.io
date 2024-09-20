@@ -1,4 +1,4 @@
-import { isClient, isFunction, isString, isVNode, Mutable } from '@movk-repo/utils'
+import { isClient, isFunction, isString, isVNode, Mutable } from 'element-plus/es/utils'
 import { createApp, render } from 'vue'
 import { instances, MessageContext } from './src/instance'
 import { MessageFn, MessageHandler, MessageOptions, MessageParams, MessageProps } from './src/message'

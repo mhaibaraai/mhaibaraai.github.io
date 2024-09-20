@@ -3,9 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@movk-repo/*": [
-        "packages/*"
-      ]
+      "@movk-repo/*": ["packages/*"],
+      "@movk-repo/shared": ["packages/shared/src"]
     },
     "types": [
       "node",

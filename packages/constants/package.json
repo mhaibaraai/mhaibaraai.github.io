@@ -1,8 +1,0 @@
-{
-  "name": "@movk-repo/constants",
-  "version": "1.0.0",
-  "private": true,
-  "author": "yixuan",
-  "license": "MIT",
-  "main": "index.ts"
-}

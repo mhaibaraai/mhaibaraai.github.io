@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { EVENT_CODE } from '@movk-repo/constants'
+import type { CSSProperties } from 'vue'
 import { useNamespace } from '@movk-repo/shared'
 import { useEventListener, useResizeObserver, useTimeoutFn } from '@vueuse/core'
+import { EVENT_CODE } from 'element-plus/es/constants'
 import { computed, onMounted, ref } from 'vue'
-import type { CSSProperties } from 'vue'
 import CircleCloseFilled from '../icons/CircleCloseFilled.vue'
 import InfoFilled from '../icons/InfoFilled.vue'
 import SuccessFilled from '../icons/SuccessFilled.vue'

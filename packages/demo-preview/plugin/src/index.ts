@@ -1,9 +1,9 @@
-import { join } from 'node:path'
-import Renderer from 'markdown-it/lib/renderer.mjs'
-import mdContainer from 'markdown-it-container'
 import type MarkdownIt from 'markdown-it'
 import type Token from 'markdown-it/lib/token.mjs'
 import type { MarkdownEnv } from 'vitepress'
+import { join } from 'node:path'
+import Renderer from 'markdown-it/lib/renderer.mjs'
+import mdContainer from 'markdown-it-container'
 import createDemoContainer from './demo'
 
 export interface ContainerParams {
