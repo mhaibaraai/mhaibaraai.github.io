@@ -127,8 +127,8 @@ export default antfu({
 3. 更新 theme 配置文件 `theme/index.ts` ,注册 `shiki-twoslash` 插件，导入 css 样式
 
    ```ts twoslash
-   import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
    import type { EnhanceAppContext } from 'vitepress'
+   import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
    import '@shikijs/vitepress-twoslash/style.css'
 
    export default {

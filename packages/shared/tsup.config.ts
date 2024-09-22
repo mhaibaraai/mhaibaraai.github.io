@@ -2,9 +2,7 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entryPoints: [
-    './src/index.ts',
-    './src/utils/index.ts',
-    './src/composables/index.ts',
+    'src/index.ts',
   ],
   external: [
     'vue',

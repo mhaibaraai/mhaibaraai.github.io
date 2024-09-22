@@ -1,8 +1,8 @@
 {
   "name": "@movk-repo/shared",
   "type": "module",
-  "version": "1.0.0",
-  "packageManager": "pnpm@9.7.1",
+  "version": "0.0.1",
+  "packageManager": "pnpm@9.10.0",
   "description": "Shared utilities for movk",
   "author": "yixuan",
   "license": "MIT",
@@ -12,30 +12,19 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./utils": {
-      "import": "./dist/utils.mjs",
-      "require": "./dist/utils.cjs"
-    },
-    "./composables": {
-      "import": "./dist/composables.mjs",
-      "require": "./dist/composables.cjs"
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json"
+    "dist"
   ],
   "scripts": {
     "stub": "tsup --watch",
-    "build": "tsup",
-    "clean": "rm -rf dist",
-    "prebuild": "pnpm run clean"
+    "build": "tsup"
   },
   "peerDependencies": {
     "vue": "^3.2.0"

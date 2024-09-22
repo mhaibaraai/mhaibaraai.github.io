@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { DefaultTheme } from 'vitepress/theme'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import type { DefaultTheme } from 'vitepress/theme'
 
 defineProps<{
   icon?: DefaultTheme.FeatureIcon

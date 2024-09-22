@@ -2,10 +2,6 @@
   "extends": "@movk-repo/typescript-config/vite.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@movk-repo/*": ["packages/*"],
-      "@movk-repo/shared": ["packages/shared/src"]
-    },
     "types": [
       "node",
       "vite/client",
