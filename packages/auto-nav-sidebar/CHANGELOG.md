@@ -1,5 +1,9 @@
-## Features
+## 1.0.1 (2024-09-23)
 
-### 1.0.0
+Performance Improvements
 
-- Initial release
+- 优化了打包文件
+
+## 1.0.0 (2024-09-1)
+
+Initial release

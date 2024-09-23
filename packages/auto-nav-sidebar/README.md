@@ -294,3 +294,7 @@ export default defineConfig({
 ```
 
 :::
+
+## 🗓️ 更新日志
+
+[点击查看更新日志](https://mhaibaraai.github.io/zh/guide/auto-sidebar-nav#changelog)
