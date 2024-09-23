@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vitepress dev --host --port 36666",
     "build": "vitepress build",
-    "serve": "vitepress serve",
-    "clean": "rimraf auto-imports.d.ts components.d.ts .vitepress/dist",
-    "prebuild": "pnpm run clean"
+    "preview": "vitepress preview"
   },
   "dependencies": {
     "@movk-repo/demo-preview-container": "workspace:*",

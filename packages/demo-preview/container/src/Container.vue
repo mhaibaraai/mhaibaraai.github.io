@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { useCopyCode, useNamespace } from '@movk-repo/shared'
-import { ElMessage } from 'element-plus'
+import { useCopyCode, useNamespace } from '@movk-repo/shared/hooks'
 import { ref } from 'vue'
+import CollapseTransition from './CollapseTransition.vue'
 import CaretTop from './icons/CaretTop.vue'
 import Code from './icons/Code.vue'
 import Copy from './icons/Copy.vue'
+import { Message } from './message'
 
 const props = defineProps<{
   rawSource: string
@@ -27,13 +28,13 @@ function onSourceVisibleKeydown(e: KeyboardEvent) {
 async function copyCode() {
   try {
     await useCopyCode(decodeURIComponent(props.rawSource))
-    ElMessage({
+    Message({
       type: 'success',
       message: '代码已复制到剪贴板',
     })
   }
   catch (e) {
-    ElMessage({
+    Message({
       type: 'error',
       message: '复制失败',
     })
@@ -54,11 +55,11 @@ async function copyCode() {
       <Copy @click="copyCode" @keydown.prevent.enter="copyCode" @keydown.prevent.space="copyCode" />
       <Code @click="sourceVisible = !sourceVisible" />
     </div>
-    <ElCollapseTransition>
+    <CollapseTransition>
       <div v-show="sourceVisible" :class="ns.e('source-wrapper')">
         <slot name="code" />
       </div>
-    </ElCollapseTransition>
+    </CollapseTransition>
 
     <Transition name="movk-fade-in-linear">
       <div

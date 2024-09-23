@@ -16,6 +16,7 @@
     "packages/**/*"
   ],
   "exclude": [
-    "docs/snippets"
+    "docs/snippets",
+    "scripts"
   ]
 }

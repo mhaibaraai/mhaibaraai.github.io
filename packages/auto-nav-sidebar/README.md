@@ -201,18 +201,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     VitePressPluginAutoNavSidebar({
-      documentRootPath: '/',
-      ignoreIndexItems: true,
-      excludeFiles: [/.*demo.*/],
-      excludeFolders: ['demo'],
-      removeTitlePrefix: /^\d+-/,
-      useTitleFromFileHeading: true,
-      useTitleFromFrontmatter: true,
-      useSortFromTitle: true,
+      documentRootPath: 'zh',
       sortMenusBy: 'frontmatterOrder',
-      sortMenusOrder: 'asc',
-      collapsed: true,
-      debugLog: true,
     }),
   ],
 })
