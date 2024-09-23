@@ -1,8 +1,8 @@
-# CSS
+# CSS {#start}
 
 > 样式、布局、动画等相关内容
 
-## 变量
+## 变量 {#note-1}
 
 - 有两个变量 `--primary-color` 和 `--secondary-color`，使用其中一个作为背景色。
 
@@ -49,7 +49,7 @@ body[data-theme='secondary'] {
 </body>
 ```
 
-## Flexbox 布局盒子的子元素根据数量宽高自适应
+## Flexbox 布局盒子的子元素根据数量宽高自适应 {#note-2}
 
 ```html
 <style>

@@ -1,6 +1,10 @@
-# 浙政钉
+---
+order: 1
+---
 
-## H5 应用 Console 调试功能
+# 浙政钉开发 {#start}
+
+## H5 应用 Console 调试功能 {#console}
 
 > 浙政钉 `H5` 应用开发中，为了方便调试，可以在页面中加入 `VConsole` 调试工具，方便查看日志、调试代码。
 
@@ -14,7 +18,7 @@
 npm install vconsole
 ```
 
-### Pc 端
+### Pc 端 {#pc}
 
 ```js
 import VConsole from 'vconsole'
@@ -32,7 +36,7 @@ document.addEventListener('keydown', (e) => {
 })
 ```
 
-### Ios 与 Android 端
+### Ios 与 Android 端 {#ios-android}
 
 ```js
 let vConsole = null
@@ -52,7 +56,7 @@ function handleTouchEnd() {
 }
 ```
 
-## 浙政钉应用埋点
+## 浙政钉应用埋点 {#gdt}
 
 埋点需要三个参数
 
@@ -60,7 +64,7 @@ function handleTouchEnd() {
 - `bid` ：`sapp_name`\_zzdpro
 - `sapp_id` ：应用ID（可以去浙政钉支持群咨询）、[官网查看埋点参数](https://yida-pro.ding.zj.gov.cn/alibaba/web/APP_VTZ4TZZSGZXB37IUIUM6/inst/homepage/#/REPORT-GWLBVYNV25OXGEY68AOOWR7GIXSVZ2B75HH1SLC6)
 
-### 路由配置
+### 路由配置 {#router}
 
 ::: code-group
 
@@ -150,11 +154,11 @@ export default function aplus_queue_push(
 
 :::
 
-### index.html 配置
+### index.html 配置 {#index}
 
 <<< @/snippets/work/dingtalk/index.html
 
-### 多端应用 index.html 配置
+### 多端应用 index.html 配置 {#index-multi}
 
 <<< @/snippets/work/dingtalk/index-multi.html
 

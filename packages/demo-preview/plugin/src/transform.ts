@@ -1,5 +1,5 @@
 import { join } from 'node:path'
-import { camelize, capitalize } from '@movk-repo/utils'
+import { camelize, capitalize } from '@vue/shared'
 import { MarkdownEnv } from 'vitepress'
 import { ContainerOptions } from '.'
 

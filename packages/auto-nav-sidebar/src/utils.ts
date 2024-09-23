@@ -1,6 +1,6 @@
+import type { ExtendedSidebarItem } from './type'
 import fse from 'fs-extra'
 import matter from 'gray-matter'
-import type { ExtendedSidebarItem } from './type'
 
 export function isIgnore(filename: string, ignoreFiles: (string | RegExp)[]): boolean {
   return ignoreFiles.some(ignore => (ignore instanceof RegExp) ? ignore.test(filename) : ignore === filename)

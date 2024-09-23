@@ -1,8 +1,8 @@
-# 组件预览与展示代码
+# 组件预览与展示代码 {#start}
 
 专为增强 `Markdown` 文档设计，特别适用于 `Vue` 和 `TSX` 组件的实时预览与代码展示，支持自定义容器及 SSR 兼容。
 
-## ✨ 特点
+## ✨ 特点 {#features}
 
 - **自定义容器**：支持灵活配置容器符号和名称，满足不同文档结构的需求。
 - **组件支持**：兼容 `.vue` 和 `.tsx` 组件，轻松引入多种前端框架示例。
@@ -13,7 +13,7 @@
 - **高效渲染**：基于 VitePress 默认的服务端渲染机制，确保示例演示内容快速加载，提升用户体验和搜索引擎优化（SEO）。
 - **暗黑模式兼容**：原生支持暗黑模式，为用户提供更好的视觉体验。
 
-## 📦 安装
+## 📦 安装 {#install}
 
 | 包名                                                                                                 | 版本                                                   |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
@@ -26,9 +26,9 @@
 pnpm add @movk-repo/demo-preview-plugin @movk-repo/demo-preview-container
 ```
 
-## 🚀 使用
+## 🚀 使用 {#usage}
 
-### 添加插件
+### 添加插件 {#plugin}
 
 在 `.vitepress/config.ts` 中添加插件
 
@@ -45,16 +45,27 @@ export default defineConfig({
 })
 ```
 
-### 添加容器组件
+### 注册容器组件 {#container}
 
-在 `.vitepress/theme/index.ts` 中添加容器组件
+在 `.vitepress/theme/index.ts` 中注册容器组件
+
+- [如何在 VitePress 中注册组件](https://vitepress.dev/zh/guide/extending-default-theme#registering-global-components)
 
 ```ts twoslash
 import { DemoPreviewContainer } from '@movk-repo/demo-preview-container'
+import { EnhanceAppContext } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 import '@movk-repo/demo-preview-container/dist/style.css'
+
+export default {
+  extends: DefaultTheme,
+  async enhanceApp({ app }: EnhanceAppContext) {
+    app.component('DemoPreview', DemoPreviewContainer)
+  },
+}
 ```
 
-## 🛠️ 配置
+## 🛠️ 配置 {#config}
 
 ### marker
 
@@ -68,7 +79,19 @@ import '@movk-repo/demo-preview-container/dist/style.css'
 - 类型: `string`
 - 默认值: `/examples`
 
-示例文件所在的根目录，默认值为 `/examples`。
+示例文件所在的根目录，默认值为 `/examples`，文件目录结构如下：
+
+```text
+.
+├─ docs
+│  ├─ .vitepress
+│  │  ├─ theme
+│  │  │  └─ index.ts
+│  │  └─ config.ts
+│  └─ index.md
+├─ examples
+└─ package.json
+```
 
 ### name
 

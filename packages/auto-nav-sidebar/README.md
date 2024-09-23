@@ -1,8 +1,8 @@
-# 自动生成侧边栏和导航栏
+# 自动生成侧边栏和导航栏 {#auto-nav-sidebar}
 
 [@movk-repo/vitepress-plugin-auto-nav-sidebar](https://www.npmjs.com/package/@movk-repo/vitepress-plugin-auto-nav-sidebar) 通过扫描文件目录，自动生成侧边栏和导航栏。
 
-## ✨ 特点
+## ✨ 特点 {#features}
 
 - 支持自定义根路径
 - 支持自定义忽略列表，排除文件和文件夹，可正则匹配
@@ -11,9 +11,9 @@
 - 支持删除自定义标签前缀
 - 全局监听 `.md` 文件变化，自动刷新侧边栏和导航栏
 
-## ⚡️ 使用
+## ⚡️ 使用 {#usage}
 
-### 安装插件
+### 安装插件 {#install}
 
 推荐使用 `pnpm` 包管理器
 
@@ -21,7 +21,7 @@
 pnpm add @movk-repo/vitepress-plugin-auto-nav-sidebar
 ```
 
-### 添加插件
+### 添加插件 {#add-plugin}
 
 在 `.vitepress/config.ts` 中添加插件
 
@@ -36,7 +36,7 @@ export default defineConfig({
 })
 ```
 
-## 🛠️ 配置
+## 🛠️ 配置 {#config}
 
 ### documentRootPath
 
@@ -172,7 +172,7 @@ date: 2021-09-01
 
 是否打印日志。如果设置为 `true`，则会在控制台打印生成的 `sidebar` 和 `nav`。
 
-## 📝 示例
+## 📝 示例 {#example}
 
 目录结构：
 
@@ -201,18 +201,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     VitePressPluginAutoNavSidebar({
-      documentRootPath: '/',
-      ignoreIndexItems: true,
-      excludeFiles: [/.*demo.*/],
-      excludeFolders: ['demo'],
-      removeTitlePrefix: /^\d+-/,
-      useTitleFromFileHeading: true,
-      useTitleFromFrontmatter: true,
-      useSortFromTitle: true,
+      documentRootPath: 'zh',
       sortMenusBy: 'frontmatterOrder',
-      sortMenusOrder: 'asc',
-      collapsed: true,
-      debugLog: true,
     }),
   ],
 })

@@ -1,15 +1,15 @@
 {
   "name": "@movk-repo/demo-preview-plugin",
   "type": "module",
-  "version": "1.1.0",
-  "packageManager": "pnpm@9.7.1",
+  "version": "1.1.2",
+  "packageManager": "pnpm@9.11.0",
   "description": "vitepress插件，用于预览markdown文件",
   "author": "yixuan",
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
-  "homepage": "https://mhaibaraai.github.io/guide/vitepress-demo-preview",
+  "homepage": "https://mhaibaraai.github.io/zh/guide/demo-preview",
   "repository": {
     "type": "git",
     "url": "git@github.com:mhaibaraai/mhaibaraai.github.io.git"
@@ -21,18 +21,21 @@
     "vitepress-demo-preview",
     "vitepress-demo-preview-plugin"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json"
+    "dist"
   ],
   "scripts": {
+    "prebuild": "esno ../scripts/copy-readme.ts plugin",
     "stub": "tsup --watch",
-    "build": "tsup",
-    "clean": "rm -rf dist",
-    "prebuild": "pnpm run clean"
+    "build": "tsup"
   },
   "peerDependencies": {
     "markdown-it-container": "^4.0.0",

@@ -7,7 +7,7 @@ export default defineConfig({
     '@types/markdown-it',
     '@types/markdown-it-container',
   ],
-  format: ['cjs', 'esm'],
+  format: ['esm'],
   clean: true,
   dts: true,
   shims: true,

@@ -1,15 +1,15 @@
 {
   "name": "@movk-repo/demo-preview-container",
   "type": "module",
-  "version": "1.1.0",
-  "packageManager": "pnpm@9.7.1",
+  "version": "1.1.1",
+  "packageManager": "pnpm@9.11.0",
   "description": "vitepress插件，用于预览markdown文件",
   "author": "yixuan",
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
-  "homepage": "https://mhaibaraai.github.io/guide/vitepress-demo-preview",
+  "homepage": "https://mhaibaraai.github.io/zh/guide/demo-preview",
   "repository": {
     "type": "git",
     "url": "git@github.com:mhaibaraai/mhaibaraai.github.io.git"
@@ -25,18 +25,19 @@
   "module": "./dist/demo-preview-container.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "package.json"
+    "dist"
   ],
   "scripts": {
+    "prebuild": "esno ../scripts/copy-readme.ts container",
     "stub": "vite build --watch",
-    "build": "vite build",
-    "clean": "rm -rf dist",
-    "prebuild": "pnpm run clean"
+    "build": "vite build"
   },
   "peerDependencies": {
-    "vitepress": "^1.0.0-rc.45",
     "vue": "^3.4.31"
+  },
+  "dependencies": {
+    "@movk-repo/shared": "workspace:*",
+    "@vueuse/core": "^11.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",

@@ -1,8 +1,8 @@
-# Vue
+# Vue {#start}
 
 > 开发技巧、常用组件与插件的总结与实践
 
-## 按需自动导入组件与图标
+## 按需自动导入组件与图标 {#note-1}
 
 > [自动导入 Element Plus 组件和图标](https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5)
 

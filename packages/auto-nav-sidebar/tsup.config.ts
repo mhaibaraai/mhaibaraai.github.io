@@ -10,7 +10,7 @@ export default defineConfig({
     '@types/node',
   ],
   clean: true,
-  format: ['esm', 'cjs'],
+  format: ['esm'],
   dts: true,
   shims: true,
 })

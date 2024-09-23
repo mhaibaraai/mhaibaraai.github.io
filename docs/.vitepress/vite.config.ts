@@ -17,6 +17,7 @@ export default defineConfig({
     alias: {
       '~/': resolve(docRoot, './'),
       '~components': resolve(docRoot, './components'),
+      '~examples': resolve(docRoot, './examples'),
     },
   },
   plugins: [

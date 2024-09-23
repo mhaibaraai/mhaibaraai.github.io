@@ -1,7 +1,7 @@
 import type MarkdownIt from 'markdown-it'
+import type { ContainerOptions, ContainerOpts, FilesOptions } from '.'
 import { transformScriptSetup } from './transform'
 import { parseComponentPath, rawPathToToken } from './utils'
-import type { ContainerOptions, ContainerOpts, FilesOptions } from '.'
 
 function createDemoContainer(md: MarkdownIt, options: ContainerOptions): ContainerOpts {
   const { RE, root, marker, name } = options
@@ -38,7 +38,7 @@ function createDemoContainer(md: MarkdownIt, options: ContainerOptions): Contain
         let code = rawCode
 
         // code-group
-        if (tokens[idx].attrGet('code-group') === '') {
+        if (tokens[idx].attrGet('code-group') === '' || files.length > 1) {
           const groupCode = files.map(file => file.rawCode).join('\n')
           code = `::: code-group\n${groupCode}\n:::`
         }

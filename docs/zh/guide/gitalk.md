@@ -2,9 +2,9 @@
 order: 3
 ---
 
-# 添加 Gitalk 添加评论功能
+# 添加 Gitalk 添加评论功能 {#start}
 
-## 注册 GitHub Application
+## 注册 GitHub Application {#register}
 
 1、首先，你需要在 `github` 上注册一个 [GitHub Application](https://github.com/settings/applications/new) ，填写参考如下：
 
@@ -31,7 +31,7 @@ order: 3
 
 找到 `Client ID` 和 `Client secret` 保存下来，后面会用到。
 
-## 配置 Gitalk
+## 配置 Gitalk {#config}
 
 1、安装 `gitalk` 插件
 

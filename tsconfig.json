@@ -2,11 +2,6 @@
   "extends": "@movk-repo/typescript-config/vite.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@movk-repo/*": [
-        "packages/*"
-      ]
-    },
     "types": [
       "node",
       "vite/client",
@@ -21,6 +16,7 @@
     "packages/**/*"
   ],
   "exclude": [
-    "docs/snippets"
+    "docs/snippets",
+    "scripts"
   ]
 }

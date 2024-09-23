@@ -1,10 +1,10 @@
-# Vue
+# Vue {#start}
 
-## 打包失败 Missing "./preload-helper" export in "vite" package
+## 打包失败 Missing "./preload-helper" export in "vite" package {#error-1}
 
 搜索 `vite/preload-helper` 替换为 `\0vite/preload-helper`
 
-## vue-element-admin 安装第三包（npm install）时报错
+## vue-element-admin 安装第三包（npm install）时报错 {#error-2}
 
 ls-remote -h -t git://github.com/adobe-webplatform/eve.git
 
@@ -20,7 +20,7 @@ git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
 git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.com/"
 ```
 
-## 使用 import.meta.env 获取环境变量提示类型 “ImportMeta” 上不存在属性 “env”
+## 使用 import.meta.env 获取环境变量提示类型 “ImportMeta” 上不存在属性 “env” {#error-3}
 
 在 `tsconfig.json` 中添加 `"types": ["vite/client"]`
 
@@ -37,7 +37,7 @@ git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.c
 - 实际上启用了 Vite 提供的类型支持，这让 TypeScript 能够理解并正确处理 Vite 特有的代码结构，如环境变量访问。这是确保 TypeScript 项目中 Vite 功能正确工作的关键配置。
   :::
 
-## JSX 元素隐式具有类型 "any"，因为不存在接口 "JSX.IntrinsicElements"
+## JSX 元素隐式具有类型 "any"，因为不存在接口 "JSX.IntrinsicElements" 的索引签名 {#error-4}
 
 在 `tsconfig.json` 中添加 `"jsx": "preserve"` 和 `"jsxImportSource": "vue"`
 
@@ -55,7 +55,7 @@ git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.c
 > Starting in Vue 3.4, Vue no longer implicitly registers the global JSX namespace
 > 从 Vue 3.4 开始，Vue 不再隐式注册全局 JSX 命名空间
 
-## Big integer literals are not available in the configured target environment (“chrome87“, “edge88“)
+## Big integer literals are not available in the configured target environment (“chrome87“, “edge88“) {#error-5}
 
 在 `vite.config.ts` 中添加
 

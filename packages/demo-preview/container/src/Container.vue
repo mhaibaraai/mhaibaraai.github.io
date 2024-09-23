@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Message } from '@movk-repo/components'
-import { useCopyCode, useNamespace } from '@movk-repo/shared'
+import { useCopyCode, useNamespace } from '@movk-repo/shared/hooks'
 import { ref } from 'vue'
-import CollapseTransition from './components/CollapseTransition.vue'
+import CollapseTransition from './CollapseTransition.vue'
 import CaretTop from './icons/CaretTop.vue'
 import Code from './icons/Code.vue'
 import Copy from './icons/Copy.vue'
+import { Message } from './message'
 
 const props = defineProps<{
   rawSource: string
