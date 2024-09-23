@@ -1,24 +1,24 @@
-# JavaScript
+# JavaScript {#start}
 
 > ES6+ 语法、常见的工具函数、编程模式等
 
-## js 监听网络返回状态码
+## js 监听网络返回状态码 {#note-1}
 
-### XMLHttpRequest 请求
+### XMLHttpRequest 请求 {#xhr}
 
 <<< @/snippets/javascript/xhr.ts
 
-### Fetch API 请求
+### Fetch API 请求 {#fetch}
 
 <<< @/snippets/javascript/fetch.ts
 
-## Promise 的 resolve 是不可逆的
+## Promise 的 resolve 是不可逆的 {#note-2}
 
 Promise 的 resolve 是不可逆的时，意味着一旦 Promise 被 resolve，就无法再次更改其状态。这是 Promise 设计上的一个关键特性，确保了异步操作的可靠性和一致性。
 
 <<< @/snippets/javascript/promise.ts
 
-## fetch 读取 xml 文件
+## fetch 读取 xml 文件 {#note-3}
 
 ```js
 async function fetchAndEncodeXML() {

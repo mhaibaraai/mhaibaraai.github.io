@@ -1,3 +1,9 @@
+# 1.0.2 (2024-09-23)
+
+Bug Fixes
+
+- 修复了README.md中的错误
+
 ## 1.0.1 (2024-09-23)
 
 Performance Improvements

@@ -2,11 +2,11 @@
 order: 1
 ---
 
-# 快速开始
+# 快速开始 {#start}
 
 [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
-## VitePress 初始化项目
+## VitePress 初始化项目 {#init}
 
 ```sh
 pnpm add -D vitepress
@@ -17,7 +17,7 @@ pnpm vitepress init
 如果使用 Git，应该将 `dist`、`cache`、`node_modules` 等添加到 `.gitignore` 文件中。
 :::
 
-## GitHub Pages 平台部署
+## GitHub Pages 平台部署 {#deploy}
 
 VitePress 链接：<https://vitepress.dev/zh/guide/deploy#github-pages>
 
@@ -38,7 +38,7 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 :::
 
-## 添加 ESLint 规则
+## 添加 ESLint 规则 {#eslint}
 
 从 ESLint v9.0.0 开始，[ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files) 平面配置文件格式将成为默认的配置文件格式。
 
@@ -71,7 +71,7 @@ export default antfu({
 },)
 ```
 
-## 添加 `unocss` 预处理器
+## 添加 `unocss` 预处理器 {#unocss}
 
 1. 安装 `unocss` 依赖
 
@@ -98,7 +98,7 @@ export default antfu({
    import 'virtual:uno.css'
    ```
 
-## 在中启用 TypeScript Twoslash（类型悬停显示）
+## 在中启用 TypeScript Twoslash（类型悬停显示） {#twoslash}
 
 > 详细配置请参考 [shiki-twoslash](https://shiki-zh-docs.vercel.app/packages/vitepress)
 

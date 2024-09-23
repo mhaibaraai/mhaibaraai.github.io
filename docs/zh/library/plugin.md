@@ -51,6 +51,6 @@ features:
         link: https://github.com/bgrins/TinyColor
 ---
 
-# 常用插件库
+# 常用插件库 {#start}
 
 <MVPPlugins/>

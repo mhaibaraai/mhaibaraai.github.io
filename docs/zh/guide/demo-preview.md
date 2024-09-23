@@ -5,9 +5,9 @@ title: 组件预览与展示代码
 
 <!-- @include: ../../../packages/demo-preview/README.md -->
 
-## 📝 示例
+## 📝 示例 {#example}
 
-### Vue 组件
+### Vue 组件 {#vue}
 
 ```markdown
 ::: demo 这是一个预览 `Vue` 组件简介的示例
@@ -23,7 +23,7 @@ title: 组件预览与展示代码
 
 :::
 
-### TypeScript 组件
+### TypeScript 组件 {#typescript}
 
 ```markdown
 ::: demo 这是一个预览 `TypeScript` 组件的示例
@@ -39,7 +39,7 @@ title: 组件预览与展示代码
 
 :::
 
-### 兼容非 SSR 组件
+### 兼容非 SSR 组件 {#non-ssr}
 
 ```markdown
 ::: demo 这是一个`Teleport` 被元素加 `ElTooltip` 组件内部使用的示例
@@ -65,7 +65,7 @@ title: 组件预览与展示代码
 
 :::
 
-### 行高亮
+### 行高亮 {#line-highlighting}
 
 - 配置语法参考 [VitePress 官方文档：在代码块中实现行高亮](https://vitepress.dev/zh/guide/markdown#line-highlighting-in-code-blocks)
 
@@ -85,7 +85,7 @@ title: 组件预览与展示代码
 
 :::
 
-### 行号
+### 行号 {#line-numbers}
 
 - 配置语法参考 [VitePress 官方文档：在代码块中显示行号](https://vitepress.dev/zh/guide/markdown#line-numbers)
 
@@ -111,7 +111,7 @@ title: 组件预览与展示代码
 
 :::
 
-### 代码组
+### 代码组 {#code-group}
 
 - 配置语法参考 [VitePress 官方文档：代码组](https://vitepress.dev/zh/guide/markdown#code-groups)
 - `{code-group}` 选项或文件路径数量大于 1 时，渲染代码组
@@ -149,7 +149,5 @@ title: 组件预览与展示代码
 仅渲染第一个代码块的组件。
 
 :::
-
-## 🗓️ 更新日志
 
 <!-- @include: ../../../packages/demo-preview/CHANGELOG.md -->

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getAnalogousColors } from '@movk-repo/shared/colors'
+import { getAnalogousColors } from '@movk-repo/shared/utils'
 import { source } from './dataset'
 import VChart, { type ECOption } from './VChart.vue'
 

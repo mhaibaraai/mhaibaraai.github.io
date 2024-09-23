@@ -2,15 +2,15 @@
 order: 2
 ---
 
-# Algolia Search 搜索
+# Algolia Search 搜索 {#start}
 
 VitePress 支持使用 [Algolia DocSearch](https://docsearch.algolia.com/docs/what-is-docsearch/) 搜索文档站点。
 
-## 在 Algolia DocSearch 官网填写自己的文档网站的地址和邮箱进行申请
+## 在 Algolia DocSearch 官网填写自己的文档网站的地址和邮箱进行申请 {#apply}
 
 ![Algolia DocSearch 申请图片](/algolia/apply.png)
 
-## 申请通过后，会收到邮件，邮件中包含了 `API Key` 和 `Index Name`
+## 申请通过后，会收到邮件，邮件中包含了 `API Key` 和 `Index Name` {#apply-reply}
 
 需要回复邮件确认申请通过，点击链接到官网注册账号。
 
@@ -24,7 +24,7 @@ VitePress 支持使用 [Algolia DocSearch](https://docsearch.algolia.com/docs/wh
 
 ![查看 api-key ](/algolia/api-key.png)
 
-## 在 VitePress 项目中配置 Algolia DocSearch
+## 在 VitePress 项目中配置 Algolia DocSearch {#config}
 
 在 `.vitepress/config.ts` 中添加 `search` 配置项：
 
@@ -55,9 +55,9 @@ export default defineConfig({
 
 :::
 
-## 添加实时更新索引
+## 添加实时更新索引 {#real-time-update}
 
-### Github Secrets 中添加私钥
+### Github Secrets 中添加私钥 {#github-secrets}
 
 打开 `Algolia Crawlers` 官网， `ALGOLIA_APP_ID` 和 `Algolia API Key` 添加到 Github 项目的 Secrets 中，在 **CI** 脚本中使用。
 
@@ -68,7 +68,7 @@ export default defineConfig({
 
 ![github-secret 配置图片](/algolia/github-secret.png)
 
-### 创建 crawlerConfig.json 文件
+### 创建 crawlerConfig.json 文件 {#crawler-config}
 
 在项目根目录下新建爬虫 `crawlerConfig.json` 文件，配置需要爬取的页面。
 
@@ -110,7 +110,7 @@ export default defineConfig({
 }
 ```
 
-### 创建 CI 脚本
+### 创建 CI 脚本 {#ci-script}
 
 在项目根目录 `.github/workflows` 文件夹下创建 `algolia.yml` 文件
 

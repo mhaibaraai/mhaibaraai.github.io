@@ -3,11 +3,11 @@ title: ECharts
 order: 2
 ---
 
-# ECharts
+# ECharts {#start}
 
 - 使用 [`echarts`](https://echarts.apache.org/zh/index.html) 与 [`vue-echarts`](https://github.com/ecomfe/vue-echarts)
 
-## 通用组件与数据
+## 通用组件与数据 {#common}
 
 这是以下示例需要的通用父组件与数据
 
@@ -23,9 +23,9 @@ order: 2
 
 :::
 
-## 最简单的数据集
+## 最简单的数据集 {#simple}
 
-::: demo
+::: demo {ClientOnly}
 
 /echarts/simple.vue
 
@@ -33,11 +33,11 @@ order: 2
 
 :::
 
-## 设置随机颜色
+## 设置随机颜色 {#random-color}
 
 使用 [`TinyColor`](https://bgrins.github.io/TinyColor/) 库生成随机颜色
 
-::: demo
+::: demo {ClientOnly}
 
 /echarts/random-color.vue
 

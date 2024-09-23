@@ -1,6 +1,6 @@
-# Git
+# Git {#start}
 
-## Git: RPC failed; HTTP 500 curl 22 The requested URL returned error: 500
+## Git: RPC failed; HTTP 500 curl 22 The requested URL returned error: 500 {#error-1}
 
 ```sh
 git config --global http.postBuffer 524288000
