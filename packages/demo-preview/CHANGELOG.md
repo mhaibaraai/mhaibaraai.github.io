@@ -1,5 +1,11 @@
 ## 🗓️ Plugin 更新日志 {#changelog-plugin}
 
+### 1.1.3 (2024-09-24)
+
+Performance Improvements
+
+- 恢复 README.md
+
 ### 1.1.2 (2024-09-23)
 
 Performance Improvements
