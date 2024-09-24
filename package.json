@@ -11,7 +11,7 @@
     "stub": "pnpm clean && pnpm run -r --parallel stub",
     "postinstall": "pnpm build",
     "docs:dev": "pnpm -F=docs dev",
-    "deploy": "pnpm -F=docs build",
+    "docs:build": "pnpm -F=docs build",
     "docs:preview": "pnpm -F=docs preview",
     "build:prepare": "rimraf dist && pnpm clean",
     "build": "pnpm build:prepare && pnpm -r -F='./packages/**' -F='./internal/**' run build",
