@@ -26,6 +26,7 @@ export default defineConfig({
     VitePressPluginAutoNavSidebar({
       documentRootPath: 'zh',
       sortMenusBy: 'frontmatterOrder',
+      collapsed: true,
     }),
     AutoImport({
       imports: ['vue', '@vueuse/core'],

@@ -1,4 +1,4 @@
-# TypeScript {#start}
+# TypeScript {#TypeScript}
 
 > TypeScript 的类型系统、接口、泛型等内容
 
