@@ -1,6 +1,7 @@
 # 记录一次 Mac 环境配置
 
 - [Homebrew ： macOS（或 Linux）缺失的软件包的管理器](https://brew.sh/zh-cn/)
+- [iTerm2 - macOS Terminal Replacement](https://iterm2.com/)
 
 ## 安装 Homebrew {#install-homebrew}
 
@@ -54,6 +55,21 @@
 
    <div class="tip custom-block" style="padding-top: 8px">
 
-   更多参考可以跳到 [开发工具和环境 Homebrew](../environment/brew)
+   更多参考可以跳到 [开发工具和环境 Homebrew](./environment/brew)
 
    </div>
+
+## 配置 Iterm2 {#install-iterm2}
+
+1. 下载 Iterm2
+
+   - 访问 [Iterm2 官网](https://iterm2.com/) 下载最新版本的 Iterm2
+   - 或者使用 Homebrew 安装
+
+   ```sh
+   brew install --cask iterm2
+   ```
+
+2. 将 iTerm2设置为默认终端
+
+   打开 iTerm2，选择菜单栏中的 iTerm2 -> Make iTerm2 Default Term
