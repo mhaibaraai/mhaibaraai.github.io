@@ -146,22 +146,7 @@ source ~/.zshrc
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
    ```
 
-2. 安装必备字体
-
-   Powerlevel10k 使用的许多符号和图标依赖于 **Nerd Fonts**。你需要安装这些字体以确保主题正常工作。
-
-   **Meslo Nerd Font** 是 Powerlevel10k 默认推荐的字体，安装方式如下：
-
-   - 使用 Homebrew 安装
-
-     ```sh
-     brew tap homebrew/cask-fonts
-     brew install --cask font-meslo-lg-nerd-font
-     ```
-
-   - 或者手动下载安装 [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#manual-font-installation)
-
-3. 启用 Powerlevel10k 主题
+2. 启用 Powerlevel10k 主题
 
    - 打开 `~/.zshrc` 文件
 
@@ -181,7 +166,7 @@ source ~/.zshrc
    source ~/.zshrc
    ```
 
-4. 配置 Powerlevel10k
+3. 配置 Powerlevel10k
 
    安装完成后，首次启动 Zsh 时会自动启动 Powerlevel10k 配置向导，它会引导你选择主题的外观和信息显示内容。
 
@@ -193,22 +178,50 @@ source ~/.zshrc
 
    以下是配置向导的示例：
 
-   - **这看起来像一个菱形（旋转的正方形）吗？**
+   - 自动安装所需字体
 
    ```sh
     This is Powerlevel10k configuration wizard. It will ask you a few questions and
-                                  configure your prompt.
+                           configure your prompt.
 
-                    Does this look like a diamond (rotated square)?
-                      reference: https://graphemica.com/%E2%97%86
+                           Install Meslo Nerd Font?
 
-                                      --->    <---
+    (y)  Yes (recommended).
 
-    (y)  Yes.
-
-    (n)  No.
+    (n)  No. Use the current font.
 
     (q)  Quit and do nothing.
 
     Choice [ynq]: y
+
    ```
+
+   - 手动安装字体 [MesloLGS Nerd Font GitHub](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+   - 生成配置文件
+
+   配置完成后，向导会生成一个 `~/.p10k.zsh` 文件，保存用户的所有设置。
+
+### 安装插件 {#plugins}
+
+Oh My Zsh 提供了多种实用插件，能够提升你的开发效率。以下是一些常用的插件：
+
+- **git**：方便 git 操作，缩短命令长度
+- **zsh-autosuggestions**：根据历史命令自动补全
+- **zsh-syntax-highlighting**：根据语法高亮显示命令
+
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+然后在 `~/.zshrc` 文件中启用这两个插件：
+
+```sh
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+启用插件后，运行以下命令以应用更改：
+
+```sh
+source ~/.zshrc
+```

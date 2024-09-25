@@ -642,7 +642,7 @@
     "Alpha Component": 1,
     "Green Component": 0.7607843279838562
   },
-  "Normal Font": "MesloLGS-NF-Regular 16",
+  "Normal Font": "MesloLGS-NF-Regular 14",
   "Ansi 12 Color (Light)": {
     "Red Component": 0.51372549019607838,
     "Color Space": "sRGB",
@@ -689,8 +689,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -704,8 +705,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -721,8 +723,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -738,8 +741,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -754,8 +758,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -768,8 +773,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -782,8 +788,9 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       },
@@ -796,17 +803,18 @@
           },
           "layout advanced configuration dictionary value": {
             "remove empty components": false,
-            "algorithm": 0,
-            "auto-rainbow style": 0
+            "auto-rainbow style": 0,
+            "font": ".AppleSystemUIFont 12",
+            "algorithm": 0
           }
         }
       }
     ],
     "advanced configuration": {
       "remove empty components": false,
-      "auto-rainbow style": 0,
-      "font": ".AppleSystemUIFont 12",
-      "algorithm": 0
+      "font": ".SFNS-Regular 12",
+      "algorithm": 0,
+      "auto-rainbow style": 0
     }
   },
   "Use Separate Colors for Light and Dark Mode": true,
