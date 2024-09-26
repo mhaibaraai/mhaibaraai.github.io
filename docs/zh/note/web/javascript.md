@@ -1,4 +1,4 @@
-# JavaScript {#start}
+# JavaScript {#JavaScript}
 
 > ES6+ 语法、常见的工具函数、编程模式等
 
