@@ -55,7 +55,7 @@ Homebrew 4.3.23-56-g9160445
 ```
 
 ::: tip
-更多参考可以跳到 [开发工具和环境 Homebrew](./environment/brew)
+更多参考可以跳到 [Homebrew 常用命令](./brew)
 :::
 
 ## Iterm2 {#install-iterm2}

@@ -1,6 +1,6 @@
 # VSCode
 
-## 安装
+## 安装 {#install}
 
 - 打开浏览器，访问 [VSCode 官方下载页面](https://code.visualstudio.com/)
 - 点击页面中的 "Download for macOS" 按钮。
@@ -8,7 +8,7 @@
 - 双击 `.zip` 文件进行解压，你会得到一个 `Visual Studio Code.app` 应用程序。
 - 将 `Visual Studio Code.app` 拖动到 **Applications** 文件夹中，这样你就可以从应用程序目录运行它。
 
-## 安装 `code` 命令行工具（可选）
+## 安装 `code` 命令行工具（可选） {#install-code}
 
 为了能够在终端中使用 `code` 命令来快速打开文件和文件夹，你可以安装 `code` 命令行工具：
 
@@ -20,9 +20,9 @@
 code .
 ```
 
-## 添加 "使用 VSCode 打开" 的右键菜单选项
+## 添加 "使用 VSCode 打开" 的右键菜单选项 {#add-right-click-menu}
 
-### 使用 Automator 自动化程序创建服务
+### 使用 Automator 自动化程序创建服务 {#use-automator}
 
 1. 打开 Automator 应用程序
 
@@ -47,10 +47,10 @@ code .
    - 在脚本框中输入以下内容：
 
      ```sh
-      for f in "$@"
-      do
-          open -a "Visual Studio Code" "$f"
-      done
+     for f in "$@"
+     do
+         open -a "Visual Studio Code" "$f"
+     done
      ```
 
    ![add-vscode-action](/vscode/add-vscode-action.png)

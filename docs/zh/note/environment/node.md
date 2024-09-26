@@ -2,159 +2,111 @@
 
 > 依赖管理和使用经验
 
-## Pnpm 安装包 {#note-1}
+## Node 的版本选择 {#node-versions}
 
-- 生产环境
+- **LTS 版本**（长期支持版本）：稳定性高，适合生产环境。
+- **Current 版本**（当前版本）：包含最新特性，但可能不够稳定，适合尝鲜和测试。
+- **EOL 版本**（终止支持版本）：不再接收更新，不推荐使用。
 
-```sh
-pnpm i [xxx] -S -w
-```
+## 安装配置 {#install-node}
 
-- 开发环境
+### 直接下载安装 {#install-download}
 
-```sh
-pnpm i [xxx] -D -w
-```
+1. macOS:
 
-## Pnpm 工作空间 {#note-2}
-
-`pnpm-workspace.yaml` 定义了工作空间的根目录，并能够使您从工作空间中包含 `/` 排除目录。默认情况下，包含所有子目录。
-
-```yaml
-packages:
-  - packages/*
-  - docs
-  - packages/playground/**
-```
-
-## Brew 安装 Node 教程及多版本切换 {#note-3}
-
-1. 查看当前电脑是否安装 `node`
+   - 从 [Node.js 官网](https://nodejs.org/) 下载 macOS 安装包（`.pkg` 文件）
+   - 使用 Homebrew 安装
 
    ```sh
-   node -v
+   brew install node
    ```
 
-2. 查看当前电脑通过 `brew` 安装的 `node` 路径
+   ::: tip 什么是 Homebrew？如何安装？
+   跳转到 [Homebrew](../mac/brew)
+   :::
+
+2. Windows:
+
+   - 从 [Node.js 官网](https://nodejs.org/) 下载 Windows 安装包（`.msi` 文件）
+   - 如果已安装 Windows 10 或更新版本，可以使用 winget：
 
    ```sh
-   ls /usr/local/Cellar/node*
+   winget install --id=OpenJS.Nodejs
    ```
 
-3. 查看可安装的 `node`
+### 使用包管理器安装（推荐） {#install-package-manager}
+
+> - 包版本管理工具的主要好处在于帮助开发者更方便地管理多个版本的 Node.js 和 npm。
+> - 在开发中，不同的项目可能需要依赖不同的 Node.js 版本，使用这些工具可以轻松切换不同的环境，并确保项目在合适的版本上运行。
+
+- [nvm](https://github.com/nvm-sh/nvm) 最受欢迎的 Node.js 版本管理工具，适用于 macOS 和 Linux。
+- [nvm-windows](https://github.com/coreybutler/nvm-windows) `nvm` 的 Windows 版本，专为 Windows 开发者设计。
+- [fnm](https://github.com/Schniz/fnm) 也是 macOS 的优秀选择，具备轻量和高效的特点，适合那些不想耗费系统资源的开发者。
+
+本文档以 `fnm` 为例，介绍如何在 macOS 上安装和使用 `fnm`。
+
+### 使用 fnm 安装 Node {#install-fnm}
+
+1. 安装 `fnm`：
+
+   - 使用脚本安装：
 
    ```sh
-   brew search node
+   curl -fsSL https://fnm.vercel.app/install | bash
    ```
 
-4. 安装其他版本 `node`
-
-   ```sh
-   brew install node@14
-   ```
-
-5. `brew` 切换 `node` 版本
-
-   ```sh
-   brew unlink node@18
-   brew link --overwrite --force node@14
-   ```
-
-6. 查看 `node` 版本
-
-   ```sh
-   node -v
-   ```
-
-## 如何在 Mac 电脑上完全卸载 Node {#note-4}
-
-- `brew` 的安装方式
-
-```sh
-brew unistall nodejs
-```
-
-- 官网下载 `pkg` 安装包的
-
-```sh
-sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}
-```
-
-## Mac (M1/M2) 使用 Nvm 安装低于 Node16 版本出现长日志和安装缓慢的现象 {#note-5}
-
-m1/m2 安装 `node16` 之前的版本时，需要使用 [rosetta](https://so.csdn.net/so/search?q=rosetta&spm=1001.2101.3001.7020) 终端
-
-> **解决方案**
-
-![node-rosetta图片](/reference/node-rosetta.png)
-
-## Mac 上 Nvm 切换 Node 版本无效 {#note-6}
-
-使用 `nvm use version` 切换 `node` 版本后,再次新开终端,依旧是旧的 `node` 版本
-
-::: tip 解决方案
-
-```sh
-nvm use 16.20.2
-nvm alias default 16.20.2
-```
-
-:::
-
-## Mac 上安装 Fnm（Node 包管理工具） {#note-7}
-
-> 详情见 [fnm](https://github.com/Schniz/fnm) 官网地址
-
-1. 安装
+   - 使用 Homebrew 安装（适用于 macOS 和 Linux）：
 
    ```sh
    brew install fnm
    ```
 
-   ```sh
-   curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-sh
-   ```
+2. 配置环境：
 
-2. 配置环境 (.zshrc)
-
-   ```zsh
-   eval "$(fnm env --use-on-cd)"
-   ```
-
-3. 下载 `node`
+   需要将 fnm 集成到你的 Shell（如 bash、zsh）。可以参考输出的安装脚本，或手动添加以下命令到你的 `.zshrc` 或 `.bashrc` 文件中：
 
    ```sh
-   fnm install 18
+   eval "$(fnm env)"
+   source ~/.zshrc
    ```
 
-4. 切换版本
+   ::: details 这是一个使用安装脚本的输出示例：
+
+   brew 在安装 fnm 后给出了环境配置的提示，并自动将 fnm 的路径和相关配置追加到 `~/.zshrc` 文件中
 
    ```sh
-   fnm use 18
-   fnm default 18
+   ==> Running `brew cleanup fnm`...
+   Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+   Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+   Installing for Zsh. Appending the following to /Users/yixuanmiao/.zshrc:
+
+   # fnm
+
+   FNM_PATH="/Users/yixuanmiao/Library/Application Support/fnm"
+   if [ -d "$FNM_PATH" ]; then
+   export PATH="/Users/yixuanmiao/Library/Application Support/fnm:$PATH"
+   eval "`fnm env`"
+   fi
+
+   In order to apply the changes, open a new terminal or run the following command:
+
+   source /Users/yixuanmiao/.zshrc
+
    ```
 
-## 删除所有 node_modules 文件夹 {#note-8}
+   :::
+
+3. 安装 Node.js：
+
+   ```sh
+   fnm install <version>
+   fnm use <version>
+   ```
+
+## fnm 常用命令 {#fnm-commands}
+
+### 查询所有 Node.js 版本 {#fnm-list}
 
 ```sh
-find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
-```
-
-## Npm 传递参数 {#note-9}
-
-当你使用 `npm run` 命令时，如果你想要传递参数给你的脚本，你需要在参数前加上 `--` , 例如：
-
-```sh
-npm run gen:cc -- --path ol-cesium-map --name demo
-```
-
-这样，`--path ol-cesium-map --name demo` 就会被传递给你的脚本，而不是 `npm run` 命令。
-
-使用 `mri` 来解析这些参数：
-
-```ts
-const argv = process.argv.slice(2)
-const mriData = mri<MriData>(argv)
-
-// mriData : { _: [], path: 'ol-cesium-map', name: 'demo' }
+fnm ls-remote
 ```

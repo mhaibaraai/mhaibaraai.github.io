@@ -2,6 +2,44 @@
 
 - [Homebrew ： macOS（或 Linux）缺失的软件包的管理器](https://brew.sh/zh-cn/)
 
+## 安装 {#install}
+
+1. 安装 Homebrew：
+
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. 添加 Homebrew 到系统路径
+
+   安装完成后，Homebrew 可能不会自动添加到你的系统路径中。根据你的 Mac 使用的是 Intel 处理器还是 Apple Silicon（M1/M2 等），路径有所不同。
+
+   - Intel 处理器：
+
+   ```sh
+   echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+   eval "$(/usr/local/bin/brew shellenv)"
+   ```
+
+   - Apple Silicon (M1/M2)：
+
+   ```sh
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   ```
+
+3. 验证安装：
+
+   ```sh
+   brew --version
+   ```
+
+   输出：
+
+   ```sh
+   Homebrew 4.3.23-56-g9160445
+   ```
+
 ## 常用命令 {#commands}
 
 ### 配置文件导出导出 {#export}
