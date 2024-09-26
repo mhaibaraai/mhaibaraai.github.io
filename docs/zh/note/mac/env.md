@@ -225,3 +225,11 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```sh
 source ~/.zshrc
 ```
+
+## 安装 Git ？
+
+跳转到 [Git 配置](../environment/git)
+
+## 安装 Node.js ？
+
+跳转到 [Node.js 配置](../environment/node)

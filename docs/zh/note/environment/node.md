@@ -4,9 +4,11 @@
 
 ## Node 的版本选择 {#node-versions}
 
-- **LTS 版本**（长期支持版本）：稳定性高，适合生产环境。
-- **Current 版本**（当前版本）：包含最新特性，但可能不够稳定，适合尝鲜和测试。
-- **EOL 版本**（终止支持版本）：不再接收更新，不推荐使用。
+- **LTS 版本**（长期支持版本）：稳定版本，通常用于生产环境。
+  - Node.js 18.20.4 (Hydrogen)
+  - Node.js 20.17.0 (Iron)
+- **Current 版本**（当前版本）：最新的主要版本，加入最新特性和改进，通常用于开发和测试。
+  - Node.js 22.9.0（2024-09-17）
 
 ## 安装配置 {#install-node}
 
@@ -103,10 +105,152 @@
    fnm use <version>
    ```
 
-## fnm 常用命令 {#fnm-commands}
+## fnm {#fnm}
 
-### 查询所有 Node.js 版本 {#fnm-list}
+### 功能参数 {#fnm-features}
+
+- `--use-on-cd`：在每次进入目录时自动切换 Node.js 版本 （✅ 推荐）
+
+  避免每次切换目录后手动运行 `fnm use` ，它会根据 `.node-version`、`.nvmrc` 或 `package.json` 中的 `engines.node` （如果启用了 `--resolve-engines`） 来确定需要的版本。
+
+  ```sh
+  eval "$(fnm env --use-on-cd)"
+  ```
+
+- `--version-file-strategy=recursive`：递归查找 `.node-version` 或 `.nvmrc` 文件 （✅ 推荐）
+
+  如果项目结构较为复杂，版本文件可能位于父级目录，此选项可以确保版本切换的准确性。
+
+  ```sh
+  eval "$(fnm env --version-file-strategy=recursive)"
+  ```
+
+- `--resolve-engines`：解析 `package.json` 中的 `engines.node` 字段 （🧪 实验）
+
+  如果项目中有 `package.json` 文件，可以通过此选项解析 `engines.node` 字段，自动切换到指定版本。
+
+  ```sh
+  eval "$(fnm env --resolve-engines)"
+  ```
+
+  `package.json` 文件示例：
+
+  ```json
+  {
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
+  ```
+
+- `--corepack-enabled`： 使用 Corepack 作为包管理器 （🧪 实验）
+
+  启用这个功能会让 fnm 自动处理包管理工具的版本，但由于 Corepack 仍然是实验性的，建议在试验环境下使用。
+
+  ```sh
+  eval "$(fnm env --corepack-enabled)"
+  ```
+
+### 常用命令 {#fnm-commands}
+
+- 查询所有 Node.js 版本
 
 ```sh
 fnm ls-remote
+```
+
+- 安装特定版本的 Node.js
+
+```sh
+fnm install <version>
+```
+
+- 安装最新的 LTS 版本
+
+```sh
+fnm install --lts
+```
+
+- 切换 Node.js 版本
+
+```sh
+fnm use <version>
+```
+
+- 查看当前使用的 Node.js 版本
+
+```sh
+fnm current
+```
+
+- 设置默认版本
+
+```sh
+fnm default <version>
+```
+
+- 查看所有已安装的 Node.js 版本
+
+```sh
+fnm ls
+```
+
+- 卸载 Node.js
+
+```sh
+fnm uninstall <version>
+```
+
+## npm {#npm}
+
+### 参数传递 {#npm-args}
+
+- 当你使用 `npm run` 命令时，如果你想要传递参数给你的脚本，你需要在参数前加上 `--` , 例如：
+
+```sh
+npm run gen:cc -- --path ol-cesium-map --name demo
+```
+
+这样，`--path ol-cesium-map --name demo` 就会被传递给你的脚本，而不是 `npm run` 命令。
+
+- 使用 `mri` 来解析这些参数：
+
+```ts
+const argv = process.argv.slice(2)
+const mriData = mri<MriData>(argv)
+
+// mriData : { _: [], path: 'ol-cesium-map', name: 'demo' }
+```
+
+### 删除所有 node_modules 文件夹 {#npm-rm-node-modules}
+
+```sh
+find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
+```
+
+## pnpm {#pnpm}
+
+### 安装 {#pnpm-install}
+
+- 使用 npm 安装 pnpm：
+
+```sh
+npm install -g pnpm
+```
+
+- 使用 Homebrew 安装 pnpm：
+
+```sh
+brew install pnpm
+```
+
+### 工作空间 {#pnpm-workspace}
+
+`pnpm-workspace.yaml` 定义了工作空间的根目录，并能够使您从工作空间中包含 `/` 排除目录。默认情况下，包含所有子目录。
+
+```yaml
+packages:
+  - packages/*
+  - docs
+  - packages/playground/**
 ```
