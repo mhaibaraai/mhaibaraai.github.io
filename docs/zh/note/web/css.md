@@ -30,6 +30,12 @@ body[data-theme='primary'] {
 body[data-theme='secondary'] {
   --chosen-color: var(--secondary-color);
 }
+body[data-theme='primary'] {
+  --chosen-color: var(--primary-color);
+}
+body[data-theme='secondary'] {
+  --chosen-color: var(--secondary-color);
+}
 .element {
   background-color: var(--chosen-color);
 }
