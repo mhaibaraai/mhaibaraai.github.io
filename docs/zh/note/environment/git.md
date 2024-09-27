@@ -4,31 +4,29 @@
 
 ## 安装配置 {#install}
 
-### Mac {#install-mac}
+- Mac 通常自带 Git，但如果没有安装，或者你想更新到最新版本，可以通过以下几种方式安装：
 
-Mac 通常自带 Git，但如果没有安装，或者你想更新到最新版本，可以通过以下几种方式安装：
+  - 通过 Homebrew 安装
 
-- 通过 Homebrew 安装
+  ```sh
+  brew install git
+  ```
 
-```sh
-brew install git
-```
+  - 通过 Xcode 安装
 
-- 通过 Xcode 安装
+  ```sh
+  xcode-select --install
+  ```
 
-```sh
-xcode-select --install
-```
+- Windows
 
-### Windows {#install-windows}
+  - 通过 Git 官网下载安装包：[https://git-scm.com/download/win](https://git-scm.com/download/win)
 
-- 通过 Git 官网下载安装包：[https://git-scm.com/download/win](https://git-scm.com/download/win)
+  验证是否安装成功：
 
-验证是否安装成功：
-
-```sh
-git --version
-```
+  ```sh
+  git --version
+  ```
 
 ## 配置 Git 用户信息 {#config}
 
@@ -113,6 +111,80 @@ git config --global core.editor "code --wait"
    ```sh
    Hi username! You've successfully authenticated, but GitHub does not provide shell access.
    ```
+
+## 配置 GPG 签名 {#gpg}
+
+名的提交 通过 GPG (GNU Privacy Guard) 或者 S/MIME 来验证提交者的身份，确保代码的来源是可信的，并防止提交内容被篡改。
+
+1. 安装 GPG
+
+   - macOS
+
+   ```sh
+   brew install gpg
+   ```
+
+   - Windows：下载并安装 [GPG for Windows](https://gpg4win.org/)
+
+2. 生成 GPG 密钥
+
+   运行以下命令来生成 GPG 密钥：
+
+   ```sh
+   gpg --full-generate-key
+   ```
+
+   生成密钥过程：
+
+   1. 选择加密算法：选择 `RSA and RSA`，按下回车。
+   2. 密钥大小：设置密钥大小为 `4096`，然后回车。
+   3. 密钥有效期：选择 `0`（表示永不过期），然后回车。
+   4. 确认：选择 `y` 以确认选择。
+   5. 填写个人信息：
+      - 输入你的 姓名，与 GitHub 上的用户名一致。
+      - 输入你的 邮箱，与 GitHub 账户的邮箱一致。
+      - 可选项：输入一个备注（例如 “`GitHub key`”），然后确认。
+   6. 设置密码：为你的密钥设置一个强密码，这个密码用于保护你的私钥。
+
+   生成完成后，GPG 会显示一个唯一的密钥 ID（一个16位的字符串）。
+
+3. 列出并查找 GPG 密钥 ID
+
+   ```sh
+   gpg --list-secret-keys --keyid-format LONG
+   ```
+
+   输出示例：
+
+   - `rsa4096/XXXXXXXXXXXXXX` : `密钥类型/密钥ID`
+   - `XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` : `密钥指纹`
+
+   ```sh
+   sec   rsa4096/XXXXXXXXXXXXXX 2024-09-01 [SCEA]
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   uid           [ultimate] Your Name <your.email@example.com>
+   ```
+
+4. 添加 GPG 密钥到 Git
+
+   - `your-key-id`： GPG 密钥 ID
+
+   ```sh
+   gpg --armor --export your-key-id
+   ```
+
+   复制输出的 GPG 密钥，然后添加到 Git 远程仓库。
+
+5. 配置 Git 使用 GPG 签名
+
+   ```sh
+   git config --global user.signingkey your-key-id
+   git config --global commit.gpgsign true
+   ```
+
+   ::: tip 配置 VSCode 以自动签署提交 ?
+   跳转到 [VSCode 配置 GPG 签名](../mac/vscode#gpg) 了解更多。
+   :::
 
 ## 常用命令 {#command}
 

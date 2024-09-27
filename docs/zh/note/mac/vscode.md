@@ -1,4 +1,4 @@
-# VSCode
+# VSCode {#vscode}
 
 ## 安装 {#install}
 
@@ -21,8 +21,6 @@ code .
 ```
 
 ## 添加 "使用 VSCode 打开" 的右键菜单选项 {#add-right-click-menu}
-
-### 使用 Automator 自动化程序创建服务 {#use-automator}
 
 1. 打开 Automator 应用程序
 
@@ -64,3 +62,5 @@ code .
    - 在 Finder 中，右键单击文件或文件夹，选择 `服务` -> `使用 VSCode 打开`
 
    ![use-service](/vscode/use-service.png)
+
+## 配置 GPG 密钥以自动签署提交 {#gpg}
