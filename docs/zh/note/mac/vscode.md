@@ -62,5 +62,3 @@ code .
    - 在 Finder 中，右键单击文件或文件夹，选择 `服务` -> `使用 VSCode 打开`
 
    ![use-service](/vscode/use-service.png)
-
-## 配置 GPG 密钥以自动签署提交 {#gpg}

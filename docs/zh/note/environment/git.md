@@ -182,9 +182,39 @@ git config --global core.editor "code --wait"
    git config --global commit.gpgsign true
    ```
 
-   ::: tip 配置 VSCode 以自动签署提交 ?
-   跳转到 [VSCode 配置 GPG 签名](../mac/vscode#gpg) 了解更多。
-   :::
+::: details 在提交代码时 `Git: gpg failed to sign the data` 错误？
+
+```sh
+> git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file -
+error: gpg failed to sign the data
+fatal: failed to write commit object
+```
+
+> 可能原因以及解决方法：
+
+1. GPG 代理未启动
+
+   - 检查代理是否正在运行：
+
+   ```sh
+   gpg-agent --daemon
+   ```
+
+   - 重启代理
+
+   ```sh
+   gpgconf --kill gpg-agent
+   gpgconf --launch gpg-agent
+   ```
+
+2. Git 和 GPG 在 macOS 上的集成有时可能需要手动设置 `GPG_TTY`
+
+   ```sh
+   echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+
+:::
 
 ## 常用命令 {#command}
 
