@@ -108,7 +108,6 @@ find packages internal -path '*/node_modules/*' -prune -o -name 'dist' -type d -
 
 ## 📝 笔记 {#node-note}
 
-
 ### 参数传递 {#npm-args}
 
 - 当你使用 `npm run` 命令时，如果你想要传递参数给你的脚本，你需要在参数前加上 `--` , 例如：
@@ -144,30 +143,3 @@ export NODE_OPTIONS=--max_old_space_size=10240
     "build": "NODE_OPTIONS=--max_old_space_size=10240 react-scripts build"
   }
 }
-
-## pnpm {#pnpm}
-
-### 安装 {#pnpm-install}
-
-- 使用 npm 安装 pnpm：
-
-```sh
-npm install -g pnpm
-```
-
-- 使用 Homebrew 安装 pnpm：
-
-```sh
-brew install pnpm
-```
-
-### 工作空间 {#pnpm-workspace}
-
-`pnpm-workspace.yaml` 定义了工作空间的根目录，并能够使您从工作空间中包含 `/` 排除目录。默认情况下，包含所有子目录。
-
-```yaml
-packages:
-  - packages/*
-  - docs
-  - packages/playground/**
-```

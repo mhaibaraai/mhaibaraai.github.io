@@ -114,6 +114,50 @@ git config --global core.editor "code --wait"
    Hi username! You've successfully authenticated, but GitHub does not provide shell access.
    ```
 
+## 常用命令 {#command}
+
+- 取消变基操作
+
+```sh
+git rebase --abort
+```
+
+- 删除所有本地分支
+
+```sh
+git branch | grep -v "master" | xargs git branch -D
+```
+
+- 删除除当前分支外的所有分支
+
+```sh
+git branch | grep -v "^\*" | xargs git branch -D
+```
+
+- 删除所有本地分支，包括当前分支
+
+```sh
+git branch | xargs git branch -D
+```
+
+- 将远程仓库的 master 分支的代码合并到你的本地分支
+
+```sh
+git merge new_remote/master --allow-unrelated-histories
+```
+
+- 强制推送本地分支到远程仓库
+
+```sh
+git push new_remote your_branch -f
+```
+
+- 从远程仓库获取最新的代码，并删除在远程仓库中已经被删除的分支
+
+```sh
+git fetch --prune
+```
+
 ## 遇到的问题 {#question}
 
 ### Connection closed by 198.18.1.24 port 22 {#question-1}
@@ -171,44 +215,4 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 
 ```sh
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-```
-
-## 常用命令 {#command}
-
-### 取消变基操作 {#command-1}
-
-```sh
-git rebase --abort
-```
-
-### 删除所有本地分支 {#command-2}
-
-- 删除除当前分支外的所有分支
-
-```sh
-git branch | grep -v "^\*" | xargs git branch -D
-```
-
-- 删除所有本地分支，包括当前分支
-
-```sh
-git branch | xargs git branch -D
-```
-
-### 将远程仓库的 master 分支的代码合并到你的本地分支 {#command-3}
-
-```sh
-git merge new_remote/master --allow-unrelated-histories
-```
-
-### 强制推送本地分支到远程仓库 {#command-4}
-
-```sh
-git push new_remote your_branch -f
-```
-
-### 从远程仓库获取最新的代码，并删除在远程仓库中已经被删除的分支 {#command-5}
-
-```sh
-git fetch --prune
 ```
