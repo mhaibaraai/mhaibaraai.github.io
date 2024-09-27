@@ -45,163 +45,69 @@
 - [nvm-windows](https://github.com/coreybutler/nvm-windows) `nvm` 的 Windows 版本，专为 Windows 开发者设计。
 - [fnm](https://github.com/Schniz/fnm) 也是 macOS 的优秀选择，具备轻量和高效的特点，适合那些不想耗费系统资源的开发者。
 
+::: tip
+
 本文档以 `fnm` 为例，介绍如何在 macOS 上安装和使用 `fnm`。
 
-### 使用 fnm 安装 Node {#install-fnm}
+跳转到 [fnm](./fnm) 了解更多。
 
-1. 安装 `fnm`：
+:::
 
-   - 使用脚本安装：
+## pnpm {#pnpm}
 
-   ```sh
-   curl -fsSL https://fnm.vercel.app/install | bash
-   ```
+### 安装 {#pnpm-install}
 
-   - 使用 Homebrew 安装（适用于 macOS 和 Linux）：
+- 使用 npm 安装 pnpm：
 
-   ```sh
-   brew install fnm
-   ```
+```sh
+npm install -g pnpm
+```
 
-2. 配置环境：
+- 使用 Homebrew 安装 pnpm：
 
-   需要将 fnm 集成到你的 Shell（如 bash、zsh）。可以参考输出的安装脚本，或手动添加以下命令到你的 `.zshrc` 或 `.bashrc` 文件中：
+```sh
+brew install pnpm
+```
 
-   ```sh
-   eval "$(fnm env)"
-   source ~/.zshrc
-   ```
+### 工作空间 {#pnpm-workspace}
 
-   ::: details 这是一个使用安装脚本的输出示例：
+`pnpm-workspace.yaml` 定义了工作空间的根目录，并能够使您从工作空间中包含 `/` 排除目录。默认情况下，包含所有子目录。
 
-   brew 在安装 fnm 后给出了环境配置的提示，并自动将 fnm 的路径和相关配置追加到 `~/.zshrc` 文件中
+```yaml
+packages:
+  - packages/*
+  - docs
+  - packages/playground/**
+```
 
-   ```sh
-   ==> Running `brew cleanup fnm`...
-   Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
-   Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
-   Installing for Zsh. Appending the following to /Users/yixuanmiao/.zshrc:
+## 实用命令 {#node-commands}
 
-   # fnm
+- 删除所有 `node_modules` 文件夹
 
-   FNM_PATH="/Users/yixuanmiao/Library/Application Support/fnm"
-   if [ -d "$FNM_PATH" ]; then
-   export PATH="/Users/yixuanmiao/Library/Application Support/fnm:$PATH"
-   eval "`fnm env`"
-   fi
+```sh
+find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
+```
 
-   In order to apply the changes, open a new terminal or run the following command:
+- 递归删除 `packages` 和 `internal` 目录下的 `dist` 文件夹，同时忽略 `node_modules` 目录
 
-   source /Users/yixuanmiao/.zshrc
+```sh
+find packages internal -path '*/node_modules/*' -prune -o -name 'dist' -type d -exec rm -rf {} + || true
+```
 
-   ```
+- `postinstall` 钩子在安装依赖后执行，可以用来执行一些构建操作，比如构建、设置环境或修复依赖关系。
 
-   :::
-
-3. 安装 Node.js：
-
-   ```sh
-   fnm install <version>
-   fnm use <version>
-   ```
-
-## fnm {#fnm}
-
-### 功能参数 {#fnm-features}
-
-- `--use-on-cd`：在每次进入目录时自动切换 Node.js 版本 （✅ 推荐）
-
-  避免每次切换目录后手动运行 `fnm use` ，它会根据 `.node-version`、`.nvmrc` 或 `package.json` 中的 `engines.node` （如果启用了 `--resolve-engines`） 来确定需要的版本。
-
-  ```sh
-  eval "$(fnm env --use-on-cd)"
-  ```
-
-- `--version-file-strategy=recursive`：递归查找 `.node-version` 或 `.nvmrc` 文件 （✅ 推荐）
-
-  如果项目结构较为复杂，版本文件可能位于父级目录，此选项可以确保版本切换的准确性。
-
-  ```sh
-  eval "$(fnm env --version-file-strategy=recursive)"
-  ```
-
-- `--resolve-engines`：解析 `package.json` 中的 `engines.node` 字段 （🧪 实验）
-
-  如果项目中有 `package.json` 文件，可以通过此选项解析 `engines.node` 字段，自动切换到指定版本。
-
-  ```sh
-  eval "$(fnm env --resolve-engines)"
-  ```
-
-  `package.json` 文件示例：
-
-  ```json
-  {
-    "engines": {
-      "node": ">=14.0.0"
-    }
+```json
+{
+  "scripts": {
+    "postinstall": "pnpm build",
+    "build": "pnpm clean && pnpm -r -F='./packages/**' -F='./internal/**' run build",
+    "clean": "find packages internal -path '*/node_modules/*' -prune -o -name 'dist' -type d -exec rm -rf {} + || true"
   }
-  ```
-
-- `--corepack-enabled`： 使用 Corepack 作为包管理器 （🧪 实验）
-
-  启用这个功能会让 fnm 自动处理包管理工具的版本，但由于 Corepack 仍然是实验性的，建议在试验环境下使用。
-
-  ```sh
-  eval "$(fnm env --corepack-enabled)"
-  ```
-
-### 常用命令 {#fnm-commands}
-
-- 查询所有 Node.js 版本
-
-```sh
-fnm ls-remote
+}
 ```
 
-- 安装特定版本的 Node.js
+## 📝 笔记 {#node-note}
 
-```sh
-fnm install <version>
-```
-
-- 安装最新的 LTS 版本
-
-```sh
-fnm install --lts
-```
-
-- 切换 Node.js 版本
-
-```sh
-fnm use <version>
-```
-
-- 查看当前使用的 Node.js 版本
-
-```sh
-fnm current
-```
-
-- 设置默认版本
-
-```sh
-fnm default <version>
-```
-
-- 查看所有已安装的 Node.js 版本
-
-```sh
-fnm ls
-```
-
-- 卸载 Node.js
-
-```sh
-fnm uninstall <version>
-```
-
-## npm {#npm}
 
 ### 参数传递 {#npm-args}
 
@@ -222,11 +128,22 @@ const mriData = mri<MriData>(argv)
 // mriData : { _: [], path: 'ol-cesium-map', name: 'demo' }
 ```
 
-### 删除所有 node_modules 文件夹 {#npm-rm-node-modules}
+### 增加 node 内存限制 {#node-memory-limit}
+
+通过 `--max_old_space_size` 选项，你可以指定更大的内存使用限制，构建大项目时能有效避免内存不足导致的 `JavaScript heap out of memory` 错误
 
 ```sh
-find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +
+export NODE_OPTIONS=--max_old_space_size=10240
 ```
+
+或者在 `package.json` 中的 `scripts` 中指定：
+
+```json
+{
+  "scripts": {
+    "build": "NODE_OPTIONS=--max_old_space_size=10240 react-scripts build"
+  }
+}
 
 ## pnpm {#pnpm}
 
