@@ -2,7 +2,7 @@
 
 > 样式、布局、动画等相关内容
 
-## 变量 {#note-1}
+## 变量 {#variable}
 
 - 有两个变量 `--primary-color` 和 `--secondary-color`，使用其中一个作为背景色。
 
@@ -12,28 +12,24 @@
   --secondary-color: blue;
   --chosen-color: var(--primary-color, var(--secondary-color));
 }
-
 .element {
   background-color: var(--chosen-color);
 }
 ```
 
-- 基于某种逻辑来选择其中一个值，可以结合使用CSS的条件伪类。
+- 基于某种逻辑来选择其中一个值，可以结合使用 CSS 的条件伪类。
 
 ```css
 :root {
   --primary-color: red;
   --secondary-color: blue;
 }
-
 body[data-theme='primary'] {
   --chosen-color: var(--primary-color);
 }
-
 body[data-theme='secondary'] {
   --chosen-color: var(--secondary-color);
 }
-
 .element {
   background-color: var(--chosen-color);
 }
@@ -49,7 +45,7 @@ body[data-theme='secondary'] {
 </body>
 ```
 
-## Flexbox 布局盒子的子元素根据数量宽高自适应 {#note-2}
+## Flexbox 布局盒子的子元素根据数量宽高自适应 {#flexbox-auto-size}
 
 ```html
 <style>
