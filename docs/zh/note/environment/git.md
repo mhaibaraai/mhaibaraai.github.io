@@ -112,6 +112,13 @@ git config --global core.editor "code --wait"
    Hi username! You've successfully authenticated, but GitHub does not provide shell access.
    ```
 
+6. 将 SSH 密钥告知 Git 使用
+
+   ```sh
+   git config --global gpg.format ssh
+   git config --global user.signingkey ~/.ssh/id_rsa.pub
+   ```
+
 ## 常用命令 {#command}
 
 - 取消变基操作
