@@ -116,7 +116,7 @@ git config --global core.editor "code --wait"
 
    ```sh
    git config --global gpg.format ssh
-   git config --global user.signingkey ~/.ssh/id_rsa.pub
+   git config --global user.signingkey ~/.ssh/id_rsa
    ```
 
 ## 常用命令 {#command}
