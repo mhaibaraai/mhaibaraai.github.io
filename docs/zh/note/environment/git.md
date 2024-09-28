@@ -4,31 +4,29 @@
 
 ## 安装配置 {#install}
 
-### Mac {#install-mac}
+- Mac 通常自带 Git，但如果没有安装，或者你想更新到最新版本，可以通过以下几种方式安装：
 
-Mac 通常自带 Git，但如果没有安装，或者你想更新到最新版本，可以通过以下几种方式安装：
+  - 通过 Homebrew 安装
 
-- 通过 Homebrew 安装
+  ```sh
+  brew install git
+  ```
 
-```sh
-brew install git
-```
+  - 通过 Xcode 安装
 
-- 通过 Xcode 安装
+  ```sh
+  xcode-select --install
+  ```
 
-```sh
-xcode-select --install
-```
+- Windows
 
-### Windows {#install-windows}
+  - 通过 Git 官网下载安装包：[https://git-scm.com/download/win](https://git-scm.com/download/win)
 
-- 通过 Git 官网下载安装包：[https://git-scm.com/download/win](https://git-scm.com/download/win)
+  验证是否安装成功：
 
-验证是否安装成功：
-
-```sh
-git --version
-```
+  ```sh
+  git --version
+  ```
 
 ## 配置 Git 用户信息 {#config}
 
@@ -112,6 +110,13 @@ git config --global core.editor "code --wait"
 
    ```sh
    Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+6. 使用 SSH 密钥对提交和标签进行签名 (可选)
+
+   ```sh
+   git config --global gpg.format ssh
+   git config --global user.signingkey ~/.ssh/id_rsa
    ```
 
 ## 常用命令 {#command}
