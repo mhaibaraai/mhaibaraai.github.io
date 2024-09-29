@@ -8,12 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@movk-repo/build-utils':
+        specifier: workspace:*
+        version: link:internal/built-utils
       '@movk-repo/eslint-config':
         specifier: workspace:*
         version: link:internal/eslint-config
+      '@movk-repo/shared':
+        specifier: workspace:*
+        version: link:packages/shared
       '@movk-repo/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
+      '@movk-repo/typedoc':
+        specifier: workspace:*
+        version: link:internal/typedoc
       '@movk-repo/typescript-config':
         specifier: workspace:*
         version: link:internal/typescript-config
@@ -54,6 +63,9 @@ importers:
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
+      mri:
+        specifier: ^1.2.0
+        version: 1.2.0
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -132,6 +144,8 @@ importers:
       eslint-plugin-format:
         specifier: ^0.1.2
         version: 0.1.2(eslint@9.11.0(jiti@1.21.6))
+
+  internal/typedoc: {}
 
   internal/typescript-config: {}
 
@@ -3054,6 +3068,10 @@ packages:
 
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
+
+  mri@1.2.0:
+    resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
+    engines: {node: '>=4'}
 
   mrmime@2.0.0:
     resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
@@ -7536,6 +7554,8 @@ snapshots:
       pathe: 1.1.2
       pkg-types: 1.2.0
       ufo: 1.5.4
+
+  mri@1.2.0: {}
 
   mrmime@2.0.0: {}
 

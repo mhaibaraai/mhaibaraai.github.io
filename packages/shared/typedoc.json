@@ -1,0 +1,7 @@
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "extends": ["@movk-repo/typedoc"],
+  "entryPoints": [
+    "./src/utils/*"
+  ]
+}

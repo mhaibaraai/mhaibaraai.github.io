@@ -42,7 +42,8 @@
   },
   "scripts": {
     "stub": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "docs:api": "typedoc"
   },
   "peerDependencies": {
     "vue": "^3.2.0"

@@ -21,8 +21,11 @@
     "rm:nm": "find . -name 'node_modules' -type d -prune -execdir rm -rf '{}' +"
   },
   "dependencies": {
+    "@movk-repo/build-utils": "workspace:*",
     "@movk-repo/eslint-config": "workspace:*",
+    "@movk-repo/shared": "workspace:*",
     "@movk-repo/theme-chalk": "workspace:*",
+    "@movk-repo/typedoc": "workspace:*",
     "@movk-repo/typescript-config": "workspace:*",
     "@vueuse/core": "^11.0.0",
     "element-plus": "^2.8.1",
@@ -38,6 +41,7 @@
     "esno": "^4.7.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
+    "mri": "^1.2.0",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.2.4",

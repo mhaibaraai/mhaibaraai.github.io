@@ -4,9 +4,12 @@ export const projRoot = resolve(__dirname, '..', '..', '..')
 export const pkgRoot = resolve(projRoot, 'packages')
 export const compRoot = resolve(pkgRoot, 'components')
 export const iconsRoot = resolve(pkgRoot, 'icons')
-export const utilRoot = resolve(pkgRoot, 'utils')
+export const sharedRoot = resolve(pkgRoot, 'shared')
 export const themeRoot = resolve(pkgRoot, 'theme-chalk')
+
+export const internalRoot = resolve(projRoot, 'internal')
 
 // Docs
 export const docsDirName = 'docs'
 export const docRoot = resolve(projRoot, docsDirName)
+export const docMdRoot = resolve(docRoot, 'zh')
