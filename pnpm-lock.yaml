@@ -75,12 +75,6 @@ importers:
       tsup:
         specifier: ^8.2.4
         version: 8.3.0(@microsoft/api-extractor@7.47.7(@types/node@18.19.50))(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(typescript@5.6.2)(yaml@2.5.1)
-      typedoc:
-        specifier: ^0.26.7
-        version: 0.26.7(typescript@5.6.2)
-      typedoc-plugin-markdown:
-        specifier: ^4.2.7
-        version: 4.2.8(typedoc@0.26.7(typescript@5.6.2))
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -145,7 +139,17 @@ importers:
         specifier: ^0.1.2
         version: 0.1.2(eslint@9.11.0(jiti@1.21.6))
 
-  internal/typedoc: {}
+  internal/typedoc:
+    devDependencies:
+      typedoc:
+        specifier: ^0.26.7
+        version: 0.26.7(typescript@5.6.2)
+      typedoc-plugin-markdown:
+        specifier: ^4.2.7
+        version: 4.2.8(typedoc@0.26.7(typescript@5.6.2))
+      typedoc-vitepress-theme:
+        specifier: ^1.0.1
+        version: 1.0.1(typedoc-plugin-markdown@4.2.8(typedoc@0.26.7(typescript@5.6.2)))
 
   internal/typescript-config: {}
 
@@ -3838,6 +3842,11 @@ packages:
     engines: {node: '>= 18'}
     peerDependencies:
       typedoc: 0.26.x
+
+  typedoc-vitepress-theme@1.0.1:
+    resolution: {integrity: sha512-pnpgzSQRaR9QLMl3it/tjq7vlV+eeUzKa22w/xF6ZUdAcYdmeag13kuA6EKfU7/kkIkJ/qsu1GPd3OcIC36Hlw==}
+    peerDependencies:
+      typedoc-plugin-markdown: '>=4.1.0'
 
   typedoc@0.26.7:
     resolution: {integrity: sha512-gUeI/Wk99vjXXMi8kanwzyhmeFEGv1LTdTQsiyIsmSYsBebvFxhbcyAx7Zjo4cMbpLGxM4Uz3jVIjksu/I2v6Q==}
@@ -8339,6 +8348,10 @@ snapshots:
   typedoc-plugin-markdown@4.2.8(typedoc@0.26.7(typescript@5.6.2)):
     dependencies:
       typedoc: 0.26.7(typescript@5.6.2)
+
+  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.2.8(typedoc@0.26.7(typescript@5.6.2))):
+    dependencies:
+      typedoc-plugin-markdown: 4.2.8(typedoc@0.26.7(typescript@5.6.2))
 
   typedoc@0.26.7(typescript@5.6.2):
     dependencies:

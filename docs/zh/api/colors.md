@@ -1,26 +1,27 @@
 # colors
 
-## Description
+## GetAnalogousColorsOptions
 
-colors 函数
+`GetAnalogousColorsOptions` 定义了生成类似色时可用的选项。
+
+***
 
 ## getAnalogousColors()
 
-```ts
-function getAnalogousColors(params): string[]
-```
+> **getAnalogousColors**(`params`?: `Partial`\<[`GetAnalogousColorsOptions`](colors.md#getanalogouscolorsoptions)\>): `string`[]
 
-getAnalogousColors
-生成随机的类似色
+生成类似色的选项
 
-### Parameters
+该函数生成一组类似色，使用 `tinycolor` 库来计算并随机调整颜色的透明度。
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `params` | `GetAnalogousColorsParams` | 参数对象 |
+### 参数
 
-### Returns
+| 属性名 | 类型 | 描述 | 默认值 |
+| ------ | ---- | ---- | ------ |
+| 无参数 | 无 | 无 | 无 |
+
+### 返回
 
 `string`[]
 
-类似色数组
+返回生成的颜色数组，每个颜色使用指定的格式。
