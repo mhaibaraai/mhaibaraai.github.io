@@ -12,7 +12,6 @@ const options = {
 
   lang: 'zh',
   alwaysCreateEntryPointModule: true,
-  excludeReferences: true,
   excludeNotDocumented: true,
   disableSources: true,
   readme: 'none',
