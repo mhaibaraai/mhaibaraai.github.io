@@ -1,10 +1,22 @@
 import tinycolor from 'tinycolor2'
 
 export interface GetAnalogousColorsOptions {
-  results?: number
-  slices?: number
+  /**
+   * 生成类似色的数量。默认值为 6。
+   */
+  results: number
+  /**
+   * 切片的数量，用于确定颜色分布。
+   */
+  slices: number
+  /**
+   * 一组可供选择的颜色方案。
+   */
   colorSchemes: string[]
-  format?: 'rgb' | 'prgb' | 'hex6' | 'hex3' | 'hex8' | 'name' | 'hsl' | 'hsv'
+  /**
+   * 返回的颜色格式，支持多种格式，默认值为 'hex6'。
+   */
+  format: 'rgb' | 'prgb' | 'hex6' | 'hex3' | 'hex8' | 'name' | 'hsl' | 'hsv'
 }
 
 const defaultGetAnalogousColorsOptions: GetAnalogousColorsOptions = {
@@ -20,10 +32,7 @@ function normalizeParams(params: Partial<GetAnalogousColorsOptions>): GetAnalogo
 }
 
 /**
- * 生成类似色数组。
- *
- * @param {Partial<GetAnalogousColorsOptions>} params - 配置选项。
- * @returns {string[]} 类似色的数组，颜色格式根据选项中的 `format` 决定。
+ * 该函数生成一组类似色，使用 `tinycolor` 库来计算并随机调整颜色的透明度。
  */
 export function getAnalogousColors(params: Partial<GetAnalogousColorsOptions> = {}): string[] {
   const { results, slices, colorSchemes, format } = normalizeParams(params)

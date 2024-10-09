@@ -14,8 +14,8 @@ const options = {
   alwaysCreateEntryPointModule: true,
   excludeNotDocumented: true,
   disableSources: true,
-  readme: 'none',
   githubPages: false,
+  readme: 'none',
 
   entryFileName: 'index',
   expandObjects: true,

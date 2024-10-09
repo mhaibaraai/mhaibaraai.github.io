@@ -1,6 +1,6 @@
 // @ts-check
 
-import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown'
+import { MarkdownPageEvent, MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
@@ -19,13 +19,9 @@ class MyMarkdownTheme extends MarkdownTheme {
 }
 
 class MyMarkdownThemeContext extends MarkdownThemeContext {
+  // customise partials
   partials = {
     ...this.partials,
-    // parametersTable: this.customParametersTable(this.partials),
-  }
-
-  helpers = {
-    ...this.helpers,
   }
 
   /**
