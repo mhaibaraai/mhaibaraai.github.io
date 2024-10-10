@@ -20,9 +20,6 @@ importers:
       '@movk-repo/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
-      '@movk-repo/typedoc':
-        specifier: workspace:*
-        version: link:internal/typedoc
       '@movk-repo/typescript-config':
         specifier: workspace:*
         version: link:internal/typescript-config
@@ -138,18 +135,6 @@ importers:
       eslint-plugin-format:
         specifier: ^0.1.2
         version: 0.1.2(eslint@9.11.0(jiti@1.21.6))
-
-  internal/typedoc:
-    devDependencies:
-      typedoc:
-        specifier: ^0.26.7
-        version: 0.26.7(typescript@5.6.2)
-      typedoc-plugin-markdown:
-        specifier: ^4.2.7
-        version: 4.2.8(typedoc@0.26.7(typescript@5.6.2))
-      typedoc-vitepress-theme:
-        specifier: ^1.0.1
-        version: 1.0.1(typedoc-plugin-markdown@4.2.8(typedoc@0.26.7(typescript@5.6.2)))
 
   internal/typescript-config: {}
 
@@ -2849,9 +2834,6 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
-  lunr@2.3.9:
-    resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
-
   magic-string@0.30.11:
     resolution: {integrity: sha512-+Wri9p0QHMy+545hKww7YAu5NyzF8iomPL/RQazugQ9+Ez4Ic3mERMd8ZTX5rfK944j+560ZJi8iAwgak1Ac7A==}
 
@@ -3836,24 +3818,6 @@ packages:
   typed-array-length@1.0.6:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
-
-  typedoc-plugin-markdown@4.2.8:
-    resolution: {integrity: sha512-1EDsc66jaCjZtxdYy+Rl0KDU1WY/iyuCOOPaeFzcYFZ81FNXV8CmgUDOHri20WGmYnkEM5nQ+ooxj1vyuQo0Lg==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      typedoc: 0.26.x
-
-  typedoc-vitepress-theme@1.0.1:
-    resolution: {integrity: sha512-pnpgzSQRaR9QLMl3it/tjq7vlV+eeUzKa22w/xF6ZUdAcYdmeag13kuA6EKfU7/kkIkJ/qsu1GPd3OcIC36Hlw==}
-    peerDependencies:
-      typedoc-plugin-markdown: '>=4.1.0'
-
-  typedoc@0.26.7:
-    resolution: {integrity: sha512-gUeI/Wk99vjXXMi8kanwzyhmeFEGv1LTdTQsiyIsmSYsBebvFxhbcyAx7Zjo4cMbpLGxM4Uz3jVIjksu/I2v6Q==}
-    engines: {node: '>= 18'}
-    hasBin: true
-    peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
 
   typescript@5.4.2:
     resolution: {integrity: sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==}
@@ -7170,8 +7134,6 @@ snapshots:
     dependencies:
       yallist: 4.0.0
 
-  lunr@2.3.9: {}
-
   magic-string@0.30.11:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -8344,23 +8306,6 @@ snapshots:
       has-proto: 1.0.3
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
-
-  typedoc-plugin-markdown@4.2.8(typedoc@0.26.7(typescript@5.6.2)):
-    dependencies:
-      typedoc: 0.26.7(typescript@5.6.2)
-
-  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.2.8(typedoc@0.26.7(typescript@5.6.2))):
-    dependencies:
-      typedoc-plugin-markdown: 4.2.8(typedoc@0.26.7(typescript@5.6.2))
-
-  typedoc@0.26.7(typescript@5.6.2):
-    dependencies:
-      lunr: 2.3.9
-      markdown-it: 14.1.0
-      minimatch: 9.0.5
-      shiki: 1.18.0
-      typescript: 5.6.2
-      yaml: 2.5.1
 
   typescript@5.4.2: {}
 
