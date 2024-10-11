@@ -13,7 +13,7 @@ export interface GetAnalogousColorsOptions {
   slices: number
   /**
    * 颜色方案数组
-   * @defaultValue ['#8E44AD', '#F39C12', '#28B463', '#1F77B4', '#FF6F61']
+   * @defaultValue ['#67C23A', '#E6A23C', '#409EFF', '#F56C6C', '#909399']
    */
   colorSchemes: string[]
   /**
@@ -26,7 +26,7 @@ export interface GetAnalogousColorsOptions {
 const defaultGetAnalogousColorsOptions: GetAnalogousColorsOptions = {
   results: 6,
   slices: 30,
-  colorSchemes: ['#8E44AD', '#F39C12', '#28B463', '#1F77B4', '#FF6F61'],
+  colorSchemes: ['#67C23A', '#E6A23C', '#409EFF', '#F56C6C', '#909399'],
   format: 'hex8',
 }
 
@@ -44,7 +44,24 @@ function normalizeParams(params: Partial<GetAnalogousColorsOptions>): GetAnalogo
  */
 export function getAnalogousColors(params: Partial<GetAnalogousColorsOptions> = {}): string[] {
   const { results, slices, colorSchemes, format } = normalizeParams(params)
-  const randomColor = colorSchemes[Math.floor(Math.random() * colorSchemes.length)]
-  const analogousColors = tinycolor(randomColor).analogous(results, slices)
-  return analogousColors.map(color => color.setAlpha(Math.random()).toString(format))
+
+  const allAnalogousColors = colorSchemes.flatMap((colorScheme) => {
+    return tinycolor(colorScheme).analogous(results, slices)
+  })
+
+  const usedColors = new Set<string>()
+  const uniqueColors: string[] = []
+
+  while (uniqueColors.length < results && allAnalogousColors.length > 0) {
+    const randomIndex = Math.floor(Math.random() * allAnalogousColors.length)
+    const color = allAnalogousColors.splice(randomIndex, 1)[0]
+    const colorStr = color.setAlpha(Math.random()).toString(format)
+
+    if (!usedColors.has(colorStr)) {
+      usedColors.add(colorStr)
+      uniqueColors.push(colorStr)
+    }
+  }
+
+  return uniqueColors
 }

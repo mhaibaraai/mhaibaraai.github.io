@@ -10,6 +10,7 @@
   "scripts": {
     "stub": "pnpm clean && pnpm run -r --parallel stub",
     "postinstall": "pnpm build",
+    "stub:shared": "pnpm -r -F='./packages/shared' stub",
     "docs:dev": "pnpm -F=docs dev",
     "docs:build": "pnpm -F=docs build",
     "docs:preview": "pnpm -F=docs preview",

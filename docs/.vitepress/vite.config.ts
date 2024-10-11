@@ -22,7 +22,9 @@ export default defineConfig({
   },
   plugins: [
     VueJsx(),
-    UnoCSS(fileURLToPath(new URL('./uno.config.ts', import.meta.url))),
+    UnoCSS({
+      configFile: resolve(docRoot, './uno.config.ts'),
+    }),
     VitePressPluginAutoNavSidebar({
       documentRootPath: 'zh',
       sortMenusBy: 'frontmatterOrder',
