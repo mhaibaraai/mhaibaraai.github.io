@@ -157,3 +157,17 @@ fnm ls
 ```sh
 fnm uninstall <version>
 ```
+
+## 报错处理 {#fnm-errors}
+
+- `zsh: command not found: node`
+
+  如果在使用 `node` 命令时出现 `zsh: command not found: node` 错误，可以尝试在 `.zshrc` 文件中替换以下配置：
+
+  ```md
+  FNM_PATH="/Users/yixuanmiao/Library/Application Support/fnm"
+  if [ -d "$FNM_PATH" ]; then // [!code --]
+  export PATH="/Users/yixuanmiao/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+  fi // [!code --]
+  ```

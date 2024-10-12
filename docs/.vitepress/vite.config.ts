@@ -1,5 +1,4 @@
 import { resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { docRoot, iconsRoot } from '@movk-repo/build-utils'
 import VitePressPluginAutoNavSidebar from '@movk-repo/vitepress-plugin-auto-nav-sidebar'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -22,11 +21,14 @@ export default defineConfig({
   },
   plugins: [
     VueJsx(),
-    UnoCSS(fileURLToPath(new URL('./uno.config.ts', import.meta.url))),
+    UnoCSS({
+      configFile: resolve(docRoot, './uno.config.ts'),
+    }),
     VitePressPluginAutoNavSidebar({
       documentRootPath: 'zh',
       sortMenusBy: 'frontmatterOrder',
       collapsed: true,
+      excludeFolders: ['threejs'],
     }),
     AutoImport({
       imports: ['vue', '@vueuse/core'],
@@ -39,7 +41,7 @@ export default defineConfig({
     }),
     Components({
       dirs: [
-        fileURLToPath(new URL('../components', import.meta.url)),
+        resolve(docRoot, './components'),
       ],
       resolvers: [
         ElementPlusResolver(),
