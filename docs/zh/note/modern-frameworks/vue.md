@@ -34,7 +34,7 @@
            ElementPlusResolver(),
            // 自动导入图标组件
            IconsResolver({
-             prefix: 'Icon',
+             prefix: 'icon',
            }),
          ],
        }),
@@ -42,6 +42,7 @@
          resolvers: [
            // 自动注册图标组件
            IconsResolver({
+             prefix: 'icon',
              enabledCollections: ['ep'],
            }),
            // 自动导入 Element Plus 组件
@@ -56,3 +57,9 @@
      ],
    })
    ```
+
+3. 使用
+
+:::demo
+/vue/components-and-icons.vue
+:::
