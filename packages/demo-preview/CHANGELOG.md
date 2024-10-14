@@ -42,6 +42,12 @@ Initial release
 
 ### 🗓️ Container 更新日志 {#changelog-container}
 
+### 1.1.2 (2024-10-14)
+
+Bug Fixes
+
+- 修复了 `message` 组件的初始高度问题
+
 ### 1.1.1 (2024-09-23)
 
 Performance Improvements

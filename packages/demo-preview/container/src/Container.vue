@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCopyCode, useNamespace } from '@movk-repo/shared/hooks'
+import { useCopyCode } from '@movk-repo/shared/hooks'
 import { ref } from 'vue'
 import CollapseTransition from './CollapseTransition.vue'
 import CaretTop from './icons/CaretTop.vue'
@@ -10,8 +10,6 @@ import { Message } from './message'
 const props = defineProps<{
   rawSource: string
 }>()
-
-const ns = useNamespace('example')
 
 const sourceVisible = ref(false)
 
@@ -45,25 +43,25 @@ async function copyCode() {
 <template>
   <!-- <ClientOnly></ClientOnly> -->
 
-  <div :class="ns.b()">
-    <div :class="ns.e('showcase')">
+  <div class="movk-example">
+    <div class="movk-example__showcase">
       <slot name="source" />
     </div>
-    <div :class="ns.e('divider')" />
+    <div class="movk-example__divider" />
 
-    <div :class="ns.e('op-btns')">
+    <div class="movk-example__op-btns">
       <Copy @click="copyCode" @keydown.prevent.enter="copyCode" @keydown.prevent.space="copyCode" />
       <Code @click="sourceVisible = !sourceVisible" />
     </div>
     <CollapseTransition>
-      <div v-show="sourceVisible" :class="ns.e('source-wrapper')">
+      <div v-show="sourceVisible" class="movk-example__source-wrapper">
         <slot name="code" />
       </div>
     </CollapseTransition>
 
     <Transition name="movk-fade-in-linear">
       <div
-        v-show="sourceVisible" :class="ns.e('float-control')" tabindex="0" role="button"
+        v-show="sourceVisible" class="movk-example__float-control" tabindex="0" role="button"
         @click="sourceVisible = false" @keydown="onSourceVisibleKeydown"
       >
         <CaretTop />

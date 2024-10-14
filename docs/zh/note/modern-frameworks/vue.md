@@ -60,6 +60,6 @@
 
 3. 使用
 
-:::demo
+<!-- :::demo
 /vue/components-and-icons.vue
-:::
+::: -->
