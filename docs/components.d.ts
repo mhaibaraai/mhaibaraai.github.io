@@ -8,11 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
-    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
-    IconEpActivity: typeof import('~icons/ep/activity')['default']
-    IconEpStar: typeof import('~icons/ep/star')['default']
-    IconEpUserFilled: typeof import('~icons/ep/user-filled')['default']
     MVPBadges: typeof import('./components/MVPBadges.vue')['default']
     MVPFeature: typeof import('./components/MVPFeature.vue')['default']
     MVPFeatures: typeof import('./components/MVPFeatures.vue')['default']

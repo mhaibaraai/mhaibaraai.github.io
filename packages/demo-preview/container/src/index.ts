@@ -1,4 +1,4 @@
 import DemoPreviewContainer from './Container.vue'
-import './index.scss'
+import './style.css'
 
 export { DemoPreviewContainer }

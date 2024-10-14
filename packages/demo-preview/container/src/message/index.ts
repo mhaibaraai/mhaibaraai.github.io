@@ -61,7 +61,6 @@ function createMessage({ ...options }: MessageOptions): MessageContext {
     handler,
     props: vm.$.props as Mutable<MessageProps>,
   }
-  instances.push(instance)
 
   return instance
 }

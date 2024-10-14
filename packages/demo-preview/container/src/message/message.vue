@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { CSSProperties } from 'vue'
 import { EVENT_CODE } from '@movk-repo/shared/constants'
-import { useNamespace } from '@movk-repo/shared/hooks'
 import { useEventListener, useResizeObserver, useTimeoutFn } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
 import CircleCloseFilled from '../icons/CircleCloseFilled.vue'
@@ -22,18 +21,11 @@ const TypeComponentsMap = {
   info: InfoFilled,
 }
 
-const ns = useNamespace('message')
-
 const messageRef = ref<HTMLDivElement>()
 const visible = ref(false)
 const height = ref(0)
 
 let stopTimer: (() => void) | undefined
-
-const typeClass = computed(() => {
-  const type = props.type
-  return { [ns.bm('icon', type)]: type && TypeComponentsMap[type] }
-})
 
 const iconComponent = computed(() => TypeComponentsMap[props.type] || '')
 
@@ -89,16 +81,20 @@ defineExpose({
 </script>
 
 <template>
-  <Transition :name="ns.b('fade')" @before-leave="onClose" @after-leave="$emit('destroy')">
+  <Transition name="movk-message-fade" @before-leave="onClose" @after-leave="$emit('destroy')">
     <div
-      v-show="visible" :id="id" ref="messageRef" :class="[
-        ns.b(),
-        { [ns.m(type)]: type },
+      v-show="visible" :id="id" ref="messageRef" class="movk-message" :class="[
+        `movk-message--${type}`,
         customClass,
       ]" :style="customStyle" role="alert" @mouseenter="clearTimer" @mouseleave="startTimer"
     >
-      <component :is="iconComponent" :class="[ns.e('icon'), typeClass]" />
-      <p :class="ns.e('content')">
+      <component
+        :is="iconComponent" class="movk-message-icon" :class="[
+          `movk-message--${type}`,
+          `movk-message-icon--${type}`,
+        ]"
+      />
+      <p class="movk-message__content">
         {{ message }}
       </p>
     </div>
