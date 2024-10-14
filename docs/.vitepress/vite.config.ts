@@ -7,9 +7,21 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+
+const antDesignVueResolver = AntDesignVueResolver({
+  importStyle: false,
+})
+const iconsResolverAutoImport = IconsResolver({
+  prefix: 'icon',
+})
+const iconsResolverComponents = IconsResolver({
+  prefix: 'icon',
+  enabledCollections: ['ep'],
+  customCollections: ['esri'],
+})
 
 export default defineConfig({
   resolve: {
@@ -33,10 +45,8 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', '@vueuse/core'],
       resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'icon',
-        }),
+        antDesignVueResolver,
+        iconsResolverAutoImport,
       ],
     }),
     Components({
@@ -44,12 +54,8 @@ export default defineConfig({
         resolve(docRoot, './components'),
       ],
       resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'icon',
-          enabledCollections: ['ep'],
-          customCollections: ['esri'],
-        }),
+        antDesignVueResolver,
+        iconsResolverComponents,
       ],
       include: [/\.vue($|\?)/, /\.md($|\?)/],
       extensions: ['vue', 'md', 'svg'],

@@ -19,9 +19,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <ElButton type="primary" @click="refresh">
-    刷新
-  </ElButton>
   <div flex="~ wrap" mt-1rem>
     <div
       v-for="color in colors" :key="color" :style="{

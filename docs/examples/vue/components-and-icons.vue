@@ -4,7 +4,7 @@ const value1 = ref(true)
 
 <template>
   <div flex="~ gap-2 items-center">
-    <ElSwitch v-model="value1" />
+    <a-button />
     <icon-ep-star />
     <icon-ep-UserFilled />
   </div>

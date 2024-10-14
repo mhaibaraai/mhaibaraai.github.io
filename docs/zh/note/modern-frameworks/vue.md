@@ -4,7 +4,7 @@
 
 ## 按需自动导入组件与图标 {#import-components-and-icons}
 
-> [自动导入 Element Plus 组件和图标](https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5)
+> [自动导入 Ant Design 组件和图标](https://www.antdv.com/docs/vue/introduce-cn#%E8%87%AA%E5%8A%A8%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5%E7%BB%84%E4%BB%B6)
 
 1. 安装插件
 
@@ -20,33 +20,31 @@
    import AutoImport from 'unplugin-auto-import/vite'
    import IconsResolver from 'unplugin-icons/resolver'
    import Icons from 'unplugin-icons/vite'
-   import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+   import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
    import Components from 'unplugin-vue-components/vite'
    import { defineConfig } from 'vite'
+
+   const antDesignVueResolver = AntDesignVueResolver({
+     importStyle: false,
+   })
+
+   const iconsResolverAutoImport = IconsResolver({
+     prefix: 'icon',
+   })
 
    export default defineConfig({
      plugins: [
        AutoImport({
-         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
          imports: ['vue', '@vueuse/core'],
-         // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
          resolvers: [
-           ElementPlusResolver(),
-           // 自动导入图标组件
-           IconsResolver({
-             prefix: 'icon',
-           }),
+           antDesignVueResolver,
+           iconsResolverAutoImport,
          ],
        }),
        Components({
          resolvers: [
-           // 自动注册图标组件
-           IconsResolver({
-             prefix: 'icon',
-             enabledCollections: ['ep'],
-           }),
-           // 自动导入 Element Plus 组件
-           ElementPlusResolver()
+           iconsResolverAutoImport,
+           antDesignVueResolver,
          ],
          include: [/\.vue($|\?)/, /\.md($|\?)/],
          extensions: ['vue', 'md', 'svg'],
@@ -60,6 +58,6 @@
 
 3. 使用
 
-<!-- :::demo
+:::demo
 /vue/components-and-icons.vue
-::: -->
+:::

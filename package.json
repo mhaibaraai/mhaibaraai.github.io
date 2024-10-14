@@ -29,7 +29,6 @@
     "@movk-repo/typescript-config": "workspace:*",
     "@vueuse/core": "^11.0.0",
     "ant-design-vue": "^4.2.5",
-    "element-plus": "^2.8.1",
     "lodash-es": "^4.17.21",
     "vue": "^3.4.38"
   },
