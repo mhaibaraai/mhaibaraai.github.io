@@ -20,13 +20,10 @@ declare global {
     getPublicKey(): string
     getPrivateKey(): string
   }
-
   interface JSEncryptConstructor {
     new(): JSEncrypt
   }
-
   const JSEncrypt: JSEncryptConstructor
-
 }
 
 export {}
@@ -39,3 +36,18 @@ return jsencrypt.encrypt(msg)
 ```
 
 :::
+
+## 指定全局组件类型 {#global-component}
+
+如果在 VSCode 中使用了 [`Vue-Official`](https://marketplace.visualstudio.com/items?itemName=Vue.volar) 插件，可以在 `tsconfig.json` 中指定全局组件类型
+
+```json [tsconfig.json]
+{
+  "compilerOptions": {
+    "types": [
+      "element-plus/global",
+      "ant-design-vue/typings/global"
+    ]
+  }
+}
+```

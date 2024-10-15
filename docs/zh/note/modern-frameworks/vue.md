@@ -18,6 +18,7 @@
 
    ```ts twoslash
    import AutoImport from 'unplugin-auto-import/vite'
+   import { FileSystemIconLoader } from 'unplugin-icons/loaders'
    import IconsResolver from 'unplugin-icons/resolver'
    import Icons from 'unplugin-icons/vite'
    import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
@@ -32,6 +33,12 @@
      prefix: 'icon',
    })
 
+   const iconsResolverComponents = IconsResolver({
+     prefix: 'icon',
+     enabledCollections: ['ep'],
+     customCollections: ['esri'],
+   })
+
    export default defineConfig({
      plugins: [
        AutoImport({
@@ -43,7 +50,7 @@
        }),
        Components({
          resolvers: [
-           iconsResolverAutoImport,
+           iconsResolverComponents,
            antDesignVueResolver,
          ],
          include: [/\.vue($|\?)/, /\.md($|\?)/],
@@ -51,6 +58,10 @@
        }),
        Icons({
          autoInstall: true,
+         customCollections: {
+           esri: FileSystemIconLoader('./esri', svg =>
+             svg.replace(/^<svg /, '<svg fill="currentColor" ')),
+         },
        })
      ],
    })

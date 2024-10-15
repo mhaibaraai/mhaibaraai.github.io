@@ -19,6 +19,9 @@ onMounted(() => {
 </script>
 
 <template>
+  <AButton type="primary" @click="refresh()">
+    点击刷新
+  </AButton>
   <div flex="~ wrap" mt-1rem>
     <div
       v-for="color in colors" :key="color" :style="{

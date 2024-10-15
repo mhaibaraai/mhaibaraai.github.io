@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"[]><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
+﻿<?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
 <g color-interpolation="linearRGB" transform="scale(0.75,0.75)">
 <g transform="matrix(1.2063492 0 0 -1.2063492 0.66666667 26)">
-<path d="M10.5 8.1 C15.5 8.1 19.8 9.9 20.9 12.3 L20.9 5 C20.9 2.8 18.4 0.9 14.8 0 L14.8 4.4 L6.2 4.4 L6.2 0 C2.6 0.8 0.1 2.8 0.1 5 L0.1 12.3 C1.2 9.9 5.5 8.1 10.5 8.1 Z M20.9 15.1 C20.9 18 16.2 20.3 10.5 20.3 C4.8 20.3 0.1 18 0.1 15.1 C0.1 13.3 1.9 11.7 4.7 10.8 L7.4 14.2 L13.6 14.2 L16.3 10.8 C19.1 11.7 20.9 13.3 20.9 15.1 Z " stroke="none" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="1" />
+<path d="M10.5 8.1 C15.5 8.1 19.8 9.9 20.9 12.3 L20.9 5 C20.9 2.8 18.4 0.9 14.8 0 L14.8 4.4 L6.2 4.4 L6.2 0 C2.6 0.8 0.1 2.8 0.1 5 L0.1 12.3 C1.2 9.9 5.5 8.1 10.5 8.1 Z M20.9 15.1 C20.9 18 16.2 20.3 10.5 20.3 C4.8 20.3 0.1 18 0.1 15.1 C0.1 13.3 1.9 11.7 4.7 10.8 L7.4 14.2 L13.6 14.2 L16.3 10.8 C19.1 11.7 20.9 13.3 20.9 15.1 Z " stroke="none"  fill-rule="evenodd" fill-opacity="1" />
 </g>
 </g>
 </svg>

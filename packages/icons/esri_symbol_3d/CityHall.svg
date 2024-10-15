@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"[]><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
+﻿<?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
 <g color-interpolation="linearRGB" transform="scale(0.75,0.75)">
 <g transform="matrix(1.4901961 0 0 -1.4901961 0.66666667 26)">
-<path d="M17 9.27 L17 7.73 L15.45 7.73 L15.45 3.09 L17 1.55 L17 0 L0 0 L0 1.55 L1.55 3.09 L1.55 7.73 L0 7.73 L0 9.27 L1.55 9.27 L15.45 9.27 L17 9.27 Z M12.36 7.73 L12.36 3.09 L13.91 3.09 L13.91 7.73 L12.36 7.73 Z M10.82 3.09 L10.82 7.73 L6.18 7.73 L6.18 3.09 L7.73 3.09 L7.73 4.64 L9.27 4.64 L9.27 3.09 L10.82 3.09 Z M4.64 3.09 L4.64 7.73 L3.09 7.73 L3.09 3.09 L4.64 3.09 Z M17 10.82 L0 10.82 L8.5 15.46 L17 10.82 Z " stroke="none" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="1" />
+<path d="M17 9.27 L17 7.73 L15.45 7.73 L15.45 3.09 L17 1.55 L17 0 L0 0 L0 1.55 L1.55 3.09 L1.55 7.73 L0 7.73 L0 9.27 L1.55 9.27 L15.45 9.27 L17 9.27 Z M12.36 7.73 L12.36 3.09 L13.91 3.09 L13.91 7.73 L12.36 7.73 Z M10.82 3.09 L10.82 7.73 L6.18 7.73 L6.18 3.09 L7.73 3.09 L7.73 4.64 L9.27 4.64 L9.27 3.09 L10.82 3.09 Z M4.64 3.09 L4.64 7.73 L3.09 7.73 L3.09 3.09 L4.64 3.09 Z M17 10.82 L0 10.82 L8.5 15.46 L17 10.82 Z " stroke="none"  fill-rule="evenodd" fill-opacity="1" />
 </g>
 </g>
 </svg>

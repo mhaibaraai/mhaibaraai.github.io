@@ -4,7 +4,9 @@
     "baseUrl": ".",
     "types": [
       "node",
-      "vite/client"
+      "vite/client",
+      "element-plus/global",
+      "ant-design-vue/typings/global"
     ]
   },
   "include": [
