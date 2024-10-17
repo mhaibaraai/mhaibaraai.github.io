@@ -20,7 +20,7 @@ onMounted(() => {
 
 <template>
   <AButton type="primary" @click="refresh()">
-    点击刷新
+    点击刷新11
   </AButton>
   <div flex="~ wrap" mt-1rem>
     <div
