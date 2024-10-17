@@ -9,3 +9,4 @@ output
 .turbo
 .cache
 .eslintcache
+.idea
