@@ -1,12 +1,18 @@
-# Make sure to add  docs/.vitepress/dist and  docs/.vitepress/cache to your .gitignore file
-.cache
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+output/
+
+# Caches
+.cache/
+cache/
+.vitepress/cache/
+.turbo/
+.eslintcache/
+
+# IDE/editor directories and system files
+.idea/
+.vscode/
 .DS_Store
-dist
-cache
-node_modules
-.vitepress/cache
-output
-.turbo
-.cache
-.eslintcache
-.idea
