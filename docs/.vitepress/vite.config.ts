@@ -7,20 +7,14 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
-import { AntDesignVueResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 
-const iconsResolverAutoImport = IconsResolver({
-  prefix: 'icon',
-})
-const iconsResolverComponents = IconsResolver({
-  prefix: 'icon',
-  enabledCollections: ['ep'],
-  customCollections: ['esri'],
-})
-
 export default defineConfig({
+  ssr: {
+    noExternal: ['element-plus', /^element-plus\/.*/],
+  },
   resolve: {
     alias: {
       '~/': resolve(docRoot, './'),
@@ -40,15 +34,9 @@ export default defineConfig({
       excludeFolders: ['threejs'],
     }),
     AutoImport({
-      imports: ['vue', '@vueuse/core'],
+      imports: ['vue', 'vue-router', '@vueuse/core'],
       resolvers: [
-        // antDesignVueResolver,
-        iconsResolverAutoImport,
-        AntDesignVueResolver({
-          cjs: true,
-          importStyle: false,
-        }),
-        // ElementPlusResolver(),
+        ElementPlusResolver(),
       ],
     }),
     Components({
@@ -56,15 +44,17 @@ export default defineConfig({
         resolve(docRoot, './components'),
       ],
       resolvers: [
-        iconsResolverComponents,
         ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'icon',
+          enabledCollections: ['ep'],
+          customCollections: ['esri'],
+        }),
       ],
       include: [/\.vue($|\?)/, /\.md($|\?)/],
-      extensions: ['vue', 'md', 'svg'],
+      extensions: ['vue', 'md'],
     }),
     Icons({
-      autoInstall: true,
-      compiler: 'vue3',
       customCollections: {
         esri: FileSystemIconLoader(resolve(iconsRoot, './esri_symbol_3d'), svg =>
           svg.replace(/^<svg /, '<svg fill="currentColor" ')),

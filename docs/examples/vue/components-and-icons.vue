@@ -4,7 +4,7 @@ const value = ref(3.5)
 
 <template>
   <div flex="~ gap-2 items-center">
-    <ARate v-model:value="value" allow-half />
+    <ElRate v-model="value" />
     <icon-ep-star />
     <icon-ep-UserFilled />
     <span color="red">

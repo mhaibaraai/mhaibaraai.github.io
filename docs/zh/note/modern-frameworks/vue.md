@@ -4,7 +4,7 @@
 
 ## 按需自动导入组件与图标 {#import-components-and-icons}
 
-> [自动导入 Ant Design 组件和图标](https://www.antdv.com/docs/vue/introduce-cn#%E8%87%AA%E5%8A%A8%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5%E7%BB%84%E4%BB%B6)
+> [Element Plus 自动按需导入](https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5)
 
 1. 安装插件
 
@@ -14,55 +14,47 @@
    pnpm add -D unplugin-vue-components unplugin-auto-import unplugin-icons
    ```
 
-2. 在 `vite.config.ts` 中配置插件
+2. 在 `vite.config.ts` 中添加以下配置
 
    ```ts twoslash
+   import { resolve } from 'node:path'
    import AutoImport from 'unplugin-auto-import/vite'
    import { FileSystemIconLoader } from 'unplugin-icons/loaders'
    import IconsResolver from 'unplugin-icons/resolver'
    import Icons from 'unplugin-icons/vite'
-   import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+   import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
    import Components from 'unplugin-vue-components/vite'
    import { defineConfig } from 'vite'
 
-   const antDesignVueResolver = AntDesignVueResolver({
-     importStyle: false,
-   })
-
-   const iconsResolverAutoImport = IconsResolver({
-     prefix: 'icon',
-   })
-
-   const iconsResolverComponents = IconsResolver({
-     prefix: 'icon',
-     enabledCollections: ['ep'],
-     customCollections: ['esri'],
-   })
-
    export default defineConfig({
+     ssr: {
+       noExternal: ['element-plus', /^element-plus\/.*/],
+     },
      plugins: [
        AutoImport({
-         imports: ['vue', '@vueuse/core'],
+         imports: ['vue', 'vue-router', '@vueuse/core'],
          resolvers: [
-           antDesignVueResolver,
-           iconsResolverAutoImport,
+           ElementPlusResolver(),
          ],
        }),
        Components({
          resolvers: [
-           iconsResolverComponents,
-           antDesignVueResolver,
+           ElementPlusResolver(),
+           IconsResolver({
+             prefix: 'icon',
+             enabledCollections: ['ep'],
+             customCollections: ['esri'],
+           }),
          ],
          include: [/\.vue($|\?)/, /\.md($|\?)/],
-         extensions: ['vue', 'md', 'svg'],
+         extensions: ['vue', 'md'],
        }),
        Icons({
-         autoInstall: true,
          customCollections: {
-           esri: FileSystemIconLoader('./esri', svg =>
+           esri: FileSystemIconLoader(resolve('./esri_symbol_3d'), svg =>
              svg.replace(/^<svg /, '<svg fill="currentColor" ')),
          },
-       })
+       }),
      ],
    })
    ```
