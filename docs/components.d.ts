@@ -7,11 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AButton: typeof import('ant-design-vue/es')['Button']
-    ARate: typeof import('ant-design-vue/lib')['Rate']
-    IconEpStar: typeof import('~icons/ep/star')['default']
-    IconEpUserFilled: typeof import('~icons/ep/user-filled')['default']
-    IconEsriAccessibility: typeof import('~icons/esri/accessibility')['default']
     MVPBadges: typeof import('./components/MVPBadges.vue')['default']
     MVPFeature: typeof import('./components/MVPFeature.vue')['default']
     MVPFeatures: typeof import('./components/MVPFeatures.vue')['default']

@@ -23,7 +23,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     )}px at ${x}px ${y}px)`,
   ]
 
-  // @ts-expect-error
+  // @ts-expect-expect-error
   await document.startViewTransition(async () => {
     isDark.value = !isDark.value
     await nextTick()
@@ -47,7 +47,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
       <!-- <MVPVisitor /> -->
     </template>
     <template #doc-after>
-      <MVPGitalk :key="Date.now()" />
+      <!-- <MVPGitalk :key="Date.now()" /> -->
     </template>
   </DefaultTheme.Layout>
 </template>

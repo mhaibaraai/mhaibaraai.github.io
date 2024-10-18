@@ -19,27 +19,28 @@
    - 从 [Node.js 官网](https://nodejs.org/) 下载 macOS 安装包（`.pkg` 文件）
    - 使用 Homebrew 安装
 
-   ```sh
-   brew install node
-   ```
+     ```sh
+     brew install node
+     ```
 
-   ::: tip 什么是 Homebrew？如何安装？
-   跳转到 [Homebrew](../mac/brew)
-   :::
+     ::: tip 什么是 Homebrew？如何安装？
+
+     跳转到 [Homebrew](../mac/brew)
+
+     :::
 
 2. Windows:
 
    - 从 [Node.js 官网](https://nodejs.org/) 下载 Windows 安装包（`.msi` 文件）
    - 如果已安装 Windows 10 或更新版本，可以使用 winget：
 
-   ```sh
-   winget install --id=OpenJS.Nodejs
-   ```
+     ```sh
+     winget install --id=OpenJS.Nodejs
+     ```
 
 ### 使用包管理器安装（推荐） {#install-package-manager}
 
 > - 包版本管理工具的主要好处在于帮助开发者更方便地管理多个版本的 Node.js 和 npm。
-> - 在开发中，不同的项目可能需要依赖不同的 Node.js 版本，使用这些工具可以轻松切换不同的环境，并确保项目在合适的版本上运行。
 
 - [nvm](https://github.com/nvm-sh/nvm) 最受欢迎的 Node.js 版本管理工具，适用于 macOS 和 Linux。
 - [nvm-windows](https://github.com/coreybutler/nvm-windows) `nvm` 的 Windows 版本，专为 Windows 开发者设计。
@@ -59,15 +60,15 @@
 
 - 使用 npm 安装 pnpm：
 
-```sh
-npm install -g pnpm
-```
+  ```sh
+  npm install -g pnpm
+  ```
 
 - 使用 Homebrew 安装 pnpm：
 
-```sh
-brew install pnpm
-```
+  ```sh
+  brew install pnpm
+  ```
 
 ### 工作空间 {#pnpm-workspace}
 
@@ -143,3 +144,4 @@ export NODE_OPTIONS=--max_old_space_size=10240
     "build": "NODE_OPTIONS=--max_old_space_size=10240 react-scripts build"
   }
 }
+```

@@ -52,24 +52,24 @@ Error: No pnpm version is specified. Please specify it by one of the following w
 
 2. 添加 `eslint.config.js` 文件
 
-```js twoslash
-import antfu from '@antfu/eslint-config'
+   ```js twoslash
+   import antfu from '@antfu/eslint-config'
 
-export default antfu({
+   export default antfu({
 
-  formatters: true,
-  vue: true,
-  typescript: true,
+     formatters: true,
+     vue: true,
+     typescript: true,
 
-}, {
-  rules: {
-    'no-console': 'off',
-    'node/prefer-global/process': 'off',
-    'ts/no-this-alias': 'off',
-    'ts/consistent-type-imports': 'off',
-  },
-},)
-```
+   }, {
+     rules: {
+       'no-console': 'off',
+       'node/prefer-global/process': 'off',
+       'ts/no-this-alias': 'off',
+       'ts/consistent-type-imports': 'off',
+     },
+   },)
+   ```
 
 ## 添加 `unocss` 预处理器 {#unocss}
 
