@@ -4,22 +4,8 @@
 
 ## 常用命令 {#common-commands}
 
-- 创建一个 `include` 文件夹
-
-```sh
-mkdir include
-```
-
-- 创建文件夹并解压至该文件夹中
-
-将名为 `include.zip` 的压缩文件解压缩到当前目录下的 `include` 文件夹中
-
-```sh
-unzip -d ./include include.zip
-```
-
-- 文件夹重命名
-
-```sh
-mv old_folder new_folder
-```
+| 命令                             | 功能说明                                 |
+| -------------------------------- | ---------------------------------------- |
+| `mkdir include`                  | 创建一个 `include` 文件夹                |
+| `unzip -d ./include include.zip` | 将 `include.zip` 解压到 `include` 文件夹 |
+| `mv old_folder new_folder`       | 文件夹重命名                             |

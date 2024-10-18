@@ -53,6 +53,10 @@ features:
         details: VitePress - Vue 驱动的静态网站生成器
         link: https://vitepress.dev/zh/
       - icon:
+          src: https://aliyuncdn.antdv.com/favicon.ico
+        details: Ant Design 的 Vue 实现
+        link: https://www.antdv.com/components/overview-cn/
+      - icon:
           src: https://element-plus.org/images/element-plus-logo-small.svg
         details: Element Plus
         link: https://element-plus.org/zh-CN/

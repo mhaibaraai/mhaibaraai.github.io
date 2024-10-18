@@ -6,50 +6,50 @@
 
 - 有两个变量 `--primary-color` 和 `--secondary-color`，使用其中一个作为背景色。
 
-```css
-:root {
-  --primary-color: red;
-  --secondary-color: blue;
-  --chosen-color: var(--primary-color, var(--secondary-color));
-}
-.element {
-  background-color: var(--chosen-color);
-}
-```
+  ```css
+  :root {
+    --primary-color: red;
+    --secondary-color: blue;
+    --chosen-color: var(--primary-color, var(--secondary-color));
+  }
+  .element {
+    background-color: var(--chosen-color);
+  }
+  ```
 
 - 基于某种逻辑来选择其中一个值，可以结合使用 CSS 的条件伪类。
 
-```css
-:root {
-  --primary-color: red;
-  --secondary-color: blue;
-}
-body[data-theme='primary'] {
-  --chosen-color: var(--primary-color);
-}
-body[data-theme='secondary'] {
-  --chosen-color: var(--secondary-color);
-}
-body[data-theme='primary'] {
-  --chosen-color: var(--primary-color);
-}
-body[data-theme='secondary'] {
-  --chosen-color: var(--secondary-color);
-}
-.element {
-  background-color: var(--chosen-color);
-}
-```
+  ```css
+  :root {
+    --primary-color: red;
+    --secondary-color: blue;
+  }
+  body[data-theme='primary'] {
+    --chosen-color: var(--primary-color);
+  }
+  body[data-theme='secondary'] {
+    --chosen-color: var(--secondary-color);
+  }
+  body[data-theme='primary'] {
+    --chosen-color: var(--primary-color);
+  }
+  body[data-theme='secondary'] {
+    --chosen-color: var(--secondary-color);
+  }
+  .element {
+    background-color: var(--chosen-color);
+  }
+  ```
 
-```html
-<body data-theme="primary">
-  <div class="element">This element has the primary color as background.</div>
-</body>
+  ```html
+  <body data-theme="primary">
+    <div class="element">This element has the primary color as background.</div>
+  </body>
 
-<body data-theme="secondary">
-  <div class="element">This element has the secondary color as background.</div>
-</body>
-```
+  <body data-theme="secondary">
+    <div class="element">This element has the secondary color as background.</div>
+  </body>
+  ```
 
 ## Flexbox 布局盒子的子元素根据数量宽高自适应 {#flexbox-auto-size}
 

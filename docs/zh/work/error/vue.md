@@ -10,15 +10,15 @@ ls-remote -h -t git://github.com/adobe-webplatform/eve.git
 
 - 修改Git的协议（ssh 替换为 https）
 
-```sh
-git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
-```
+  ```sh
+  git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
+  ```
 
 - 切换镜像网站
 
-```sh
-git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.com/"
-```
+  ```sh
+  git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.com/"
+  ```
 
 ## 使用 import.meta.env 获取环境变量提示类型 “ImportMeta” 上不存在属性 “env” {#error-3}
 
@@ -52,8 +52,8 @@ git config --global url."https://hub.fastgit.xyz/".insteadOf "ssh://git@github.c
 
 - 根据 [vue](https://vuejs.org/guide/extras/render-function.html#jsx-type-inference) 指南，这是由以下更改引起的：
 
-> Starting in Vue 3.4, Vue no longer implicitly registers the global JSX namespace
-> 从 Vue 3.4 开始，Vue 不再隐式注册全局 JSX 命名空间
+  > Starting in Vue 3.4, Vue no longer implicitly registers the global JSX namespace
+  > 从 Vue 3.4 开始，Vue 不再隐式注册全局 JSX 命名空间
 
 ## Big integer literals are not available in the configured target environment (“chrome87“, “edge88“) {#error-5}
 

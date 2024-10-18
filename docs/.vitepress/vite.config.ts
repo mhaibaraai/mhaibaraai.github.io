@@ -12,6 +12,9 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  ssr: {
+    noExternal: ['element-plus', /^element-plus\/.*/],
+  },
   resolve: {
     alias: {
       '~/': resolve(docRoot, './'),
@@ -31,12 +34,9 @@ export default defineConfig({
       excludeFolders: ['threejs'],
     }),
     AutoImport({
-      imports: ['vue', '@vueuse/core'],
+      imports: ['vue', 'vue-router', '@vueuse/core'],
       resolvers: [
         ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'icon',
-        }),
       ],
     }),
     Components({
@@ -52,11 +52,9 @@ export default defineConfig({
         }),
       ],
       include: [/\.vue($|\?)/, /\.md($|\?)/],
-      extensions: ['vue', 'md', 'svg'],
+      extensions: ['vue', 'md'],
     }),
     Icons({
-      autoInstall: true,
-      compiler: 'vue3',
       customCollections: {
         esri: FileSystemIconLoader(resolve(iconsRoot, './esri_symbol_3d'), svg =>
           svg.replace(/^<svg /, '<svg fill="currentColor" ')),

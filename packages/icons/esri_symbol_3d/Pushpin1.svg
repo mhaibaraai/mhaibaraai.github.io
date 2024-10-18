@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"[]><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
+﻿<?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
 <g color-interpolation="linearRGB" transform="scale(0.75,0.75)">
 <g transform="matrix(1.4901961 0 0 -1.4901961 0.66666667 26)">
-<path d="M9 1 L8.5 -0 L8 1 L8 10 C6.31 10.25 5 11.74 5 13.5 C5 15.43 6.54 17 8.47 17 C10.4 17 11.97 15.43 11.97 13.5 C11.97 11.74 10.69 10.25 9 10 L9 1 Z " stroke="none" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="1" />
+<path d="M9 1 L8.5 -0 L8 1 L8 10 C6.31 10.25 5 11.74 5 13.5 C5 15.43 6.54 17 8.47 17 C10.4 17 11.97 15.43 11.97 13.5 C11.97 11.74 10.69 10.25 9 10 L9 1 Z " stroke="none"  fill-rule="evenodd" fill-opacity="1" />
 </g>
 </g>
 </svg>

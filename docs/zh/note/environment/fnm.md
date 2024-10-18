@@ -4,23 +4,25 @@
 
 ## 使用 fnm 安装 Node {#install-fnm}
 
-1. 安装 `fnm`：
+1. 安装 fnm：
 
    - 使用脚本安装：
 
-   ```sh
-   curl -fsSL https://fnm.vercel.app/install | bash
-   ```
+     ```sh
+     curl -fsSL https://fnm.vercel.app/install | bash
+     ```
 
    - 使用 Homebrew 安装（适用于 macOS 和 Linux）：
 
-   ```sh
-   brew install fnm
-   ```
+     ```sh
+     brew install fnm
+     ```
 
-   ::: tip 什么是 Homebrew？如何安装？
-   跳转到 [Homebrew](../mac/brew)
-   :::
+     ::: tip 什么是 Homebrew？如何安装？
+
+     跳转到 [Homebrew](../mac/brew)
+
+     :::
 
 2. 配置环境：
 
@@ -110,57 +112,22 @@
 
 ## 常用命令 {#fnm-commands}
 
-- 查询所有 Node.js 版本
-
-```sh
-fnm ls-remote
-```
-
-- 安装特定版本的 Node.js
-
-```sh
-fnm install <version>
-```
-
-- 安装最新的 LTS 版本
-
-```sh
-fnm install --lts
-```
-
-- 切换 Node.js 版本
-
-```sh
-fnm use <version>
-```
-
-- 查看当前使用的 Node.js 版本
-
-```sh
-fnm current
-```
-
-- 设置默认版本
-
-```sh
-fnm default <version>
-```
-
-- 查看所有已安装的 Node.js 版本
-
-```sh
-fnm ls
-```
-
-- 卸载 Node.js
-
-```sh
-fnm uninstall <version>
-```
+| 命令                      | 功能说明                      |
+| ------------------------- | ----------------------------- |
+| `fnm ls-remote`           | 查询所有 Node.js 版本         |
+| `fnm install <version>`   | 安装特定版本的 Node.js        |
+| `fnm install --lts`       | 安装最新的 LTS 版本           |
+| `fnm use <version>`       | 切换 Node.js 版本             |
+| `fnm current`             | 查看当前使用的 Node.js 版本   |
+| `fnm default <version>`   | 设置默认版本                  |
+| `fnm ls`                  | 查看所有已安装的 Node.js 版本 |
+| `fnm uninstall <version>` | 卸载 Node.js                  |
 
 ## 报错处理 {#fnm-errors}
 
 - `zsh: command not found: node`
+
+  > [github issues : Zsh shell setup command did not work for me](https://github.com/Schniz/fnm/issues/1279)
 
   如果在使用 `node` 命令时出现 `zsh: command not found: node` 错误，可以尝试在 `.zshrc` 文件中替换以下配置：
 

@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev --host --port 36666",
+    "dev": "pnpm clean && vitepress dev --host --port 36666",
     "build": "vitepress build",
+    "clean": "rimraf auto-imports.d.ts components.d.ts .vitepress/dist",
     "preview": "vitepress preview"
   },
   "dependencies": {

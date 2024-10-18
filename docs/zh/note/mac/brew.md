@@ -16,17 +16,17 @@
 
    - Intel 处理器：
 
-   ```sh
-   echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
-   eval "$(/usr/local/bin/brew shellenv)"
-   ```
+     ```sh
+     echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+     eval "$(/usr/local/bin/brew shellenv)"
+     ```
 
    - Apple Silicon (M1/M2)：
 
-   ```sh
-   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
-   eval "$(/opt/homebrew/bin/brew shellenv)"
-   ```
+     ```sh
+     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+     eval "$(/opt/homebrew/bin/brew shellenv)"
+     ```
 
 3. 验证安装：
 
@@ -39,8 +39,6 @@
    ```sh
    Homebrew 4.3.23-56-g9160445
    ```
-
-## 常用命令 {#commands}
 
 ### 配置文件导出导出 {#export}
 
@@ -73,5 +71,7 @@ xargs brew install --cask < brew-cask-packages.txt
 ```
 
 ::: tip 提示
+
 一般情况下，Homebrew 的配置不会随着系统的重装等过程丢失，因此不需要专门导入配置
+
 :::

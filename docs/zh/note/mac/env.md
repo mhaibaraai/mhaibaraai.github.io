@@ -71,9 +71,9 @@ Iterm2 是 macOS 上一款功能强大的终端仿真器，提供了许多增强
 - 访问 [Iterm2 官网](https://iterm2.com/) 下载最新版本的 Iterm2
 - 或者使用 Homebrew 安装
 
-```sh
-brew install --cask iterm2
-```
+  ```sh
+  brew install --cask iterm2
+  ```
 
 ### 将 iTerm2设置为默认终端 {#set-default}
 
@@ -93,7 +93,9 @@ brew install --cask iterm2
 ![import](/iterm2/import.png)
 
 ::: tip
+
 附上我的配置文件 [iterm2.json](/iterm2/default.json)
+
 :::
 
 ### 更改主题 {#theme}
@@ -130,11 +132,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 - **修改主题**： 找到 `ZSH_THEME` 这一行，修改为你喜欢的主题（例如 `robbyrussell`、`powerlevel10k/powerlevel10k` 等）。
 - **启用插件**： 在 `plugins=(...)` 一行中添加你需要的插件，如 `git`、`zsh-autosuggestions`、`zsh-syntax-highlighting` 等。
 
-每次修改完 `~/.zshrc` 后，运行以下命令以应用更改：
+  每次修改完 `~/.zshrc` 后，运行以下命令以应用更改：
 
-```sh
-source ~/.zshrc
-```
+  ```sh
+  source ~/.zshrc
+  ```
 
 ### 修改主题 Powerlevel10k {#change-theme}
 
@@ -150,21 +152,21 @@ source ~/.zshrc
 
    - 打开 `~/.zshrc` 文件
 
-   ```sh
-   code ~/.zshrc
-   ```
+     ```sh
+     code ~/.zshrc
+     ```
 
    - 找到 `ZSH_THEME="..."` 这一行，修改为：
 
-   ```sh
-   ZSH_THEME="powerlevel10k/powerlevel10k"
-   ```
+     ```sh
+     ZSH_THEME="powerlevel10k/powerlevel10k"
+     ```
 
    - 保存并退出编辑器，然后运行以下命令以应用更改：
 
-   ```sh
-   source ~/.zshrc
-   ```
+     ```sh
+     source ~/.zshrc
+     ```
 
 3. 配置 Powerlevel10k
 
@@ -199,7 +201,7 @@ source ~/.zshrc
    - 手动安装字体 [MesloLGS Nerd Font GitHub](https://github.com/romkatv/powerlevel10k#manual-font-installation)
    - 生成配置文件
 
-   配置完成后，向导会生成一个 `~/.p10k.zsh` 文件，保存用户的所有设置。
+     配置完成后，向导会生成一个 `~/.p10k.zsh` 文件，保存用户的所有设置。
 
 ### 安装插件 {#plugins}
 

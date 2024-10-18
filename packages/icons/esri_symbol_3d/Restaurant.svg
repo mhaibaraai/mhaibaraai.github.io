@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"[]><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
+﻿<?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" xml:space="preserve" enable-background="new 0 0 20 20">
 <g color-interpolation="linearRGB" transform="scale(0.75,0.75)">
 <g transform="matrix(1.4901961 0 0 -1.4901961 0.66666667 26)">
-<path d="M8.65 14.39 L8.65 10.46 C8.65 9.74 8.07 9.16 7.35 9.16 L6.17 9.16 L6.43 1.31 C6.43 0.59 5.96 0 5.38 0 C4.81 0 4.34 0.59 4.34 1.31 L4.6 9.16 L3.42 9.16 C2.7 9.16 2.12 9.74 2.12 10.46 L2.12 14.39 C2.12 15.11 2.7 15.69 3.42 15.69 L3.42 11.77 L4.73 11.77 L4.73 15.69 L6.04 15.69 L6.04 11.77 L7.35 11.77 L7.35 15.69 C8.07 15.69 8.65 15.11 8.65 14.39 Z M12.71 0 C12.06 0 11.53 0.59 11.53 1.31 L11.92 7.85 L11.99 8.12 C11.18 8.44 10.62 9.1 10.35 10.46 L10.35 11.77 C10.35 14.66 11.72 17 13.88 17 L13.88 15.69 L13.88 1.31 C13.88 0.59 13.36 0 12.71 0 Z " stroke="none" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="1" />
+<path d="M8.65 14.39 L8.65 10.46 C8.65 9.74 8.07 9.16 7.35 9.16 L6.17 9.16 L6.43 1.31 C6.43 0.59 5.96 0 5.38 0 C4.81 0 4.34 0.59 4.34 1.31 L4.6 9.16 L3.42 9.16 C2.7 9.16 2.12 9.74 2.12 10.46 L2.12 14.39 C2.12 15.11 2.7 15.69 3.42 15.69 L3.42 11.77 L4.73 11.77 L4.73 15.69 L6.04 15.69 L6.04 11.77 L7.35 11.77 L7.35 15.69 C8.07 15.69 8.65 15.11 8.65 14.39 Z M12.71 0 C12.06 0 11.53 0.59 11.53 1.31 L11.92 7.85 L11.99 8.12 C11.18 8.44 10.62 9.1 10.35 10.46 L10.35 11.77 C10.35 14.66 11.72 17 13.88 17 L13.88 15.69 L13.88 1.31 C13.88 0.59 13.36 0 12.71 0 Z " stroke="none"  fill-rule="evenodd" fill-opacity="1" />
 </g>
 </g>
 </svg>

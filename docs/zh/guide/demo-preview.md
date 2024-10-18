@@ -42,14 +42,14 @@ title: 组件预览与展示代码
 ### 兼容非 SSR 组件 {#non-ssr}
 
 ```markdown
-::: demo 这是一个`Teleport` 被元素加 `ElTooltip` 组件内部使用的示例
+::: demo 使用 `teleport` 传递组件内容的示例
 
 /basic/non-ssr.vue
 
 :::
 ```
 
-::: demo 这是一个`Teleport` 被元素加 `ElTooltip` 组件内部使用的示例 {ClientOnly}
+::: demo 使用 `teleport` 传递组件内容的示例 {ClientOnly}
 
 /basic/non-ssr.vue
 
