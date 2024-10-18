@@ -9,7 +9,7 @@
 
 配置通用的服务接口:
 
-![Map 服务接口](mapInterface.png)
+![Map 服务接口](/iserver/mapInterface.png)
 
 目前项目主要使用的接口有: `rest` 和 `wms130`
 
@@ -23,7 +23,7 @@
 
 - [iServe zxyTileImage 瓦片服务](http://support.supermap.com.cn/DataWarehouse/WebDocHelp/iServer/mergedProjects/SuperMapiServerRESTAPI/root/maps/map/zxyTileImage/zxyTileImage.htm)
 
-![zxyTileImage 瓦片服务](zxyTileImage.png)
+![zxyTileImage 瓦片服务](/iserver/zxyTileImage.png)
 
 示例服务地址: `http://192.168.110.130:8091/iserver/services/map-DiTu/rest/maps/ditu@ditu/zxyTileImage`
 
@@ -78,7 +78,7 @@ const viewOptions: __esri.SceneViewProperties = {
 
 - [iServer WMS 服务](http://support.supermap.com.cn/DataWarehouse/WebDocHelp/iServer/API/WMS/WMS_introduce.htm)
 
-![wms130 服务](wms130.png)
+![wms130 服务](/iserver/wms130.png)
 
 示例服务地址: `http://192.168.110.130:8091/iserver/services/map-DiTu/wms130`
 
@@ -119,7 +119,7 @@ const layerName = 'ditu@ditu'
 
 配置通用的服务接口:
 
-![Data 服务接口](dataInterface.png)
+![Data 服务接口](/iserver/dataInterface.png)
 
 ### rest 服务
 
@@ -224,7 +224,7 @@ const layerName = 'ordos_nrs_data_ggfwssd'
 
 配置只有一个 **rest** 服务接口:
 
-![Scene 服务接口](sceneInterface.png)
+![Scene 服务接口](/iserver/sceneInterface.png)
 
 示例服务地址: `http://192.168.110.130:8091/iserver/services/3D-ThreeDTilesCache-tileset/rest/realspace/datas/tileset/config`
 
@@ -268,7 +268,7 @@ const url = 'http://192.168.110.130:8091/iserver/services/3D-ThreeDTilesCache-ti
 
 尝试用 SLD_BODY 自定义 wms 服务的样式， GetMap 请求格式如下，图层样式没有渲染
 
-![sld_body error](sldBody.png)
+![sld_body error](/iserver/sldBody.png)
 
 问题原因:
 
@@ -276,7 +276,7 @@ wms 服务目前只支持已定义的图层样式
 
 [iServer GetMap 请求](http://support.supermap.com.cn/DataWarehouse/WebDocHelp/iServer/API/WMS/WMS130/GetMap/GetMap_request.htm)
 
-![sld_body reply](sldBodyReply.png)
+![sld_body reply](/iserver/sldBodyReply.png)
 
 ### 地图服务获取 geojson 表述格式错误
 
@@ -284,7 +284,7 @@ wms 服务目前只支持已定义的图层样式
 
 请求url /iserver/services/map-text/rest/FZJZSSD@cs.geojson 与资源 root 的 url 模板不匹配
 
-![geojson error](geojson.png)
+![geojson error](/iserver/geojson.png)
 
 问题原因:
 
@@ -293,7 +293,7 @@ wms 服务目前只支持已定义的图层样式
 
 ### 报错：400 ，msg：对象已经被释放
 
-![release error](releaseError.png)
+![release error](/iserver/releaseError.png)
 
 问题原因:
 
@@ -303,9 +303,9 @@ wms 服务目前只支持已定义的图层样式
 
 问题描述:
 
-![wfs error1](wfsError1.png)
+![wfs error1](/iserver/wfsError1.png)
 
-![wfs error2](wfsError2.png)
+![wfs error2](/iserver/wfsError2.png)
 
 问题原因:
 
@@ -326,9 +326,9 @@ supermap wfs2.0 执行 GetFeature 操作支持 `outputFormat=json` 输出，但�
 
 有个需求为点击地块展示详情，但是获取到的要素只有部分属性值
 
-![wfs error3](wfsError3.png)
+![wfs error3](/iserver/wfsError3.png)
 
-![wfs error4](wfsError4.png)
+![wfs error4](/iserver/wfsError4.png)
 
 问题原因:
 
@@ -495,9 +495,9 @@ fetch('http://192.168.110.130:8091/iserver/services/map-cs/rest/maps/dltb/legend
 
 在使用 `Arcgis Sdk` 叠加 3DTile 服务，请求 `404`，对比 `iServer` 官网示例，发现请求路径少了 `/data/path/`，导致请求失败
 
-![3dtile error](3dtileError.png)
+![3dtile error](/iserver/3dtileError.png)
 
-![3dtile error2](3dtileError2.png)
+![3dtile error2](/iserver/3dtileError2.png)
 
 问题原因:
 
@@ -528,6 +528,6 @@ interceptorToggle.add()
 
 直接放在 iServer 安装目录 `\webapps` 下面也可以，就能浏览器访问到 `json` 文件
 
-![3dtile res](3dtileRes.png)
+![3dtile res](/iserver/3dtileRes.png)
 
-![3dtile res2](3dtileRes2.png)
+![3dtile res2](/iserver/3dtileRes2.png)
