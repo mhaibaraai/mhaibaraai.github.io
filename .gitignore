@@ -17,3 +17,7 @@ cache/
 .idea/
 .vscode/
 .DS_Store
+
+# Test files
+auto-imports.d.ts
+components.d.ts

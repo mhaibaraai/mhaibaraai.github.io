@@ -150,4 +150,12 @@ title: 组件预览与展示代码
 
 :::
 
-<!-- @include: ../../../packages/demo-preview/CHANGELOG.md -->
+## 🗓️ 更新日志 {#changelog-plugin}
+
+:::code-group
+
+<<< ../../../packages/demo-preview/plugin/CHANGELOG.md [plugin]
+
+<<< ../../../packages/demo-preview/container/CHANGELOG.md [container]
+
+:::

@@ -97,12 +97,182 @@ git config --global user.email "Your Email"
    ```
 
 5. 在 GitHub、GitLab 等远程仓库添加 SSH 公钥。
-
 6. 测试 SSH 连接
 
    ```sh
    ssh -T git@github.com
    ```
+
+## 配置 GPG 密钥 {#gpg}
+
+1. 安装 GPG
+
+   ```sh
+   brew install gnupg
+   ```
+
+2. 生成 GPG 密钥
+
+   ```sh
+   gpg --full-generate-key
+   ```
+
+   - **选择密钥类型**：默认情况下，现在的 GPG 会选择 `ECC and ECC` 。您可以直接按 `Enter` 选择默认选项，生成 `ECC` 密钥。
+
+     :::warning 注意
+
+     `ECC` 密钥（如 `Ed25519` ）提供了更高的安全性和更小的密钥尺寸。但在某些旧系统或软件中，可能存在兼容性问题。如果需要最大兼容性，可以选择 `RSA and RSA` ，然后将密钥长度设置为 `4096` 位。
+
+     :::
+
+   - **选择曲线类型**： 如果选择了 `ECC`，系统会提示您选择曲线。默认的 `Curve 25519（Ed25519）`是推荐的选项，直接按 `Enter` 即可。
+   - **设置密钥的有效期**： 输入 `0` 表示密钥永不过期，或者根据需要设置。
+   - **用户信息**： 输入您的姓名、邮箱地址（必须与 GitHub 上的邮箱一致）和可选的注释。
+   - **确认信息**： 检查所有信息是否正确，输入 `O` 确认。
+   - **设置密码短语**： 为您的密钥设置一个安全的密码短语。
+
+3. 查看 GPG 密钥
+
+   ```sh
+   gpg --list-secret-keys --keyid-format LONG
+   ```
+
+   会看到类似以下的输出：
+
+   ```sh
+   [keyboxd]
+   ----------------
+   sec   ed25519/密钥ID  日期 [SC]
+         密钥指纹
+   uid           [ultimate] 姓名 <邮箱>
+   ssb   cv25519/子密钥ID  日期 [E]
+   ```
+
+   记录下 **ed25519/** 后面的长密钥 ID。例如，`ABCD1234EFGH5678`。
+
+4. 导出并复制公钥
+
+   ```sh
+   gpg --armor --export 密钥ID | pbcopy
+   ```
+
+   复制的内容类似于：
+
+   ```sh
+   -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+   mDMEY...
+   ...
+   -----END PGP PUBLIC KEY BLOCK-----
+   ```
+
+5. 将 GPG 密钥添加到 GitHub
+6. 配置 Git 使用 GPG 签名
+
+   - 设置默认签名密钥
+   - 启用自动签名提交
+   - 指定 GPG 程序的路径
+   - 使用默认 `openpgp` 格式
+
+   ```sh
+   git config --global user.signingkey 密钥ID
+   git config --global commit.gpgsign true
+   git config --global gpg.program $(which gpg)
+   git config --global --unset gpg.format
+   ```
+
+7. 安装 pinentry-mac
+
+   pinentry 程序用于提示您输入 GPG 密钥的密码。
+
+   ```sh
+   brew install pinentry-mac
+   echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+   killall gpg-agent
+   ```
+
+   为避免每次提交都输入密码，可以配置 GPG 缓存密码：
+
+   ```sh
+   code ~/.gnupg/gpg-agent.conf
+   ```
+
+   添加以下内容，代表把密码缓存 1 小时，最大缓存时间为 2 小时。
+
+   ```sh
+   default-cache-ttl 3600
+   max-cache-ttl 7200
+   ```
+
+   重启代理：
+
+   ```sh
+   killall gpg-agent
+   ```
+
+8. 在 VSCode 打开 `"git.enableCommitSigning": true,` 选项。
+
+   ![VSCode GPG 设置](/vscode/git-vscode-gpg.png)
+
+9. gpg failed to sign the data fatal: failed to write commit object？
+
+   - 验证 gpg-agent 是否已启动
+
+     ```sh
+     pgrep gpg-agent
+     ```
+
+     如果命令返回一个或多个进程 ID，表示 gpg-agent 已成功启动。
+
+     如果未运行，尝试重新启动 gpg-agent：
+
+     ```sh
+      gpgconf --kill gpg-agent
+      gpgconf --launch gpg-agent
+     ```
+
+   - 设置环境变量
+
+     在您的 Shell 配置文件（如 `~/.bashrc` 或 `~/.zshrc`）中添加：
+
+     ```sh
+     export GPG_TTY=$(tty)
+     ```
+
+     然后重新加载配置文件：
+
+     ```sh
+     source ~/.zshrc  # 或者 source ~/.bash_profile
+     ```
+
+   - 确保 `commit.gpgsign` 设置为 `true` ，且没有冲突的条目
+
+     ```sh
+     git config -l | grep gpg
+     ```
+
+     如果发现有类似以下输出：
+
+     ```sh
+     commit.gpgsign=true
+     gpg.program=/opt/homebrew/bin/gpg
+     commit.gpgsign=false
+     ```
+
+     找出哪个配置文件将 `commit.gpgsign` 设置为 `false`,它可能是在你的仓库中的本地 `.git/config` 文件中设置的：
+
+     ```sh
+     git config --show-origin --get-all commit.gpgsign
+     ```
+
+     全局启用 GPG 签名，删除冲突的配置：
+
+     ```sh
+     git config --global commit.gpgsign true
+     git config --unset commit.gpgsign
+     ```
+
+     或者，你也可以手动编辑当前仓库的 `.git/config` 文件，删除或注释掉 `commit.gpgsign=false` 这一行。
 
 ## 常用 Git 命令 {#commands}
 
