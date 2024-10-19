@@ -15,8 +15,8 @@
 
 ## 示例 {#examples}
 
-<!-- ::: demo
+::: demo
 
 /shared/utils/getAnalogousColors.vue
 
-::: -->
+:::

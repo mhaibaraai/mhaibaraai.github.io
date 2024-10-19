@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+pnpm-lock.yaml
 
 # Build outputs
 dist/
@@ -16,3 +17,7 @@ cache/
 .idea/
 .vscode/
 .DS_Store
+
+# Test files
+auto-imports.d.ts
+components.d.ts
