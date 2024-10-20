@@ -1,6 +1,5 @@
 # Node modules
 node_modules/
-pnpm-lock.yaml
 
 # Build outputs
 dist/
