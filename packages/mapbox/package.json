@@ -1,0 +1,37 @@
+{
+  "name": "@movk-repo/mapbox",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.11.0",
+  "description": "一个基于 Mapbox 的 Vue 3 的轻量级组件库",
+  "author": "yixuan",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "homepage": "https://mhaibaraai.github.io/zh/guide/mapbox",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mhaibaraai/mhaibaraai.github.io.git"
+  },
+  "keywords": [
+    "mapbox",
+    "vue3-mapbox"
+  ],
+  "main": "./dist/demo-preview-container.umd.cjs",
+  "module": "./dist/demo-preview-container.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "stub": "vite build --watch",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.31"
+  },
+  "dependencies": {
+    "mapbox-gl": "^3.7.0"
+  }
+}

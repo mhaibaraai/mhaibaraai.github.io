@@ -282,6 +282,8 @@ git config --global user.email "Your Email"
 | `git branch \| grep -v "^\*" \| xargs git branch -D` | 删除除当前分支外的所有分支                       |
 | `git branch \| xargs git branch -D`                  | 删除所有本地分支，包括当前分支                   |
 | `git fetch --prune`                                  | 从远程仓库获取最新的代码，并删除已经被删除的分支 |
+| `git branch -m <old_branch> <new_branch>`            | 重命名本地分支                                   |
+| `git push origin --delete <branch_name>`             | 删除远程分支                                     |
 
 ## 遇到的问题 {#question}
 
