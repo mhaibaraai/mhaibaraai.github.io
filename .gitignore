@@ -7,11 +7,9 @@ dist/
 output/
 
 # Caches
-.cache/
-cache/
-.vitepress/cache/
-.turbo/
-.eslintcache/
+cache
+.turbo
+.eslintcache
 
 # IDE/editor directories and system files
 .idea/

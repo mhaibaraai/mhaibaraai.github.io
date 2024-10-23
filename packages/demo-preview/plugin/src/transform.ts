@@ -1,7 +1,7 @@
+import type { MarkdownEnv } from 'vitepress'
+import type { ContainerOptions } from '.'
 import { join } from 'node:path'
 import { camelize, capitalize } from '@vue/shared'
-import { MarkdownEnv } from 'vitepress'
-import { ContainerOptions } from '.'
 
 const scriptLangTsRE = /<\s*script[^>]+\blang=['"]ts['"][^>]*/
 const scriptSetupRE = /<\s*script[^>]+\bsetup\b[^>]*/

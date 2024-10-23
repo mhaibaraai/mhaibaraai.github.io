@@ -1,6 +1,6 @@
+import type { Mutable } from '@vueuse/core'
 import type { ComponentPublicInstance, VNode } from 'vue'
 import type { MessageHandler, MessageProps } from './message'
-import { Mutable } from '@vueuse/core'
 import { shallowReactive } from 'vue'
 
 export interface MessageContext {

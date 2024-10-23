@@ -1,6 +1,5 @@
-/* eslint-disable regexp/no-misleading-capturing-group */
+import type { FilesOptions } from '.'
 import { readFileSync } from 'node:fs'
-import { FilesOptions } from '.'
 
 export const rawPathRegexp
   = /^(.+?(?:(?:\.([a-z0-9]+))?))(?:(#[\w-]+))?(?: ?(?:\{(\d+(?:[,-]\d+)*)? ?(\S+)? ?(\S+)?\}))? ?(?:\[(.+)\])?$/

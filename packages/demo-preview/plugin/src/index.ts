@@ -1,8 +1,8 @@
 import type MarkdownIt from 'markdown-it'
+import type Renderer from 'markdown-it/lib/renderer.mjs'
 import type Token from 'markdown-it/lib/token.mjs'
 import type { MarkdownEnv } from 'vitepress'
 import { join } from 'node:path'
-import Renderer from 'markdown-it/lib/renderer.mjs'
 import mdContainer from 'markdown-it-container'
 import createDemoContainer from './demo'
 
@@ -37,14 +37,14 @@ export interface ContainerOptions extends ContainerParams {
 
 export interface ContainerOpts {
   marker: string | undefined
-  validate(params: string): boolean
-  render(
+  validate: (params: string) => boolean
+  render: (
     tokens: Token[],
     index: number,
     options: ContainerParams,
     env: MarkdownEnv,
     self: Renderer
-  ): string
+  ) => string
 }
 
 export interface FilesOptions {

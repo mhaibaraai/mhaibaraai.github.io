@@ -18,15 +18,10 @@
     "mapbox",
     "vue3-mapbox"
   ],
-  "main": "./dist/demo-preview-container.umd.cjs",
-  "module": "./dist/demo-preview-container.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "stub": "vite build --watch",
-    "build": "vite build"
   },
   "peerDependencies": {
     "vue": "^3.4.31"

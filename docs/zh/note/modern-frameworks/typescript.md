@@ -13,16 +13,18 @@
 ```ts [global.d.ts]
 declare global {
   interface JSEncrypt {
-    setPublicKey(publicKey: string): void
-    setPrivateKey(privateKey: string): void
-    encrypt(value: string): string
-    decrypt(value: string): string
-    getPublicKey(): string
-    getPrivateKey(): string
+    setPublicKey: (publicKey: string) => void
+    setPrivateKey: (privateKey: string) => void
+    encrypt: (value: string) => string
+    decrypt: (value: string) => string
+    getPublicKey: () => string
+    getPrivateKey: () => string
   }
+
   interface JSEncryptConstructor {
-    new(): JSEncrypt
+    new (): JSEncrypt
   }
+
   const JSEncrypt: JSEncryptConstructor
 }
 

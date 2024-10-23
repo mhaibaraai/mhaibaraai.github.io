@@ -1,4 +1,4 @@
-import { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes, PropType } from 'vue'
 
 export const messageTypes = ['success', 'info', 'warning', 'error'] as const
 

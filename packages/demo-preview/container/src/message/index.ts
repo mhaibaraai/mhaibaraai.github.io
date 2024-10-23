@@ -1,8 +1,10 @@
+import type { Mutable } from '@vueuse/core'
+import type { MessageContext } from './instance'
+import type { MessageFn, MessageHandler, MessageOptions, MessageParams, MessageProps } from './message'
 import { isFunction, isString } from '@vue/shared'
-import { isClient, Mutable } from '@vueuse/core'
+import { isClient } from '@vueuse/core'
 import { createApp, isVNode, render } from 'vue'
-import { instances, MessageContext } from './instance'
-import { MessageFn, MessageHandler, MessageOptions, MessageParams, MessageProps } from './message'
+import { instances } from './instance'
 import MessageConstructor from './message.vue'
 
 let instanceCount = 1

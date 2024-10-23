@@ -37,6 +37,7 @@ export function extractFrontmatterField<T>(content: string, field: string, defau
     }
   }
   catch (e) {
+    console.error(e)
     return defaultValue
   }
   return defaultValue

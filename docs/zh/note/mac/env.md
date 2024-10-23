@@ -92,12 +92,6 @@ Iterm2 是 macOS 上一款功能强大的终端仿真器，提供了许多增强
 
 ![import](/iterm2/import.png)
 
-::: tip
-
-附上我的配置文件 [iterm2.json](/iterm2/default.json)
-
-:::
-
 ### 更改主题 {#theme}
 
 - iTerm2 -> Setting -> Profiles -> Colors-> Color Presets

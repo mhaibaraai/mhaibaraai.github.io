@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { PropType } from 'vue'
 import { BarChart, LineChart, PieChart } from 'echarts/charts'
 import {
   DatasetComponent,
@@ -9,7 +10,6 @@ import {
 } from 'echarts/components'
 import { use } from 'echarts/core'
 import { SVGRenderer } from 'echarts/renderers'
-import { PropType } from 'vue'
 import VChart from 'vue-echarts'
 // 系列类型的定义后缀都为 SeriesOption
 import type {

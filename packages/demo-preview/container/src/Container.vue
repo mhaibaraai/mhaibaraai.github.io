@@ -36,6 +36,7 @@ async function copyCode() {
       type: 'error',
       message: '复制失败',
     })
+    console.error(e)
   }
 }
 </script>
